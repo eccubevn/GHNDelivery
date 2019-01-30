@@ -1,0 +1,20 @@
+CHOTHUHANG: Cho thử hàng
+CHOXEMHANGKHONGTHU: Cho xem hàng (không cho thử hàng)
+KHONGCHOXEMHANG: Không cho xem hàng
+ghn.config.client_id: Mã chủ cửa hàng (Client Id)
+ghn.config.client_name: Tên chủ cửa hàng
+ghn.config.token: Mã thông báo api - token
+ghn.config.weight: Cân nặng trung bình 1 món hàng (gram)
+ghn.config.payment_type: Người trả phí giao hàng
+ghn.config.payment_type.seller: Người bán
+ghn.config.payment_type.buyer: Người mua
+ghn.config.callback_url: Link nhận thông tin trạng thái giao hàng từ GHN
+ghn.config.callback_url.help: "Mặc định: <tên miền của bạn>/receive. Ví dụ: http://eccubeshop.vn/receive"
+ghn.config.note_code: Loại hàng
+ghn.config.insurance_fee: Phí bảo hộ
+ghn.config.checkout: Nhận tiền thu phí hộ
+ghn.config.checkout.bank_transfer: Chuyển khoảng nhân hàng
+ghn.config.checkout.cod: Khác
+ghn.config.wallet: Sử dụng ví GHN để thanh toán phí giao hàng
+ghn.config.wallet.yes: Có
+ghn.config.wallet.no: Không

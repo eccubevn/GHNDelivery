@@ -1,0 +1,24 @@
+{#
+ * Created by PhpStorm.
+ * User: lqdung
+ * Date: 1/29/2019
+ * Time: 10:55 AM
+#}
+
+{%- extends '@admin/Form/bootstrap_4_horizontal_layout.html.twig' -%}
+
+{#Remove label class#}
+{% block form_label_class -%}
+{%- endblock form_label_class %}
+
+{%- block form_label -%}
+    <div class="d-inline-block col-3" {%- if help -%}data-tooltip="true" data-placement="top" title="{{ help|trans }}"{%- endif -%}>
+        {{ parent() }}
+        {%- if help -%}
+            <i class="fa fa-question-circle fa-lg ml-1"></i>
+        {%- endif -%}
+        {%- if required -%}
+            <span class="badge badge-primary ml-1">{{ 'admin.common.required'|trans }}</span>
+        {%- endif -%}
+    </div>
+{%- endblock form_label -%}
