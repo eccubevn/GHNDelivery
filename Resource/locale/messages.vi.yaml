@@ -18,3 +18,14 @@ ghn.config.checkout.cod: Khác
 ghn.config.wallet: Sử dụng ví GHN để thanh toán phí giao hàng
 ghn.config.wallet.yes: Có
 ghn.config.wallet.no: Không
+# install
+ghn.plugin_manager.delivery_name: Giao hàng nhanh
+ghn.plugin_manager.delivery_name.remove: "Giao hàng nhanh - Đã xóa"
+ghn.plugin_manager.service_name: GHN
+ghn.plugin_manager.delivery_url: "https://giaohangnhanh.vn"
+ghn.plugin_manager.page_name: "Giao hàng nhanh - Tính phí"
+# Shopping
+ghn.shopping.delivery: Tính phí
+ghn.shopping.delivery.province: "Tỉnh/thành phố"
+ghn.shopping.delivery.district: "Giao hàng đến quận/huyện"
+ghn.shopping.delivery.total: "Tổng tiền hiện tại của đơn hàng"

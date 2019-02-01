@@ -67,7 +67,7 @@ class GHNPref extends AbstractEntity
     /**
      * @var Pref
      *
-     * @ORM\ManyToOne(targetEntity="Eccube\Entity\Master\Pref", inversedBy="GHNPrefs")
+     * @ORM\ManyToOne(targetEntity="Eccube\Entity\Master\Pref")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="pref_eccube_id", referencedColumnName="id")
      * })

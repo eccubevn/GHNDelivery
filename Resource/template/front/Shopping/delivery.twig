@@ -1,0 +1,76 @@
+{#
+ * Created by PhpStorm.
+ * User: lqdung
+ * Date: 1/31/2019
+ * Time: 2:29 PM
+#}
+
+{% extends 'default_frame.twig' %}
+
+{% form_theme form 'Form/form_div_layout.twig' %}
+
+{% set body_class = 'cart_page' %}
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+{% block javascript %}{% endblock javascript %}
+
+{% block main %}
+    <div class="ec-role">
+        <div class="ec-pageHeader">
+            <h1>{{ 'ghn.shopping.delivery'|trans }}</h1>
+        </div>
+    </div>
+    <div class="ec-role">
+        <div class="ec-registerRole">
+            <div class="ec-off1Grid">
+                <div class="ec-off1Grid__cell">
+                    <form method="post" action="{{ url('ghn_delivery_shopping', {'id': Shipping.id}) }}">
+                        {{ form_widget(form._token) }}
+                        <div class="ec-borderedDefs">
+                            <dl>
+                                <dt>
+                                    {{ 'ghn.shopping.delivery.province'|trans }}
+                                </dt>
+                                <dd>
+                                    <div>
+                                        {{ Shipping.Pref.name }}
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    {{ form_label(form.gHNPref, '', { 'label_attr': { 'class': 'ec-label' }}) }}
+                                </dt>
+                                <dd>
+                                    <div class="{{ has_errors(form.gHNPref) ? ' error'}}">
+                                        {{ form_widget(form.gHNPref) }}
+                                        {{ form_errors(form.gHNPref) }}
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    {{ 'ghn.shopping.delivery.total'|trans }}
+                                </dt>
+                                <dd>
+                                    <div>
+                                        {{ Shipping.Order.payment_total|price }}
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="ec-RegisterRole__actions">
+                            <div class="ec-off4Grid">
+                                <div class="ec-off4Grid__cell">
+                                    <button type="submit" class="ec-blockBtn--action">{{ 'common.registration'|trans }}</button>
+                                    <a href="{{ url('shopping') }}" class="ec-blockBtn--cancel">{{ 'common.back'|trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
