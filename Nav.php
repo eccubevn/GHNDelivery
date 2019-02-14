@@ -11,6 +11,15 @@ class Nav implements EccubeNav
      */
     public static function getNav()
     {
-        return [];
+        return [
+            'product' => [
+                'children' => [
+                    'ghn_delivery_admin_warehouse' => [
+                        'url' => 'ghn_delivery_admin_warehouse',
+                        'name' => 'ghn.warehouse',
+                    ],
+                ],
+            ],
+        ];
     }
 }

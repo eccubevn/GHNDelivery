@@ -75,6 +75,13 @@ class GHNPref extends AbstractEntity
     private $Pref;
 
     /**
+     * @var GHNWarehouse[]
+     *
+     * @ORM\ManyToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNWarehouse", inversedBy="GHNPref")
+     */
+    private $Warehouses;
+
+    /**
      * @return int
      */
     public function getId(): int

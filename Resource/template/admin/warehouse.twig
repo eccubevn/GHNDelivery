@@ -2,8 +2,8 @@
 
 {% set menus = ['store', 'plugin', 'plugin_list'] %}
 
-{% block title %}GHNDelivery{% endblock %}
-{% block sub_title %}プラグイン一覧{% endblock %}
+{% block title %}Warehouse{% endblock %}
+{% block sub_title %}GHNDelivery{% endblock %}
 
 {% form_theme form '@GHNDelivery/admin/Form/GHNCustomize.twig' %}
 
@@ -43,11 +43,11 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-6">
                         <div class="c-conversionArea__leftBlockItem">
-                            <a class="c-baseLink"
-                               href="{{ url('admin_store_plugin') }}">
-                                <i class="fa fa-backward" aria-hidden="true"></i>
-                                <span>{{ 'admin.common.back'|trans }}</span>
-                            </a>
+                            {#<a class="c-baseLink"#}
+                               {#href="{{ url('admin_store_plugin') }}">#}
+                                {#<i class="fa fa-backward" aria-hidden="true"></i>#}
+                                {#<span>{{ 'admin.common.back'|trans }}</span>#}
+                            {#</a>#}
                         </div>
                     </div>
                     <div class="col-6">

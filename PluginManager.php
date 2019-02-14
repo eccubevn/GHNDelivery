@@ -97,7 +97,7 @@ class PluginManager extends AbstractPluginManager
             }
             $delivery = $GHNDelivery->getDelivery();
             $delivery->setVisible(false);
-            $delivery->setName(trans('ghn.plugin_manager.delivery_name.remove'));
+            $delivery->setName("Giao hàng nhanh - Đã xóa");
             $em->remove($GHNDelivery);
             $em->persist($delivery);
         }
@@ -127,16 +127,20 @@ class PluginManager extends AbstractPluginManager
         $saleType = $em->getRepository(SaleType::class)->find(SaleType::SALE_TYPE_NORMAL);
         $paymentMethods = $em->getRepository(Payment::class)->findAll();
         $delivery = new Delivery();
-        $delivery->setName(trans('ghn.plugin_manager.delivery_name'))
+        $delivery->setName('Giao hàng nhanh')
             ->setSaleType($saleType)
-            ->setServiceName(trans('ghn.plugin_manager.service_name'))
+            ->setServiceName('GHN')
             ->setVisible(true)
-            ->setConfirmUrl(trans('ghn.plugin_manager.delivery_url'));
+            ->setConfirmUrl("https://giaohangnhanh.vn");
         $em->persist($delivery);
+        $em->flush($delivery);
+
         foreach ($paymentMethods as $paymentMethod) {
             $method = new PaymentOption();
             $method->setDelivery($delivery)
-                ->setPayment($paymentMethod);
+                ->setDeliveryId($delivery->getId())
+                ->setPayment($paymentMethod)
+                ->setPaymentId($paymentMethod->getId());
             $em->persist($method);
         }
 
@@ -164,15 +168,20 @@ class PluginManager extends AbstractPluginManager
     {
         // add to layout
         $page = new Page();
-        $page->setName(trans('ghn.plugin_manager.page_name'))
+        $page->setName("Giao hàng nhanh - Tính phí")
             ->setUrl('ghn_delivery_shopping')
             ->setFileName("@GHNDelivery/front/Shopping/delivery.twig")
             ->setEditType(Page::EDIT_TYPE_DEFAULT);
         $em->persist($page);
+        $em->flush($page);
+
         $layout = $em->getRepository(Layout::class)->find(Layout::DEFAULT_LAYOUT_UNDERLAYER_PAGE);
         $pageLayout = new PageLayout();
         $pageLayout->setPage($page)
-            ->setLayout($layout);
+            ->setPageId($page->getId())
+            ->setLayout($layout)
+            ->setLayoutId($layout->getId())
+            ->setSortNo(1);
         $page->addPageLayout($pageLayout);
         $em->persist($pageLayout);
     }
