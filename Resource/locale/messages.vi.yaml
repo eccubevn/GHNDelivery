@@ -1,6 +1,7 @@
 CHOTHUHANG: Cho thử hàng
 CHOXEMHANGKHONGTHU: Cho xem hàng (không cho thử hàng)
 KHONGCHOXEMHANG: Không cho xem hàng
+ghn.config.missing: Vui lòng đăng ký trước
 ghn.config.client_id: Mã chủ cửa hàng (Client Id)
 ghn.config.client_name: Tên chủ cửa hàng
 ghn.config.token: Mã thông báo api - token

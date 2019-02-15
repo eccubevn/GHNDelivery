@@ -28,7 +28,7 @@ class GHNWarehouseRepository extends AbstractRepository
     }
 
     /**
-     * @return null|object
+     * @return GHNWarehouse
      */
     public function getByOne()
     {

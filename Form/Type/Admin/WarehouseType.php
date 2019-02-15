@@ -48,7 +48,7 @@ class WarehouseType extends AbstractType
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
-                    new Length(['max' => $this->eccubeConfig->get('eccube_smtext_len')])
+                    new Length(['max' => $this->eccubeConfig->get('ghn_name_len')])
                 ]
             ])
             ->add('contact_phone', TextType::class, [

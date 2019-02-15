@@ -53,7 +53,7 @@ class GHNWarehouse extends AbstractEntity
     /**
      * @var GHNPref
      *
-     * @ORM\OneToMany(targetEntity="Plugin\GHNDelivery\Entity\GHNPref", mappedBy="Warehouses")
+     * @ORM\ManyToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNPref", inversedBy="Warehouses")
      * @ORM\JoinColumns(
      *     @ORM\JoinColumn(name="ghn_pref_id", referencedColumnName="id")
      * )
@@ -89,9 +89,26 @@ class GHNWarehouse extends AbstractEntity
     private $is_main;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="hub_id", type="integer", nullable=true)
+     */
+    private $hub_id;
+
+    /**
+     * GHNWarehouse constructor.
+     * @param int $hub_id
+     */
+    public function __construct()
+    {
+        $this->is_main = true;
+    }
+
+
+    /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -230,5 +247,46 @@ class GHNWarehouse extends AbstractEntity
     public function setIsMain(?string $is_main): void
     {
         $this->is_main = $is_main;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHubId()
+    {
+        return $this->hub_id;
+    }
+
+    /**
+     * @param int $hub_id
+     */
+    public function setHubId(int $hub_id): void
+    {
+        $this->hub_id = $hub_id;
+    }
+
+    public function getApiCreateParameter()
+    {
+        $ret = [
+            'Address' => $this->getAddress(),
+            'ContactName' => $this->getContactName(),
+            'ContactPhone' => $this->getContactPhone(),
+            'DistrictID' => $this->getGHNPref() ? (int) $this->getGHNPref()->getDistrictId() : null,
+            'IsMain' => true, // tmp
+        ];
+
+        if ($this->getEmail()) {
+            $ret['Email'] = $this->getEmail();
+        }
+
+        if ($this->getLati()) {
+            $ret['Latitude'] = $this->getLati();
+        }
+
+        if ($this->getLong()) {
+            $ret['Longitude'] = $this->getLong();
+        }
+
+        return $ret;
     }
 }

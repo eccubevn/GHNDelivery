@@ -8,6 +8,7 @@
 namespace Plugin\GHNDelivery\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Eccube\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Entity\Master\Pref;
@@ -77,9 +78,17 @@ class GHNPref extends AbstractEntity
     /**
      * @var GHNWarehouse[]
      *
-     * @ORM\ManyToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNWarehouse", inversedBy="GHNPref")
+     * @ORM\OneToMany(targetEntity="Plugin\GHNDelivery\Entity\GHNWarehouse", mappedBy="GHNPref")
      */
     private $Warehouses;
+
+    /**
+     * GHNPref constructor.
+     */
+    public function __construct()
+    {
+        $this->Warehouses = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -191,5 +200,33 @@ class GHNPref extends AbstractEntity
     public function setPref(Pref $Pref): void
     {
         $this->Pref = $Pref;
+    }
+
+    /**
+     * @return GHNWarehouse[]
+     */
+    public function getWarehouses()
+    {
+        return $this->Warehouses;
+    }
+
+    /**
+     * @param GHNWarehouse $Warehouse
+     */
+    public function addWarehouse(GHNWarehouse $Warehouse): void
+    {
+        if (is_null($this->Warehouses)) {
+            $this->Warehouses = new ArrayCollection();
+        }
+
+        $this->Warehouses->add($Warehouse);
+    }
+
+    /**
+     * @param GHNWarehouse $Warehouse
+     */
+    public function removeWarehouse($Warehouse): void
+    {
+        $this->Warehouses->removeElement($Warehouse);
     }
 }

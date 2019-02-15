@@ -1,2 +1,7 @@
 parameters:
   ghn_session_name: ghn_delivery
+#  production
+#  ghn_endpoint: https://console.ghn.vn/api/v1/apiv3
+#  Testing
+  ghn_endpoint: https://apiv3-test.ghn.vn/api/v1/apiv3
+  ghn_name_len: 50

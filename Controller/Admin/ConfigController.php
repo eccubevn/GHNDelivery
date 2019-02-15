@@ -5,11 +5,13 @@ namespace Plugin\GHNDelivery\Controller\Admin;
 use Eccube\Controller\AbstractController;
 use Eccube\Entity\BaseInfo;
 use Eccube\Repository\BaseInfoRepository;
+use Plugin\GHNDelivery\Entity\GHNConfig;
 use Plugin\GHNDelivery\Form\Type\Admin\ConfigType;
 use Plugin\GHNDelivery\Form\Type\Admin\WarehouseType;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
 use Plugin\GHNDelivery\Repository\GHNPrefRepository;
 use Plugin\GHNDelivery\Repository\GHNWarehouseRepository;
+use Plugin\GHNDelivery\Service\ApiService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,21 +37,27 @@ class ConfigController extends AbstractController
     protected $warehouseRepo;
 
     /**
+     * @var ApiService
+     */
+    protected $apiService;
+
+    /**
      * ConfigController constructor.
      * @param GHNConfigRepository $configRepository
      * @param GHNPrefRepository $GHNPrefRepo
      */
-    public function __construct(GHNConfigRepository $configRepository, GHNPrefRepository $GHNPrefRepo, BaseInfoRepository $baseInfoRepository, GHNWarehouseRepository $warehouseRepo)
+    public function __construct(GHNConfigRepository $configRepository, GHNPrefRepository $GHNPrefRepo, BaseInfoRepository $baseInfoRepository, GHNWarehouseRepository $warehouseRepo, ApiService $apiService)
     {
         $this->configRepository = $configRepository;
         $this->GHNPrefRepo = $GHNPrefRepo;
         $this->BaseInfo = $baseInfoRepository->get();
         $this->warehouseRepo = $warehouseRepo;
+        $this->apiService = $apiService;
     }
 
 
     /**
-     * @Route("/%eccube_admin_route%/ghn_delivery/config", name="ghn_delivery_admin_config")
+     * @Route("/%eccube_admin_route%/ghn/config", name="ghn_delivery_admin_config")
      * @Template("@GHNDelivery/admin/config.twig")
      */
     public function index(Request $request)
@@ -73,19 +81,46 @@ class ConfigController extends AbstractController
     }
 
     /**
-     * @Route("/%eccube_admin_route%/ghn_delivery/warehouse", name="ghn_delivery_admin_warehouse")
+     * @Route("/%eccube_admin_route%/ghn/warehouse", name="ghn_delivery_admin_warehouse")
      * @Template("@GHNDelivery/admin/warehouse.twig")
      */
     public function wareHouse(Request $request)
     {
+        /** @var GHNConfig $config */
+        $config = $this->configRepository->find(1);
+        if (!$config) {
+            $this->addError('ghn.config.missing', 'admin');
+
+            return $this->redirectToRoute('ghn_delivery_admin_config');
+        }
         $Warehouse = $this->warehouseRepo->getByOne();
         $form = $this->createForm(WarehouseType::class, $Warehouse);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // call api register
+            if ($Warehouse->getId()) {
+                // call api update
+                $parser = $this->apiService->updateWarehouse($Warehouse);
+            } else {
+                // call api register
+                $parser = $this->apiService->addWarehouse($Warehouse);
+            }
 
+            if ($parser->getCode()) {
+                if (isset($parser->getData()['HubID'])) {
+                    // save hub id
+                    $Warehouse->setHubId($parser->getData()['HubID']);
+                }
+                $pref = $Warehouse->getGHNPref();
+                $this->entityManager->persist($Warehouse);
+                $pref->addWarehouse($Warehouse);
+                $this->entityManager->flush();
 
-            // save
+                $this->addSuccess('admin.common.save_complete', 'admin');
+
+                return $this->redirectToRoute('ghn_delivery_admin_warehouse');
+            } else {
+                $this->addError($parser->getMsg(), 'admin');
+            }
         }
 
         return [
