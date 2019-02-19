@@ -9,6 +9,7 @@ namespace Plugin\GHNDelivery\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Entity\AbstractEntity;
+use Eccube\Entity\OrderItem;
 use Eccube\Entity\Shipping;
 
 
@@ -119,11 +120,14 @@ class GHNService extends AbstractEntity
     private $extra_services;
 
     /**
-     * @var int
+     * @var OrderItem
      *
-     * @ORM\Column(name="order_item_id", type="integer", nullable=false)
+     * @ORM\OneToOne(targetEntity="Eccube\Entity\OrderItem")
+     * @ORM\JoinColumns(
+     *     @ORM\JoinColumn(name="order_item_id", referencedColumnName="id", onDelete="CASCADE")
+     * )
      */
-    private $order_item_id;
+    private $OrderItem;
 
     /**
      * @return int
@@ -388,20 +392,20 @@ class GHNService extends AbstractEntity
     }
 
     /**
-     * @return int
+     * @return OrderItem
      */
-    public function getOrderItemId()
+    public function getOrderItem()
     {
-        return $this->order_item_id;
+        return $this->OrderItem;
     }
 
     /**
-     * @param int $order_item_id
+     * @param OrderItem $orderItem
      * @return GHNService
      */
-    public function setOrderItemId($order_item_id)
+    public function setOrderItem(OrderItem $orderItem)
     {
-        $this->order_item_id = $order_item_id;
+        $this->OrderItem = $orderItem;
 
         return $this;
     }

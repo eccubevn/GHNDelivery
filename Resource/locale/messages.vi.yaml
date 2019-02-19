@@ -44,3 +44,5 @@ ghn.shopping.delivery.district: "Giao hàng đến quận/huyện"
 ghn.shopping.delivery.total: "Tổng tiền hiện tại của đơn hàng"
 ghn.shopping.delivery.service: Dịch vụ
 ghn.shopping.delivery.service_incorrect: Dịch vụ không đúng, vui lòng chọn lại!
+ghn.shopping.delivery.remove.error: Không có dịch vụ chuyển phát khác giao hàng nhanh, không thể hủy bỏ
+ghn.shopping.delivery.remove.alret: Bạn có chắc muốn hủy bỏ dịch vụ Giao hàng nhanh cho địa điểm này không?

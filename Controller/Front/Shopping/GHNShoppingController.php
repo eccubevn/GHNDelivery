@@ -14,11 +14,13 @@ use Eccube\Entity\Master\TaxDisplayType;
 use Eccube\Entity\Master\TaxType;
 use Eccube\Entity\OrderItem;
 use Eccube\Entity\Shipping;
+use Eccube\Repository\DeliveryRepository;
 use Eccube\Repository\Master\OrderItemTypeRepository;
 use Plugin\GHNDelivery\Entity\GHNService;
 use Plugin\GHNDelivery\Entity\GHNWarehouse;
 use Plugin\GHNDelivery\Form\Type\Front\GHNDeliveryShoppingType;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
+use Plugin\GHNDelivery\Repository\GHNDeliveryRepository;
 use Plugin\GHNDelivery\Repository\GHNServiceRepository;
 use Plugin\GHNDelivery\Repository\GHNWarehouseRepository;
 use Plugin\GHNDelivery\Service\ApiService;
@@ -28,6 +30,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GHNShoppingController extends AbstractController
@@ -58,20 +61,34 @@ class GHNShoppingController extends AbstractController
     protected $orderItemTypeRepository;
 
     /**
+     * @var GHNDeliveryRepository
+     */
+    protected $ghnDeliveryRepo;
+
+    /**
+     * @var DeliveryRepository
+     */
+    protected $deliveryRepository;
+
+    /**
      * GHNShoppingController constructor.
      * @param GHNWarehouseRepository $warehouseRepo
      * @param ApiService $apiService
      * @param GHNServiceRepository $serviceRepo
      * @param GHNConfigRepository $configRepo
      * @param OrderItemTypeRepository $orderItemTypeRepository
+     * @param GHNDeliveryRepository $ghnDeliveryRepo
+     * @param DeliveryRepository $deliveryRepository
      */
-    public function __construct(GHNWarehouseRepository $warehouseRepo, ApiService $apiService, GHNServiceRepository $serviceRepo, GHNConfigRepository $configRepo, OrderItemTypeRepository $orderItemTypeRepository)
+    public function __construct(GHNWarehouseRepository $warehouseRepo, ApiService $apiService, GHNServiceRepository $serviceRepo, GHNConfigRepository $configRepo, OrderItemTypeRepository $orderItemTypeRepository, GHNDeliveryRepository $ghnDeliveryRepo, DeliveryRepository $deliveryRepository)
     {
         $this->warehouseRepo = $warehouseRepo;
         $this->apiService = $apiService;
         $this->serviceRepo = $serviceRepo;
         $this->configRepo = $configRepo;
         $this->orderItemTypeRepository = $orderItemTypeRepository;
+        $this->ghnDeliveryRepo = $ghnDeliveryRepo;
+        $this->deliveryRepository = $deliveryRepository;
     }
 
     /**
@@ -85,6 +102,7 @@ class GHNShoppingController extends AbstractController
      */
     public function index(Request $request, Shipping $Shipping)
     {
+        /** @var GHNService $service */
         $service = $this->serviceRepo->findOneBy(['Shipping' => $Shipping]);
         if (!$service) {
             $service = new GHNService();
@@ -142,37 +160,13 @@ class GHNShoppingController extends AbstractController
                 }
             }
             // add new to Order Item
-            $type = $this->orderItemTypeRepository->find(OrderItemType::DELIVERY_FEE);
-            $TaxInclude = $this->entityManager
-                ->find(TaxDisplayType::class, TaxDisplayType::INCLUDED);
-            $Taxation = $this->entityManager
-                ->find(TaxType::class, TaxType::TAXATION);
+            $this->addGHNOrderItem($Shipping, $service);
 
-            $OrderItem = new OrderItem();
-            $OrderItem->setProductName(trans('ghn.delivery.order_item.name'))
-                ->setPrice($service->getMainServiceFee())
-                ->setQuantity(1)
-                ->setOrderItemType($type)
-                ->setShipping($Shipping)
-                ->setOrder($Shipping->getOrder())
-                ->setTaxDisplayType($TaxInclude)
-                ->setTaxType($Taxation)
-                ->setProcessorName(GHNProcessor::class);
-            $this->entityManager->persist($OrderItem);
-            $this->entityManager->flush($OrderItem);
-
-            $service->setOrderItemId($OrderItem->getId());
             $this->entityManager->persist($service);
-
-            $Shipping->addOrderItem($OrderItem);
-            $Shipping->getOrder()->addItem($OrderItem);
-
             $this->entityManager->flush();
 
             // check still redirect?
-            $redirects = $this->session->get($this->eccubeConfig->get('ghn_session_redirect'), [$Shipping->getId() => true]);
-            unset($redirects[$Shipping->getId()]);
-            $this->session->set($this->eccubeConfig->get('ghn_session_redirect'), $redirects);
+            $redirects = $this->removeRedirectSession($Shipping);
 
             $nextValue = reset($redirects);
             if (!empty($redirects) && $nextValue) {
@@ -191,6 +185,53 @@ class GHNShoppingController extends AbstractController
     }
 
     /**
+     * @param Request $request
+     * @param Shipping $shipping
+     *
+     * @Route(path="/shopping/ghn/remove/{id}", name="ghn_delivery_remove", requirements={"id"="\d+"}, methods={"POST"})
+     * @ParamConverter("Shipping")
+     */
+    public function removeGHNDeliveryFromOrder(Request $request, Shipping $shipping)
+    {
+        $this->isTokenValid();
+
+        // current delivery
+        $currentDelivery = $shipping->getDelivery();
+
+        $isChange = false;
+        // is GHN delivery?
+        $ghnDelivery = $this->ghnDeliveryRepo->find($currentDelivery);
+        if ($ghnDelivery) {
+            $OrderItems = $shipping->getProductOrderItems();
+            $SaleTypes = [];
+            foreach ($OrderItems as $OrderItem) {
+                $ProductClass = $OrderItem->getProductClass();
+                $SaleType = $ProductClass->getSaleType();
+                $SaleTypes[$SaleType->getId()] = $SaleType;
+            }
+            $Deliveries = $this->deliveryRepository->getDeliveries($SaleTypes);
+            foreach ($Deliveries as $delivery) {
+                if ($delivery->getId() != $currentDelivery->getId()) {
+                    $shipping->setDelivery($delivery);
+                    $this->entityManager->flush($shipping);
+                    $isChange = true;
+                    break;
+                }
+            }
+
+            if ($isChange) {
+                $this->removeRedirectSession($shipping);
+
+                return $this->redirectToRoute('shopping');
+            }
+        }
+
+        $this->addError('ghn.shopping.delivery.remove.error');
+
+        return $this->redirectToRoute('ghn_delivery_shopping', ['id' => $shipping->getId()]);
+    }
+
+    /**
      * ajax
      *
      * @param Request $request
@@ -203,6 +244,10 @@ class GHNShoppingController extends AbstractController
      */
     public function getServiceAndFee(Request $request, Shipping $Shipping)
     {
+        if(!$request->isXmlHttpRequest()) {
+            throw new NotFoundHttpException();
+        }
+
         $this->isTokenValid();
 
         $builder = $this->formFactory->createBuilder(GHNDeliveryShoppingType::class, $Shipping, ['Pref' => $Shipping->getPref()]);
@@ -229,5 +274,47 @@ class GHNShoppingController extends AbstractController
         }
 
         return ['ghn_service' => $data, 'messge' => $message];
+    }
+
+    /**
+     * @param Shipping $Shipping
+     * @return mixed
+     */
+    private function removeRedirectSession(Shipping $Shipping)
+    {
+        $redirects = $this->session->get($this->eccubeConfig->get('ghn_session_redirect'), [$Shipping->getId() => true]);
+        unset($redirects[$Shipping->getId()]);
+        $this->session->set($this->eccubeConfig->get('ghn_session_redirect'), $redirects);
+
+        return $redirects;
+    }
+
+    /**
+     * @param Shipping $Shipping
+     * @param $service
+     */
+    private function addGHNOrderItem(Shipping $Shipping, GHNService $service)
+    {
+        $type = $this->orderItemTypeRepository->find(OrderItemType::DELIVERY_FEE);
+        $TaxInclude = $this->entityManager
+            ->find(TaxDisplayType::class, TaxDisplayType::INCLUDED);
+        $Taxation = $this->entityManager
+            ->find(TaxType::class, TaxType::TAXATION);
+
+        $OrderItem = new OrderItem();
+        $OrderItem->setProductName(trans('ghn.delivery.order_item.name'))
+            ->setPrice($service->getMainServiceFee())
+            ->setQuantity(1)
+            ->setOrderItemType($type)
+            ->setShipping($Shipping)
+            ->setOrder($Shipping->getOrder())
+            ->setTaxDisplayType($TaxInclude)
+            ->setTaxType($Taxation)
+            ->setProcessorName(GHNProcessor::class);
+        $this->entityManager->persist($OrderItem);
+        $service->setOrderItem($OrderItem);
+
+        $Shipping->addOrderItem($OrderItem);
+        $Shipping->getOrder()->addItem($OrderItem);
     }
 }

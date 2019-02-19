@@ -25,18 +25,19 @@ class GHNDeliveryShoppingType extends AbstractType
         /** Master Pref ID of eccube $Pref */
         $Pref = $options['Pref'];
 
-        $builder->add('gHNPref', EntityType::class, [
-            'label' => 'ghn.shopping.delivery.district',
-            'class' => GHNPref::class,
-            'choice_label' => 'district_name',
-            'query_builder' => function (EntityRepository $entityRepository) use ($Pref) {
-                return $entityRepository->createQueryBuilder('ghn_pref')
-                    ->where('ghn_pref.Pref = :pref')
-                    ->setParameter('pref', $Pref)
-                    ->orderBy('ghn_pref.district_name', ' DESC');
-            },
-            'placeholder' => '----------------'
-        ])
+        $builder
+            ->add('gHNPref', EntityType::class, [
+                'label' => 'ghn.shopping.delivery.district',
+                'class' => GHNPref::class,
+                'choice_label' => 'district_name',
+                'query_builder' => function (EntityRepository $entityRepository) use ($Pref) {
+                    return $entityRepository->createQueryBuilder('ghn_pref')
+                        ->where('ghn_pref.Pref = :pref')
+                        ->setParameter('pref', $Pref)
+                        ->orderBy('ghn_pref.district_name', ' DESC');
+                },
+                'placeholder' => '----------------'
+            ])
             ->add('main_service_id', TextType::class, [
                 'mapped' => false,
                 'constraints' => [

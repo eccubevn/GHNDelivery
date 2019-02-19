@@ -48,6 +48,9 @@
         </div>
     </div>
     <div class="ec-role">
+
+        {{ include('Shopping/alert.twig') }}
+
         <div class="ec-registerRole">
             <div class="ec-off1Grid">
                 <div class="ec-off1Grid__cell">
@@ -86,7 +89,7 @@
                             <div class="ec-off4Grid">
                                 <div class="ec-off4Grid__cell">
                                     <button type="submit" class="ec-blockBtn--action">{{ 'common.registration'|trans }}</button>
-                                    <a href="{{ url('shopping') }}" class="ec-blockBtn--cancel">{{ 'common.back'|trans }}</a>
+                                    <a data-confirm="false" data-message="{{ 'ghn.shopping.delivery.remove.alret'|trans }}" {{ csrf_token_for_anchor() }} href="{{ url('ghn_delivery_remove', {id: Shipping.id}) }}" class="ec-blockBtn--cancel" data-method="post">{{ 'common.back'|trans }}</a>
                                 </div>
                             </div>
                         </div>
