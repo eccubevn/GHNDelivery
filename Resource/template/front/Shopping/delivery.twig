@@ -9,11 +9,37 @@
 
 {% form_theme form 'Form/form_div_layout.twig' %}
 
-{% set body_class = 'cart_page' %}
+{% set body_class = 'shopping_page' %}
 
 {% block stylesheet %}{% endblock stylesheet %}
 
-{% block javascript %}{% endblock javascript %}
+{% block javascript %}
+    <script type="text/javascript">
+        $(function () {
+            $("select[id=ghn_delivery_shopping_gHNPref]").on("change", function() {
+                loadingOverlay();
+                let district = $(this).val();
+                if (!district) {
+                    loadingOverlay("hide");
+                    return false;
+                }
+
+                let form = $(this).parents('form');
+                $.ajax({
+                    url: '{{ url('ghn_delivery_service_fee', {id: Shipping.id}) }}',
+                    type: 'POST',
+                    data: form.serialize()
+                }).done(function(data) {
+                    $("#ghn-service-section").html(data);
+                }).always(function() {
+                    loadingOverlay("hide");
+                });
+            });
+
+            $("select[id=ghn_delivery_shopping_gHNPref]").trigger("change");
+        });
+    </script>
+{% endblock %}
 
 {% block main %}
     <div class="ec-role">
@@ -25,7 +51,7 @@
         <div class="ec-registerRole">
             <div class="ec-off1Grid">
                 <div class="ec-off1Grid__cell">
-                    <form method="post" action="{{ url('ghn_delivery_shopping', {'id': Shipping.id}) }}">
+                    <form id="ghn-service" name="ghn-service" method="post" action="{{ url('ghn_delivery_shopping', {'id': Shipping.id}) }}">
                         {{ form_widget(form._token) }}
                         <div class="ec-borderedDefs">
                             <dl>
@@ -35,6 +61,7 @@
                                 <dd>
                                     <div>
                                         {{ Shipping.Pref.name }}
+                                        {{ form_errors(form.main_service_id) }}
                                     </div>
                                 </dd>
                             </dl>
@@ -49,17 +76,12 @@
                                     </div>
                                 </dd>
                             </dl>
-                            <dl>
-                                <dt>
-                                    {{ 'ghn.shopping.delivery.total'|trans }}
-                                </dt>
-                                <dd>
-                                    <div>
-                                        {{ Shipping.Order.payment_total|price }}
-                                    </div>
-                                </dd>
-                            </dl>
                         </div>
+
+                        <div class="ec-borderedDefs" id="ghn-service-section">
+
+                        </div>
+
                         <div class="ec-RegisterRole__actions">
                             <div class="ec-off4Grid">
                                 <div class="ec-off4Grid__cell">

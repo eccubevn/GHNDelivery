@@ -93,7 +93,7 @@ class ConfigController extends AbstractController
 
             return $this->redirectToRoute('ghn_delivery_admin_config');
         }
-        $Warehouse = $this->warehouseRepo->getByOne();
+        $Warehouse = $this->warehouseRepo->getOrCreate();
         $form = $this->createForm(WarehouseType::class, $Warehouse);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -104,8 +104,9 @@ class ConfigController extends AbstractController
                 // call api register
                 $parser = $this->apiService->addWarehouse($Warehouse);
             }
-
-            if ($parser->getCode()) {
+            if (!$parser) {
+                $this->addError('admin.common.save_error', 'admin');
+            } elseif ($parser->getCode()) {
                 if (isset($parser->getData()['HubID'])) {
                     // save hub id
                     $Warehouse->setHubId($parser->getData()['HubID']);
@@ -119,7 +120,7 @@ class ConfigController extends AbstractController
 
                 return $this->redirectToRoute('ghn_delivery_admin_warehouse');
             } else {
-                $this->addError($parser->getMsg(), 'admin');
+                $this->addError($parser->getMsg() ? $parser->getMsg() : 'admin.common.save_error', 'admin');
             }
         }
 

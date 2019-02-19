@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Eccube\Annotation\ShoppingFlow;
 use Eccube\Entity\ItemHolderInterface;
 use Eccube\Entity\Order;
+use Eccube\Entity\OrderItem;
 use Eccube\Service\PurchaseFlow\ItemHolderPreprocessor;
 use Eccube\Service\PurchaseFlow\PurchaseContext;
 use Plugin\GHNDelivery\Repository\GHNDeliveryRepository;
@@ -63,9 +64,10 @@ class GHNProcessor implements ItemHolderPreprocessor
                 continue;
             }
 
+            /** @var OrderItem $item */
             foreach ($Shipping->getOrderItems() as $item) {
                 // GHN fee
-                if ($item->getProcessorName() == self::class) {
+                if ($item->isDeliveryFee() && $item->getProcessorName() == self::class) {
                     $Shipping->removeOrderItem($item);
                     $itemHolder->removeOrderItem($item);
                     $this->entityManager->remove($item);

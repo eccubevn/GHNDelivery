@@ -30,6 +30,7 @@ ghn.warehouse.lati: Kinh độ
 ghn.warehouse.long: Vĩ độ
 
 # install - hard-code
+ghn.delivery.order_item.name: Giao hàng nhanh
 #ghn.plugin_manager.delivery_name: Giao hàng nhanh
 #ghn.plugin_manager.delivery_name.remove: "Giao hàng nhanh - Đã xóa"
 #ghn.plugin_manager.service_name: GHN
@@ -41,3 +42,5 @@ ghn.shopping.delivery: Tính phí
 ghn.shopping.delivery.province: "Tỉnh/thành phố"
 ghn.shopping.delivery.district: "Giao hàng đến quận/huyện"
 ghn.shopping.delivery.total: "Tổng tiền hiện tại của đơn hàng"
+ghn.shopping.delivery.service: Dịch vụ
+ghn.shopping.delivery.service_incorrect: Dịch vụ không đúng, vui lòng chọn lại!

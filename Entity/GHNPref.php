@@ -93,7 +93,7 @@ class GHNPref extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -109,7 +109,7 @@ class GHNPref extends AbstractEntity
     /**
      * @return string
      */
-    public function getProvinceName(): string
+    public function getProvinceName()
     {
         return $this->province_name;
     }
@@ -125,7 +125,7 @@ class GHNPref extends AbstractEntity
     /**
      * @return string
      */
-    public function getProvinceId(): string
+    public function getProvinceId()
     {
         return $this->province_id;
     }
@@ -141,7 +141,7 @@ class GHNPref extends AbstractEntity
     /**
      * @return string
      */
-    public function getDistrictName(): string
+    public function getDistrictName()
     {
         return $this->district_name;
     }
@@ -157,7 +157,7 @@ class GHNPref extends AbstractEntity
     /**
      * @return string
      */
-    public function getDistrictCode(): string
+    public function getDistrictCode()
     {
         return $this->district_code;
     }
@@ -171,17 +171,17 @@ class GHNPref extends AbstractEntity
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getDistrictId(): string
+    public function getDistrictId()
     {
-        return $this->district_id;
+        return (int) $this->district_id;
     }
 
     /**
-     * @param string $district_id
+     * @param $district_id
      */
-    public function setDistrictId(string $district_id): void
+    public function setDistrictId($district_id): void
     {
         $this->district_id = $district_id;
     }
@@ -189,7 +189,7 @@ class GHNPref extends AbstractEntity
     /**
      * @return Pref
      */
-    public function getPref(): Pref
+    public function getPref()
     {
         return $this->Pref;
     }
@@ -197,7 +197,7 @@ class GHNPref extends AbstractEntity
     /**
      * @param Pref $Pref
      */
-    public function setPref(Pref $Pref): void
+    public function setPref($Pref): void
     {
         $this->Pref = $Pref;
     }

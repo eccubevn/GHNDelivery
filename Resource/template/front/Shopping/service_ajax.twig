@@ -1,0 +1,22 @@
+{#
+ * User: lqdung1992@gmail.com
+ * Date: 2/15/2019
+ * Time: 5:20 PM
+#}
+<script type="text/javascript">
+    $(function () {
+    });
+</script>
+<dl id="ghn-service-dl">
+    <dt>
+        {{ 'ghn.shopping.delivery.service'|trans }}
+    </dt>
+    <dd>
+        {% for service in ghn_service %}
+        <div>
+            <input id="service_{{ service.ServiceID }}" type="radio" name="ghn_delivery_shopping[main_service_id]" value="{{ service.ServiceID }}">
+            <label for="service_{{ service.ServiceID }}">{{ service.Name }} - {{ service.ServiceFee|price }} - {{ service.ExpectedDeliveryTime|date_day }}</label>
+        </div>
+        {% endfor %}
+    </dd>
+</dl>

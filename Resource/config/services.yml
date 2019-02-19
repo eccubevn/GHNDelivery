@@ -1,5 +1,6 @@
 parameters:
-  ghn_session_name: ghn_delivery
+  ghn_session_redirect: ghn_redirect
+  ghn_session_service_fee: ghn_service
 #  production
 #  ghn_endpoint: https://console.ghn.vn/api/v1/apiv3
 #  Testing

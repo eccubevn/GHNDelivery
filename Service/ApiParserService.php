@@ -35,7 +35,7 @@ class ApiParserService
     /**
      * @return int|null
      */
-    public function getCode(): ?int
+    public function getCode()
     {
         return $this->code;
     }
@@ -43,7 +43,7 @@ class ApiParserService
     /**
      * @return null|string
      */
-    public function getMsg(): ?string
+    public function getMsg()
     {
         return $this->msg;
     }
@@ -51,7 +51,7 @@ class ApiParserService
     /**
      * @return array
      */
-    public function getData(): array
+    public function getData()
     {
         return $this->data;
     }

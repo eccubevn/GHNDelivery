@@ -71,14 +71,14 @@ class Event implements EventSubscriberInterface
                 /** @var OrderItem $shippingOrderItem */
                 foreach ($shipping->getOrderItems() as $shippingOrderItem) {
                     // is exist GHN delivery fee
-                    if ($shippingOrderItem->isDeliveryFee() && $shippingOrderItem->getProcessorName() instanceof GHNProcessor) {
+                    if ($shippingOrderItem->isDeliveryFee() && $shippingOrderItem->getProcessorName() == GHNProcessor::class) {
                         $redirects[$shipping->getId()] = false;
                     }
                 }
             }
         }
         // save to session
-        $this->session->set($this->eccubeConfig->get('ghn_session_name'), $redirects);
+        $this->session->set($this->eccubeConfig->get('ghn_session_redirect'), $redirects);
 
         foreach ($redirects as $key => $value) {
             if ($value) {

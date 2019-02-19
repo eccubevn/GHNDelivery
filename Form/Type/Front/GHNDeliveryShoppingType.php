@@ -12,8 +12,11 @@ use Eccube\Entity\Shipping;
 use Plugin\GHNDelivery\Entity\GHNPref;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class GHNDeliveryShoppingType extends AbstractType
 {
@@ -32,13 +35,22 @@ class GHNDeliveryShoppingType extends AbstractType
                     ->setParameter('pref', $Pref)
                     ->orderBy('ghn_pref.district_name', ' DESC');
             },
-        ]);
+            'placeholder' => '----------------'
+        ])
+            ->add('main_service_id', TextType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new NotBlank(['message' => trans('ghn.shopping.delivery.service_incorrect')]),
+                    new Regex(['pattern' => "/^\d+$/u", 'message' => trans('ghn.shopping.delivery.service_incorrect')]),
+                ],
+            ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('Pref');
-        $resolver->setDefaults(['data_class' => Shipping::class]);
+        $resolver->setDefaults(['data_class' => Shipping::class, 'allow_extra_fields' => true]);
     }
 
     public function getBlockPrefix()

@@ -30,7 +30,7 @@ class GHNWarehouseRepository extends AbstractRepository
     /**
      * @return GHNWarehouse
      */
-    public function getByOne()
+    public function getOrCreate()
     {
         $Warehouse = $this->findOneBy([]);
 
@@ -41,4 +41,14 @@ class GHNWarehouseRepository extends AbstractRepository
 
         return $Warehouse;
     }
+
+    /**
+     * @return GHNWarehouse
+     */
+    public function getOne()
+    {
+        return $this->findOneBy([]);
+    }
+
+
 }

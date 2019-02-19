@@ -63,14 +63,14 @@ class GHNWarehouse extends AbstractEntity
     /**
      * @var string|null
      *
-     * @ORM\Column(name="long", type="string", length=255, nullable=true)
+     * @ORM\Column(name="longitude", type="string", length=255, nullable=true)
      */
     private $long;
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="lati", type="string", length=255, nullable=true)
+     * @ORM\Column(name="latitude", type="string", length=255, nullable=true)
      */
     private $lati;
 
