@@ -18,6 +18,7 @@ use Eccube\Annotation as Eccube;
  */
 trait GHNShippingTrait
 {
+    use FullAddressTrait;
 // Todo continue (ver 2.0 - fee)
 //    /**
 //     * Allowed values: CHOTHUHANG, CHOXEMHANGKHONGTHU, KHONGCHOXEMHANG
@@ -59,6 +60,13 @@ trait GHNShippingTrait
     private $GHNPref;
 
     /**
+     * @var GHNService|null
+     *
+     * @ORM\OneToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNService")
+     */
+    private $GHNService;
+
+    /**
      * @return GHNPref
      */
     public function getGHNPref()
@@ -73,6 +81,25 @@ trait GHNShippingTrait
     public function setGHNPref($GHNPref)
     {
         $this->GHNPref = $GHNPref;
+
+        return $this;
+    }
+
+    /**
+     * @return null|GHNService
+     */
+    public function getGHNService(): ?GHNService
+    {
+        return $this->GHNService;
+    }
+
+    /**
+     * @param null|GHNService $GHNService
+     * @return $this
+     */
+    public function setGHNService(?GHNService $GHNService)
+    {
+        $this->GHNService = $GHNService;
 
         return $this;
     }

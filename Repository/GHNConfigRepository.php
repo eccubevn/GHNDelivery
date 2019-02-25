@@ -3,7 +3,9 @@
 namespace Plugin\GHNDelivery\Repository;
 
 use Eccube\Common\EccubeConfig;
+use Eccube\Entity\BaseInfo;
 use Eccube\Repository\AbstractRepository;
+use Eccube\Repository\BaseInfoRepository;
 use Plugin\GHNDelivery\Entity\GHNConfig;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -22,14 +24,18 @@ class GHNConfigRepository extends AbstractRepository
      */
     protected $container;
 
+    /** @var BaseInfo */
+    protected $baseInfo;
+
     /**
      * ConfigRepository constructor.
      * @param $container
      */
-    public function __construct(ManagerRegistry $managerRegistry, EccubeConfig $eccubeConfig, ContainerInterface $container)
+    public function __construct(ManagerRegistry $managerRegistry, EccubeConfig $eccubeConfig, ContainerInterface $container, BaseInfoRepository $baseInfoRepository)
     {
         $this->container = $container;
         $this->eccubeConfig = $eccubeConfig;
+        $this->baseInfo = $baseInfoRepository->get();
         parent::__construct($managerRegistry, GHNConfig::class);
     }
 
@@ -46,6 +52,9 @@ class GHNConfigRepository extends AbstractRepository
             $Config->setId($id);
             $url = $this->container->get('router')->generate('ghn_callback', [], UrlGeneratorInterface::ABSOLUTE_URL);
             $Config->setCallbackUrl($url);
+
+            $Config->setClientPhone($this->baseInfo->getPhoneNumber());
+            $Config->setClientAddress($this->baseInfo->getGHNFullAddress());
         }
 
         return $Config;

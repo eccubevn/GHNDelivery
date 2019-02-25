@@ -9,6 +9,7 @@ namespace Plugin\GHNDelivery\Entity;
 
 use Eccube\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Eccube\Entity\Shipping;
 
 /**
  * Class Warehouse
@@ -288,5 +289,21 @@ class GHNWarehouse extends AbstractEntity
         }
 
         return $ret;
+    }
+
+    /**
+     * @param Shipping $shipping
+     * @return string
+     */
+    public function getExternalReturnCode(Shipping $shipping)
+    {
+        $ret = [
+            $this->getId(),
+            $this->getHubId(),
+            $this->getGHNPref()->getDistrictId(),
+            $shipping->getId()
+        ];
+
+        return implode('', $ret);
     }
 }

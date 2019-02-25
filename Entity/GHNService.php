@@ -159,7 +159,7 @@ class GHNService extends AbstractEntity
      * @param Shipping $Shipping
      * @return GHNService
      */
-    public function setShipping(Shipping $Shipping): GHNService
+    public function setShipping(Shipping $Shipping)
     {
         $this->Shipping = $Shipping;
         return $this;
@@ -177,7 +177,7 @@ class GHNService extends AbstractEntity
      * @param int $from_district_id
      * @return GHNService
      */
-    public function setFromDistrictId(int $from_district_id): GHNService
+    public function setFromDistrictId(int $from_district_id)
     {
         $this->from_district_id = $from_district_id;
         return $this;
@@ -195,7 +195,7 @@ class GHNService extends AbstractEntity
      * @param string $from_district_name
      * @return GHNService
      */
-    public function setFromDistrictName(string $from_district_name): GHNService
+    public function setFromDistrictName(string $from_district_name)
     {
         $this->from_district_name = $from_district_name;
         return $this;
@@ -213,7 +213,7 @@ class GHNService extends AbstractEntity
      * @param int $to_district_id
      * @return GHNService
      */
-    public function setToDistrictId(int $to_district_id): GHNService
+    public function setToDistrictId(int $to_district_id)
     {
         $this->to_district_id = $to_district_id;
         return $this;

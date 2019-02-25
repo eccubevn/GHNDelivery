@@ -4,8 +4,13 @@ KHONGCHOXEMHANG: Không cho xem hàng
 ghn.config.missing: Vui lòng đăng ký trước
 ghn.config.client_id: Mã chủ cửa hàng (Client Id)
 ghn.config.client_name: Tên chủ cửa hàng
+ghn.config.client_phone: Số điện thoại chủ cửa hàng
+ghn.config.client_address: Địa chỉ chủ cửa hàng
 ghn.config.token: Mã thông báo api - token
 ghn.config.weight: Cân nặng trung bình 1 món hàng (gram)
+ghn.config.length: Chiều dài trung bình của một món hàng (cm)
+ghn.config.width: Chiều rộng trung bình của một món hàng (cm)
+ghn.config.height: Chiều cao trung bình của một món hàng (cm)
 ghn.config.payment_type: Người trả phí giao hàng
 ghn.config.payment_type.seller: Người bán
 ghn.config.payment_type.buyer: Người mua
@@ -46,3 +51,7 @@ ghn.shopping.delivery.service: Dịch vụ
 ghn.shopping.delivery.service_incorrect: Dịch vụ không đúng, vui lòng chọn lại!
 ghn.shopping.delivery.remove.error: Không có dịch vụ chuyển phát khác giao hàng nhanh, không thể hủy bỏ
 ghn.shopping.delivery.remove.alret: Bạn có chắc muốn hủy bỏ dịch vụ Giao hàng nhanh cho địa điểm này không?
+
+# order
+ghn.order.not_found: Không tìm thấy dịch vụ!
+ghn.order.can_not_create: Không thể tạo đơn hàng! Vui lòng nhấn nút tạo lại ở trang danh sách đơn hàng.

@@ -1,0 +1,94 @@
+{#
+ * Created by PhpStorm.
+ * User: lqdung
+ * Date: 2/21/2019
+ * Time: 11:57 AM
+#}
+{%- extends '@GHNDelivery/admin/Form/GHNCustomize.twig' -%}
+
+{%- block form_row -%}
+    <div class="col-6">
+        {% set service_id = form.parent.children.main_service_id.vars.value ? form.parent.children.main_service_id.vars.value : form.parent.children.main_service_id.vars.data %}
+        <script type="text/javascript">
+            $(function () {
+                let ghn_id = '{{ id }}';
+                var shipping_index = ghn_id.replace('form_shippings_', '').replace('_GHNPref', '');
+                let pref_id = ghn_id.replace('GHNPref', 'address_pref');
+
+                // one shipping only
+                if (shipping_index !== '') {
+                    // copy click
+                    $('.copy-customer').on('click', function() {
+                        $("select[id=order_address_pref]").trigger("change");
+                    });
+                    $("select[id=order_address_pref]").on("change", function () {
+                        let target = $("select[id="+ghn_id+"]");
+                        let pref = $(this).find("option:selected").text();
+                        if (pref) {
+                            target.find('option').hide();
+                            target.find('option:contains(' + pref + ')').show();
+                        }
+                    });
+                }
+
+                let core_change = $("select[id="+pref_id+"]");
+                core_change.on("change", function () {
+                    let target = $("select[id="+ghn_id+"]");
+
+                    let pref = $(this).find("option:selected").text();
+                    if (pref) {
+                        target.find('option').hide();
+                        target.find('option:contains('+pref+')').show();
+                    }
+                });
+
+                core_change.trigger("change");
+
+                let ghn_change = $("select[id="+ghn_id+"]");
+                ghn_change.on("change", function() {
+                    // loadingOverlay();
+                    let district = $(this).val();
+                    if (!district) {
+                        // loadingOverlay("hide");
+                        return false;
+                    }
+                    let url = '{{ url('ghn_order_service_fee_no_id') }}' + '/'+district;
+                    if (shipping_index !== '') {
+                        url += '/' + shipping_index;
+                    }
+
+                    let form = $(this).parents('form');
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        // data: '',
+                    }).done(function(data) {
+                        $("#service-section_{{ id }}").html(data);
+                        if ('{{ service_id }}') {
+                            $("#service"+shipping_index+"_{{ service_id }}").prop("checked", true);
+                        }
+                    }).always(function() {
+                        // loadingOverlay("hide");
+                    });
+                });
+
+                ghn_change.trigger("change");
+            });
+        </script>
+
+        {%- if expanded is defined and expanded -%}
+            {{ block('fieldset_form_row') }}
+        {%- else -%}
+            <div class="form-group row{% if (not compound or force_error|default(false)) and not valid %} is-invalid{% endif %}">
+                {{- form_label(form) -}}
+                <div class="col">
+                    {{- form_widget(form) -}}
+                </div>
+                </div>
+        {%- endif -%}
+    </div>
+    <div class="col-6" id="service-section_{{ id }}">
+
+    </div>
+{%- endblock form_row -%}
+

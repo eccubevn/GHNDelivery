@@ -1,6 +1,6 @@
 {% extends '@admin/default_frame.twig' %}
 
-{% set menus = ['store', 'plugin', 'plugin_list'] %}
+{% set menus = ['product', 'ghn_delivery_admin_warehouse'] %}
 
 {% block title %}Warehouse{% endblock %}
 {% block sub_title %}GHNDelivery{% endblock %}
@@ -43,11 +43,6 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-6">
                         <div class="c-conversionArea__leftBlockItem">
-                            {#<a class="c-baseLink"#}
-                               {#href="{{ url('admin_store_plugin') }}">#}
-                                {#<i class="fa fa-backward" aria-hidden="true"></i>#}
-                                {#<span>{{ 'admin.common.back'|trans }}</span>#}
-                            {#</a>#}
                         </div>
                     </div>
                     <div class="col-6">

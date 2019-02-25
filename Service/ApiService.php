@@ -8,6 +8,7 @@
 namespace Plugin\GHNDelivery\Service;
 
 
+use Eccube\Common\Constant;
 use Eccube\Common\EccubeConfig;
 use Eccube\Entity\BaseInfo;
 use Eccube\Repository\BaseInfoRepository;
@@ -157,22 +158,32 @@ class ApiService
         return $parser;
     }
 
-    /**
-     * @param $fromDistrictId
-     * @param $toDistrictId
-     * @return bool|ApiParserService
-     */
-    public function calcServiceFee($fromDistrictId, $toDistrictId)
+    public function createOrder(array $data)
     {
         /** @var GHNConfig $config */
         $config = $this->configRepo->find(1);
         if (!$config) {
             return false;
         }
-        $url = $this->endpoint . '/CalculateFee';
 
-//        $data = $GHNWarehouse->getApiCreateParameter();
-        $data['token'] = $config->getToken();
+        $url = $this->endpoint . '/CreateOrder';
+
+        $jsonRet = $this->requestApi($url, $data, true);
+        $parser = new ApiParserService();
+        $parser->parse($jsonRet);
+
+        return $parser;
+    }
+
+    public function updateOrder(array $data)
+    {
+        /** @var GHNConfig $config */
+        $config = $this->configRepo->find(1);
+        if (!$config) {
+            return false;
+        }
+
+        $url = $this->endpoint . '/UpdateOrder';
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -184,10 +195,10 @@ class ApiService
     /**
      * API request processing
      *
-     * @param string $url
+     * @param $url
      * @param array $data
-     *
-     * @return array
+     * @param bool $post
+     * @return mixed|string
      */
     public function requestApi($url, $data = [], $post = false)
     {
@@ -200,32 +211,28 @@ class ApiService
 
         if ($post) {
             curl_setopt($curl, CURLOPT_POST, 1);
-//            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 
             if (count($data) > 0) {
                 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
             }
         }
 
-//        $baseUrl = null;
-//        if ($this->requestStack->getCurrentRequest()) {
-//            $baseUrl = $this->requestStack->getCurrentRequest()->getSchemeAndHttpHost().$this->requestStack->getCurrentRequest()->getBasePath();
-//        }
+        $baseUrl = null;
+        if ($this->requestStack->getCurrentRequest()) {
+            $baseUrl = $this->requestStack->getCurrentRequest()->getSchemeAndHttpHost().$this->requestStack->getCurrentRequest()->getBasePath();
+        }
 
         // Option array
         $options = [
             // HEADER
             CURLOPT_HTTPHEADER => [
-//                'X-ECCUBE-URL: '.$baseUrl,
-//                'X-ECCUBE-VERSION: '.Constant::VERSION,
+                'X-ECCUBE-URL: '.$baseUrl,
+                'X-ECCUBE-VERSION: '.Constant::VERSION,
                 // ghn require
                 'Accept: application/json',
                 'Content-Type: application/json',
                 'cache-control: no-cache'
             ],
-//            CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4,
-//            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//            CURLOPT_ENCODING => "",
             CURLOPT_HTTPGET => $post === false,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_RETURNTRANSFER => true,
@@ -247,6 +254,6 @@ class ApiService
 //            throw new NotFoundResourceException();
 //        }
 
-        return $result;
+        return $result ? $result : $message;
     }
 }

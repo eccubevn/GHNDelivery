@@ -36,6 +36,20 @@ class ConfigType extends AbstractType
                     new Length(['max' => 255]),
                 ]
             ])
+            ->add('client_phone', TextType::class, [
+                'label' => 'ghn.config.client_phone',
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['max' => 255]),
+                ]
+            ])
+            ->add('client_address', TextType::class, [
+                'label' => 'ghn.config.client_address',
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['max' => 255]),
+                ]
+            ])
             ->add('token', TextType::class, [
                 'label' => 'ghn.config.token',
                 'constraints' => [
@@ -45,6 +59,30 @@ class ConfigType extends AbstractType
             ])
             ->add('weight', NumberType::class, [
                 'label' => 'ghn.config.weight',
+                'required' => true,
+                'constraints' => [
+                    new NotBlank(),
+                    new Range(['min' => 1])
+                ]
+            ])
+            ->add('length', NumberType::class, [
+                'label' => 'ghn.config.length',
+                'required' => true,
+                'constraints' => [
+                    new NotBlank(),
+                    new Range(['min' => 1])
+                ]
+            ])
+            ->add('width', NumberType::class, [
+                'label' => 'ghn.config.width',
+                'required' => true,
+                'constraints' => [
+                    new NotBlank(),
+                    new Range(['min' => 1])
+                ]
+            ])
+            ->add('height', NumberType::class, [
+                'label' => 'ghn.config.height',
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),

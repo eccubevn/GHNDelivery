@@ -1,0 +1,31 @@
+{#
+ * User: lqdung1992@gmail.com
+ * Date: 2/15/2019
+ * Time: 5:20 PM
+#}
+<script type="text/javascript">
+    $(function () {
+    });
+</script>
+<div class="form-group row">
+    <label class="col-3">
+        {{ 'ghn.shopping.delivery.service'|trans }}
+    </label>
+    <div class="col">
+        {% if message and message != "Success" %}
+            {{ message }}
+        {% else %}
+        {% for service in ghn_service if service.ServiceID is defined %}
+        <div>
+            {% if index is defined and index is not null %}
+                <input id="service{{ index }}_{{ service.ServiceID }}" type="radio" name="form[shippings][{{ index }}][main_service_id]" value="{{ service.ServiceID }}">
+                <label for="service{{ index }}_{{ service.ServiceID }}">{{ service.Name }} - {{ service.ServiceFee|price }} - {{ service.ExpectedDeliveryTime|date_day }}</label>
+            {% else %}
+                <input id="service_{{ service.ServiceID }}" type="radio" name="order[Shipping][main_service_id]" value="{{ service.ServiceID }}">
+                <label for="service_{{ service.ServiceID }}">{{ service.Name }} - {{ service.ServiceFee|price }} - {{ service.ExpectedDeliveryTime|date_day }}</label>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>

@@ -1,8 +1,11 @@
 parameters:
   ghn_session_redirect: ghn_redirect
   ghn_session_service_fee: ghn_service
+  admin_ghn_session_service_fee: admin_ghn_service
 #  production
 #  ghn_endpoint: https://console.ghn.vn/api/v1/apiv3
 #  Testing
   ghn_endpoint: https://apiv3-test.ghn.vn/api/v1/apiv3
   ghn_name_len: 50
+  # This field is ClientID, use for tracking commission between GHN and Client.
+  ghn_affiliate_id: 252905

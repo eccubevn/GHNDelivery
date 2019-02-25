@@ -27,30 +27,65 @@ class GHNConfig extends AbstractEntity
     /**
      * @var string
      *
-     * @ORM\Column(name="client_id", type="string", length=255)
+     * @ORM\Column(name="client_id", type="string", length=255, nullable=false)
      */
     private $client_id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="client_name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="client_name", type="string", length=255, nullable=false)
      */
     private $client_name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="token", type="string", length=255)
+     * @ORM\Column(name="client_phone", type="string", length=20, nullable=false)
+     */
+    private $client_phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="client_address", type="string", length=255, nullable=false)
+     */
+    private $client_address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=255, nullable=false)
      */
     private $token;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="weight", type="float", precision=1)
+     * @ORM\Column(name="weight", type="float", precision=1, nullable=false)
      */
     private $weight;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="length", type="float", precision=1, nullable=false)
+     */
+    private $length;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="width", type="float", precision=1, nullable=false)
+     */
+    private $width;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="height", type="float", precision=1, nullable=false)
+     */
+    private $height;
 
     /**
      * Choose who pay shipping fee.
@@ -79,7 +114,7 @@ class GHNConfig extends AbstractEntity
      *
      * @var string
      *
-     * @ORM\Column(name="note_code", type="string", length=255)
+     * @ORM\Column(name="note_code", type="string", length=255, nullable=false)
      */
     private $note_code;
 
@@ -121,6 +156,42 @@ class GHNConfig extends AbstractEntity
     {
         $this->id = $id;
 
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientPhone()
+    {
+        return $this->client_phone;
+    }
+
+    /**
+     * @param mixed $client_phone
+     * @return GHNConfig
+     */
+    public function setClientPhone($client_phone)
+    {
+        $this->client_phone = $client_phone;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientAddress()
+    {
+        return $this->client_address;
+    }
+
+    /**
+     * @param mixed $client_address
+     * @return GHNConfig
+     */
+    public function setClientAddress($client_address)
+    {
+        $this->client_address = $client_address;
         return $this;
     }
 
@@ -251,7 +322,7 @@ class GHNConfig extends AbstractEntity
     /**
      * @return bool
      */
-    public function isCheckMainBankAccount(): bool
+    public function isCheckMainBankAccount()
     {
         return $this->check_main_bank_account;
     }
@@ -299,6 +370,60 @@ class GHNConfig extends AbstractEntity
     {
         $this->payment_type = $payment_type;
 
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    /**
+     * @param float $length
+     * @return GHNConfig
+     */
+    public function setLength(float $length)
+    {
+        $this->length = $length;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param float $width
+     * @return GHNConfig
+     */
+    public function setWidth(float $width)
+    {
+        $this->width = $width;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param float $height
+     * @return GHNConfig
+     */
+    public function setHeight(float $height)
+    {
+        $this->height = $height;
         return $this;
     }
 }

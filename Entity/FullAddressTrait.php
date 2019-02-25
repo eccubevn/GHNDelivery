@@ -1,0 +1,40 @@
+<?php
+/**
+ * Author: lqdung1992@gmail.com
+ * Date: 2/20/2019
+ * Time: 3:33 PM
+ */
+
+namespace Plugin\GHNDelivery\Entity;
+
+
+use Eccube\Entity\Master\Pref;
+
+/**
+ * Trait FullAddressTrait
+ * @package Plugin\GHNDelivery\Entity
+ *
+ * @internal Eccube\Entity\Shipping|Eccube\Entity\Order|Eccube\Entity\Customer
+ *
+ * @property string $addr01
+ * @property string $addr02
+ * @property Pref $Pref
+ * @property string $postal_code
+ */
+trait FullAddressTrait
+{
+    /**
+     * @param bool $isNeedPostcode
+     * @return string
+     */
+    public function getGHNFullAddress($isNeedPostcode = false)
+    {
+        $tmp = [$this->addr02, $this->addr01, $this->Pref];
+
+        if ($isNeedPostcode) {
+            $tmp[] = $this->postal_code;
+        }
+
+        return implode(', ', $tmp);
+    }
+}

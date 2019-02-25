@@ -7,7 +7,6 @@
 
 namespace Plugin\GHNDelivery\Controller\Front\Shopping;
 
-
 use Eccube\Controller\AbstractController;
 use Eccube\Entity\Master\OrderItemType;
 use Eccube\Entity\Master\TaxDisplayType;
@@ -124,6 +123,8 @@ class GHNShoppingController extends AbstractController
             $service->setToPref($toGHNPref);
 
             $data = $request->getSession()->get($this->eccubeConfig->get('ghn_session_service_fee'));
+            // remove session
+            $request->getSession()->remove($this->eccubeConfig->get('ghn_session_service_fee'));
             if (is_null($data)) {
                 $output = $this->apiService->findAvailableServices($fromGHNPref->getDistrictId(), $toGHNPref->getDistrictId());
                 // call api to get service list
@@ -273,7 +274,7 @@ class GHNShoppingController extends AbstractController
             $message = $output->getMsg();
         }
 
-        return ['ghn_service' => $data, 'messge' => $message];
+        return ['ghn_service' => $data, 'message' => $message];
     }
 
     /**
@@ -316,5 +317,6 @@ class GHNShoppingController extends AbstractController
 
         $Shipping->addOrderItem($OrderItem);
         $Shipping->getOrder()->addItem($OrderItem);
+        $Shipping->setGHNService($service);
     }
 }
