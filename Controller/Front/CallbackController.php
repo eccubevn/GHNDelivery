@@ -19,5 +19,6 @@ class CallbackController extends AbstractController
      */
     public function index(Request $request)
     {
+
     }
 }

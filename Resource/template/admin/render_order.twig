@@ -1,0 +1,67 @@
+{#
+ * Created by PhpStorm.
+ * User: lqdung
+ * Date: 2/26/2019
+ * Time: 3:25 PM
+#}
+{#Render re-register GHN#}
+<script type="text/javascript">
+    $(function () {
+        $("#ghn-reorder").insertBefore(".c-conversionArea button[name=mode]");
+    });
+</script>
+<a id="ghn-reorder" href="{{ url('ghn_reorder', {'id': Order.id}) }}" class="btn btn-ec-conversion px-5 mr-3">{{ 'ghn.order.reorder.button'|trans }}</a>
+
+{#GHN Order infomation#}
+{% if GHNOrders|length > 0 %}
+<script type="text/javascript">
+    $(function () {
+        $("#ghn-render-order").appendTo(".c-primaryCol");
+    });
+</script>
+
+<div id="ghn-render-order">
+    <div class="card rounded border-0 mb-4">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-8">
+                    <div class="d-inline-block">
+                        <span class="card-title">{{ 'ghn.shipping'|trans }}</span>
+                    </div>
+                </div>
+                <div class="col-4 text-right"><a data-toggle="collapse" href="#ghnOrder" aria-expanded="false" aria-controls="ghnOrder"><i class="fa fa-angle-up fa-lg"></i></a></div>
+            </div>
+        </div>
+        <div class="collapse show ec-cardCollapse" id="ghnOrder">
+            {% for shipping in Order.Shippings %}
+            {% for ghn_order in GHNOrders %}
+                {% if shipping.id == ghn_order.Shipping.id %}
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="d-inline-block"><span class="card-title">{{ 'ghn.shipping.id'|trans }}</span></div>
+                            </div>
+                            <div class="col">
+                                {{ shipping.id }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        {% for key, ghn_shipping in ghn_order.getReturnData(true) %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row mb-3">
+                                        <div class="col-3">{{ key|trans }}</div>
+                                        <div class="col">{% if key == "ExpectedDeliveryTime" %}{{ ghn_shipping|date_min }}{% else %}{{ ghn_shipping }}{% endif %}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div><!-- .card.rounded -->
+</div>
+{% endif %}

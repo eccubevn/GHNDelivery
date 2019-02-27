@@ -12,11 +12,11 @@
         <script type="text/javascript">
             $(function () {
                 let ghn_id = '{{ id }}';
-                var shipping_index = ghn_id.replace('form_shippings_', '').replace('_GHNPref', '');
+                var shipping_index = ghn_id.replace('order_Shipping', '').replace('form_shippings_', '').replace('_GHNPref', '');
                 let pref_id = ghn_id.replace('GHNPref', 'address_pref');
 
                 // one shipping only
-                if (shipping_index !== '') {
+                if (shipping_index === '') {
                     // copy click
                     $('.copy-customer').on('click', function() {
                         $("select[id=order_address_pref]").trigger("change");

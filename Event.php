@@ -11,7 +11,6 @@ use Eccube\Entity\Shipping;
 use Eccube\Event\EccubeEvents;
 use Eccube\Event\EventArgs;
 use Eccube\Event\TemplateEvent;
-use Eccube\Repository\Master\OrderItemTypeRepository;
 use Plugin\GHNDelivery\Entity\GHNConfig;
 use Plugin\GHNDelivery\Entity\GHNOrder;
 use Plugin\GHNDelivery\Entity\GHNService;
@@ -25,10 +24,6 @@ use Plugin\GHNDelivery\Service\PurchaseFlow\GHNProcessor;
 use Symfony\Bundle\FrameworkBundle\Controller\ControllerTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Form\FormBuilder;
-use Symfony\Component\Form\FormError;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -44,7 +39,7 @@ class Event implements EventSubscriberInterface
     protected $eccubeConfig;
 
     /** @var GHNDeliveryRepository */
-    protected $GHNDeliveryRepo;
+    protected $ghnDeliveryRepo;
 
     /** @var ApiService */
     protected $apiService;
@@ -53,7 +48,7 @@ class Event implements EventSubscriberInterface
     protected $warehouseRepo;
 
     /** @var GHNOrderRepository */
-    protected $GHNOrderRepo;
+    protected $ghnOrderRepo;
 
     /** @var GHNConfigRepository */
     protected $configRepo;
@@ -63,11 +58,6 @@ class Event implements EventSubscriberInterface
 
     /** @var GHNServiceRepository */
     protected $serviceRepo;
-
-    /**
-     * @var OrderItemTypeRepository
-     */
-    protected $orderItemTypeRepository;
 
     /**
      * @var RequestStack
@@ -86,22 +76,20 @@ class Event implements EventSubscriberInterface
      * @param GHNConfigRepository $configRepo
      * @param EntityManagerInterface $entityManager
      * @param GHNServiceRepository $serviceRepo
-     * @param OrderItemTypeRepository $orderItemTypeRepository
      * @param RequestStack $request
      */
-    public function __construct(Session $session, ContainerInterface $container, EccubeConfig $eccubeConfig, GHNDeliveryRepository $GHNDeliveryRepo, ApiService $apiService, GHNWarehouseRepository $warehouseRepo, GHNOrderRepository $GHNOrderRepo, GHNConfigRepository $configRepo, EntityManagerInterface $entityManager, GHNServiceRepository $serviceRepo, OrderItemTypeRepository $orderItemTypeRepository, RequestStack $request)
+    public function __construct(Session $session, ContainerInterface $container, EccubeConfig $eccubeConfig, GHNDeliveryRepository $GHNDeliveryRepo, ApiService $apiService, GHNWarehouseRepository $warehouseRepo, GHNOrderRepository $GHNOrderRepo, GHNConfigRepository $configRepo, EntityManagerInterface $entityManager, GHNServiceRepository $serviceRepo, RequestStack $request)
     {
         $this->session = $session;
         $this->container = $container;
         $this->eccubeConfig = $eccubeConfig;
-        $this->GHNDeliveryRepo = $GHNDeliveryRepo;
+        $this->ghnDeliveryRepo = $GHNDeliveryRepo;
         $this->apiService = $apiService;
         $this->warehouseRepo = $warehouseRepo;
-        $this->GHNOrderRepo = $GHNOrderRepo;
+        $this->ghnOrderRepo = $GHNOrderRepo;
         $this->configRepo = $configRepo;
         $this->entityManager = $entityManager;
         $this->serviceRepo = $serviceRepo;
-        $this->orderItemTypeRepository = $orderItemTypeRepository;
         $this->request = $request;
     }
 
@@ -114,43 +102,44 @@ class Event implements EventSubscriberInterface
         return [
             'Shopping/index.twig' => 'shoppingIndex',
             EccubeEvents::ADMIN_ORDER_EDIT_INDEX_COMPLETE => 'createGHNOrder',
+            EccubeEvents::ADMIN_ORDER_UPDATE_STATUS_COMPLETE => 'createGHNOrderForOneShipping',
             EccubeEvents::ADMIN_ORDER_EDIT_INDEX_PROGRESS => 'calcGHNServeFeeOneShipping',
-            EccubeEvents::ADMIN_SHIPPING_EDIT_INDEX_COMPLETE => 'calcGHNServeFeeMultiShipping'
+            EccubeEvents::ADMIN_SHIPPING_EDIT_INDEX_COMPLETE => 'calcGHNServeFeeMultiShipping',
+            '@admin/Order/edit.twig' => 'renderOrder'
         ];
+    }
+
+    public function renderOrder(TemplateEvent $event)
+    {
+        $order = $event->getParameter('Order');
+        $ghnOrder = $this->ghnOrderRepo->findBy(['Order' => $order]);
+//        if (count($ghnOrder) == 0) {
+//            return;
+//        }
+        $event->setParameter('GHNOrders', $ghnOrder);
+        $event->addSnippet('@GHNDelivery/admin/render_order.twig');
     }
 
     public function calcGHNServeFeeMultiShipping(EventArgs $eventArgs)
     {
+        $config = $this->configRepo->find(1);
+        if (!$config) {
+            return;
+        }
         /** @var Shipping[] $targetShippings */
         $targetShippings = $eventArgs['TargetShippings'];
 
         $warehouse = $this->warehouseRepo->getOne();
-        $config = $this->configRepo->find(1);
         $request = $this->request->getCurrentRequest();
         $dataRequest = $request->get('form')['shippings'];
 
         foreach ($targetShippings as $key => $shipping) {
-            /** @var Shipping $shp */
-            $shp = $shipping;
-            /** @var GHNService $service */
-            $service = $this->serviceRepo->findOneBy(['Shipping' => $shp]);
-            if (!$service) {
-                $service = new GHNService();
-                $service->setShipping($shp);
-            }
             $mainServiceId = $dataRequest[$key]['main_service_id'];
-            $service->setMainServiceId($mainServiceId);
-
-            // get service ID + fee
-            $fromGHNPref = $warehouse->getGHNPref();
-            $service->setFromPref($fromGHNPref);
-
-            $toGHNPref = $shp->getGHNPref();
-            $service->setToPref($toGHNPref);
+            $service = $this->serviceRepo->buildGHNService($shipping, $mainServiceId, $warehouse);
 
             $data = $this->session->get($this->eccubeConfig->get('admin_ghn_session_service_fee') . $key);
             if (is_null($data)) {
-                $output = $this->apiService->findAvailableServices($fromGHNPref->getDistrictId(), $toGHNPref->getDistrictId());
+                $output = $this->apiService->findAvailableServices($service->getFromDistrictId(), $service->getToDistrictId());
                 // call api to get service list
                 $data = $output->getData();
                 // error
@@ -166,9 +155,8 @@ class Event implements EventSubscriberInterface
 
                 return;
             }
-            $service->setWeight($config->getWeight());
 
-            $shp->setGHNService($service);
+            $shipping->setGHNService($service);
             $this->entityManager->persist($service);
             // don't flush
         }
@@ -181,54 +169,32 @@ class Event implements EventSubscriberInterface
      */
     public function calcGHNServeFeeOneShipping(EventArgs $eventArgs)
     {
+        $config = $this->configRepo->find(1);
+        if (!$config) {
+            return;
+        }
         /** @var Order $order */
         $order = $eventArgs['TargetOrder'];
 
         if ($order->isMultiple()) {
             return;
         }
-
         $warehouse = $this->warehouseRepo->getOne();
-        $config = $this->configRepo->find(1);
 
         $requestData = $this->request->getCurrentRequest()->get('order');
         if (!isset($requestData['Shipping']['main_service_id']) || !is_numeric($requestData['Shipping']['main_service_id'])) {
-            /** @var FormBuilder $builder */
-            $builder = $eventArgs['builder'];
-            $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
-                $form = $event->getForm();
-                if (!isset($form['order']['Shipping']['main_service_id']) || !is_numeric($form['order']['Shipping']['main_service_id']->getData())) {
-                    $form['order']['Shipping']['GHNPref']->addError(new FormError(trans('ghn.shopping.delivery.service_incorrect')));
-                }
-            });
-
-            $eventArgs->setArgument('builder', $builder);
-
-
+            $this->addFlash('eccube.admin.error', trans('ghn.shopping.delivery.service_incorrect'));
             return;
         }
 
         /** @var Shipping $shp */
         $shp = $order->getShippings()->first();
-        /** @var GHNService $service */
-        $service = $this->serviceRepo->findOneBy(['Shipping' => $shp]);
-        if (!$service) {
-            $service = new GHNService();
-            $service->setShipping($shp);
-        }
         $mainServiceId = $requestData['Shipping']['main_service_id'];
-        $service->setMainServiceId($mainServiceId);
-
-        // get service ID + fee
-        $fromGHNPref = $warehouse->getGHNPref();
-        $service->setFromPref($fromGHNPref);
-
-        $toGHNPref = $shp->getGHNPref();
-        $service->setToPref($toGHNPref);
+        $service = $this->serviceRepo->buildGHNService($shp, $mainServiceId, $warehouse);
 
         $data = $this->session->get($this->eccubeConfig->get('admin_ghn_session_service_fee'));
         if (is_null($data)) {
-            $output = $this->apiService->findAvailableServices($fromGHNPref->getDistrictId(), $toGHNPref->getDistrictId());
+            $output = $this->apiService->findAvailableServices($service->getFromDistrictId(), $service->getToDistrictId());
             // call api to get service list
             $data = $output->getData();
             // error
@@ -244,11 +210,56 @@ class Event implements EventSubscriberInterface
 
             return;
         }
-        $service->setWeight($config->getWeight());
-
         $shp->setGHNService($service);
         $this->entityManager->persist($service);
         // do not flush
+    }
+
+    public function createGHNOrderForOneShipping(EventArgs $event)
+    {
+        /** @var GHNConfig $config */
+        $config = $this->configRepo->find(1);
+        if (!$config) {
+            return;
+        }
+        /** @var Shipping $shipping */
+        $shipping = $event['Shipping'];
+        /** @var Order $order */
+        $order = $shipping->getOrder();
+
+        if ($order->getOrderStatus()->getId() != OrderStatus::IN_PROGRESS) {
+            return;
+        }
+
+        $warehouse = $this->warehouseRepo->getOne();
+
+        /** @var Shipping $shipping */
+        $isGHNDelivery = $this->ghnDeliveryRepo->find($shipping->getDelivery());
+        if (!$isGHNDelivery) {
+            return;
+        }
+
+        $service = $shipping->getGHNService();
+        if (!$service) {
+            $this->session->getFlashBag()->add('eccube.admin.error', 'ghn.order.not_found');
+
+            return;
+        }
+
+        $ghnOrder = $this->ghnOrderRepo->buildGHNOrder($shipping, $service, $warehouse);
+        $output = $this->callApi($ghnOrder, $config);
+
+        if (!$output->getCode()) {
+            $this->session->getFlashBag()->add('eccube.admin.error', $output->getMsg() ? $output->getMsg() : 'ghn.order.can_not_create');
+
+            return;
+        }
+
+        // save information
+        $ghnOrder->setReturnData(serialize($output->getData()));
+        $this->entityManager->persist($ghnOrder);
+        // please flush all for update order
+        $this->entityManager->flush();
     }
 
     public function createGHNOrder(EventArgs $event)
@@ -261,15 +272,15 @@ class Event implements EventSubscriberInterface
         /** @var Order $order */
         $order = $event['TargetOrder'];
 
-        $warehouse = $this->warehouseRepo->getOne();
-
-        if ($order->getOrderStatus()->getId() != OrderStatus::DELIVERED) {
+        if ($order->getOrderStatus()->getId() != OrderStatus::IN_PROGRESS) {
             return;
         }
 
+        $warehouse = $this->warehouseRepo->getOne();
+
         /** @var Shipping $shipping */
         foreach ($order->getShippings() as $shipping) {
-            $isGHNDelivery = $this->GHNDeliveryRepo->find($shipping->getDelivery());
+            $isGHNDelivery = $this->ghnDeliveryRepo->find($shipping->getDelivery());
             if (!$isGHNDelivery) {
                 continue;
             }
@@ -281,29 +292,9 @@ class Event implements EventSubscriberInterface
                 return;
             }
 
-            // create GHN order
             /** @var GHNOrder $ghnOrder */
-            $ghnOrder = $this->GHNOrderRepo->findOneBy(['Shipping' => $shipping]);
-            $isUpdate = true;
-            if (!$ghnOrder || !$ghnOrder->isCreatedOrder()) {
-                $ghnOrder = new GHNOrder();
-                $ghnOrder->setShipping($shipping);
-                $isUpdate = false;
-            }
-            // set new service
-            $ghnOrder->setGHNService($service);
-            // set new warehouse
-            $ghnOrder->setGHNWarehouse($warehouse);
-
-            // update
-            if ($isUpdate) {
-                $dataForApi = $ghnOrder->updateOrder($config);
-                $output = $this->apiService->updateOrder($dataForApi);
-            } else {
-                // create
-                $dataForApi = $ghnOrder->createOrder($config, $this->eccubeConfig->get('ghn_affiliate_id'));
-                $output = $this->apiService->createOrder($dataForApi);
-            }
+            $ghnOrder = $this->ghnOrderRepo->buildGHNOrder($shipping, $service, $warehouse);
+            $output = $this->callApi($ghnOrder, $config);
 
             if (!$output->getCode()) {
                 $this->session->getFlashBag()->add('eccube.admin.error', 'ghn.order.can_not_create');
@@ -333,7 +324,7 @@ class Event implements EventSubscriberInterface
         foreach ($order->getShippings() as $shipping) {
             $redirects[$shipping->getId()] = false;
             $delivery = $shipping->getDelivery();
-            $GHNDelivery = $this->GHNDeliveryRepo->find($delivery->getId());
+            $GHNDelivery = $this->ghnDeliveryRepo->find($delivery->getId());
             // if ghn delivery => add script to redirect to GHN page
             if ($GHNDelivery) {
                 $redirects[$shipping->getId()] = true;
@@ -356,5 +347,26 @@ class Event implements EventSubscriberInterface
                 break;
             }
         }
+    }
+
+    /**
+     * @param $ghnOrder
+     * @param $config
+     * @return bool|Service\ApiParserService
+     */
+    private function callApi(GHNOrder $ghnOrder, $config)
+    {
+        // todo: condition?
+        // update
+        if ($ghnOrder->getId()) {
+            $dataForApi = $ghnOrder->updateOrder($config);
+            $output = $this->apiService->updateOrder($dataForApi);
+        } else {
+            // create
+            $dataForApi = $ghnOrder->createOrder($config, $this->eccubeConfig->get('ghn_affiliate_id'));
+            $output = $this->apiService->createOrder($dataForApi);
+        }
+
+        return $output;
     }
 }

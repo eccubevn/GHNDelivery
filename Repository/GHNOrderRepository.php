@@ -18,4 +18,26 @@ class GHNOrderRepository extends AbstractRepository
     {
         parent::__construct($registry, $entityClass);
     }
+
+    /**
+     * @param $shipping
+     * @param $service
+     * @param $warehouse
+     * @return GHNOrder
+     */
+    public function buildGHNOrder($shipping, $service, $warehouse): GHNOrder
+    {
+        /** @var GHNOrder $ghnOrder */
+        $ghnOrder = $this->findOneBy(['Shipping' => $shipping]);
+        if (!$ghnOrder || !$ghnOrder->isCreatedOrder()) {
+            $ghnOrder = new GHNOrder();
+            $ghnOrder->setShipping($shipping);
+        }
+        // set new service
+        $ghnOrder->setGHNService($service);
+        // set new warehouse
+        $ghnOrder->setGHNWarehouse($warehouse);
+
+        return $ghnOrder;
+    }
 }

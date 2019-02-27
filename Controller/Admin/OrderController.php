@@ -9,13 +9,21 @@ namespace Plugin\GHNDelivery\Controller\Admin;
 
 
 use Eccube\Controller\AbstractController;
+use Eccube\Entity\Master\OrderStatus;
+use Eccube\Entity\Order;
+use Eccube\Entity\Shipping;
+use Plugin\GHNDelivery\Entity\GHNConfig;
+use Plugin\GHNDelivery\Entity\GHNOrder;
 use Plugin\GHNDelivery\Entity\GHNPref;
 use Plugin\GHNDelivery\Entity\GHNWarehouse;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
+use Plugin\GHNDelivery\Repository\GHNDeliveryRepository;
+use Plugin\GHNDelivery\Repository\GHNOrderRepository;
 use Plugin\GHNDelivery\Repository\GHNPrefRepository;
 use Plugin\GHNDelivery\Repository\GHNServiceRepository;
 use Plugin\GHNDelivery\Repository\GHNWarehouseRepository;
 use Plugin\GHNDelivery\Service\ApiService;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -46,6 +54,12 @@ class OrderController extends AbstractController
     /** @var GHNPrefRepository */
     protected $prefRepo;
 
+    /** @var GHNDeliveryRepository */
+    protected $ghnDeliveryRepo;
+
+    /** @var GHNOrderRepository */
+    protected $ghnOrderRepo;
+
     /**
      * OrderController constructor.
      * @param GHNWarehouseRepository $warehouseRepo
@@ -53,15 +67,20 @@ class OrderController extends AbstractController
      * @param GHNServiceRepository $serviceRepo
      * @param GHNConfigRepository $configRepo
      * @param GHNPrefRepository $prefRepo
+     * @param GHNDeliveryRepository $ghnDeliveryRepo
+     * @param GHNOrderRepository $ghnOrderRepo
      */
-    public function __construct(GHNWarehouseRepository $warehouseRepo, ApiService $apiService, GHNServiceRepository $serviceRepo, GHNConfigRepository $configRepo, GHNPrefRepository $prefRepo)
+    public function __construct(GHNWarehouseRepository $warehouseRepo, ApiService $apiService, GHNServiceRepository $serviceRepo, GHNConfigRepository $configRepo, GHNPrefRepository $prefRepo, GHNDeliveryRepository $ghnDeliveryRepo, GHNOrderRepository $ghnOrderRepo)
     {
         $this->warehouseRepo = $warehouseRepo;
         $this->apiService = $apiService;
         $this->serviceRepo = $serviceRepo;
         $this->configRepo = $configRepo;
         $this->prefRepo = $prefRepo;
+        $this->ghnDeliveryRepo = $ghnDeliveryRepo;
+        $this->ghnOrderRepo = $ghnOrderRepo;
     }
+
 
     /**
      * ajax
@@ -127,5 +146,72 @@ class OrderController extends AbstractController
         $request->getSession()->set($sessionName, $data);
 
         return ['ghn_service' => $data, 'message' => $message, 'index' => $index];
+    }
+
+
+    /**
+     * @param Request $request
+     * @param Order $Order
+     * @Route(path="/%eccube_admin_route%/ghn/reorder/{id}", name="ghn_reorder", requirements={"id"="\d+"})
+     * @ParamConverter("Order")
+     */
+    public function reRegisterOrder(Request $request, Order $Order)
+    {
+        $url = $this->redirectToRoute('admin_order_edit', ['id' => $Order->getId()]);
+
+        /** @var GHNConfig $config */
+        $config = $this->configRepo->find(1);
+        if (!$config) {
+            $this->addError('ghn.config.missing', 'admin');
+            return $url;
+        }
+
+        if (!$Order->getId() || $Order->getOrderStatus()->getId() != OrderStatus::IN_PROGRESS) {
+            $this->addError('ghn.order.reorder.can_not_create', 'admin');
+
+            return $url;
+        }
+
+        $warehouse = $this->warehouseRepo->getOne();
+
+        /** @var Shipping $shipping */
+        foreach ($Order->getShippings() as $shipping) {
+            $isGHNDelivery = $this->ghnDeliveryRepo->find($shipping->getDelivery());
+            if (!$isGHNDelivery) {
+                $this->addWarning(trans('ghn.shipping.not_ghn', ['%shipping%' => $shipping->getId()]), 'admin');
+                continue;
+            }
+
+            $service = $shipping->getGHNService();
+            if (!$service) {
+                $this->addError('ghn.order.not_found', 'admin');
+
+                return $url;
+            }
+
+            $ghnOrder = $this->ghnOrderRepo->buildGHNOrder($shipping, $service, $warehouse);
+            if ($ghnOrder->getId()) {
+                $this->addWarning(trans('ghn.shipping.create_already', ['%shipping%' => $shipping->getId()]), 'admin');
+                continue;
+            } else {
+                // create
+                $dataForApi = $ghnOrder->createOrder($config, $this->eccubeConfig->get('ghn_affiliate_id'));
+                $output = $this->apiService->createOrder($dataForApi);
+            }
+
+            if (!$output->getCode()) {
+                $this->addError($output->getMsg()?$output->getMsg() : 'ghn.order.can_not_create', 'admin');
+
+                return $url;
+            }
+
+            // save information
+            $ghnOrder->setReturnData(serialize($output->getData()));
+            $this->entityManager->persist($ghnOrder);
+        }
+        // please flush all for update order
+        $this->entityManager->flush();
+
+        return $url;
     }
 }

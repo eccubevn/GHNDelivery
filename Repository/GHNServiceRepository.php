@@ -14,8 +14,39 @@ use Plugin\GHNDelivery\Entity\GHNService;
 
 class GHNServiceRepository extends AbstractRepository
 {
-    public function __construct(ManagerRegistry $registry, string $entityClass = GHNService::class)
+    /** @var GHNConfigRepository */
+    protected $configRepo;
+
+    public function __construct(ManagerRegistry $registry, GHNConfigRepository $configRepository)
     {
-        parent::__construct($registry, $entityClass);
+        parent::__construct($registry, GHNService::class);
+        $this->configRepo = $configRepository;
+    }
+
+    /**
+     * @param $shp
+     * @param $mainServiceId
+     * @param $warehouse
+     * @return GHNService
+     */
+    public function buildGHNService($shp, $mainServiceId, $warehouse): GHNService
+    {
+        /** @var GHNService $service */
+        $service = $this->findOneBy(['Shipping' => $shp]);
+        if (!$service) {
+            $service = new GHNService();
+            $service->setShipping($shp);
+        }
+        $service->setMainServiceId($mainServiceId);
+
+        // get service ID + fee
+        $fromGHNPref = $warehouse->getGHNPref();
+        $service->setFromPref($fromGHNPref);
+
+        $toGHNPref = $shp->getGHNPref();
+        $service->setToPref($toGHNPref);
+        $service->setWeight($this->configRepo->find(1)->getWeight());
+
+        return $service;
     }
 }

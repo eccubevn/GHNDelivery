@@ -1114,10 +1114,15 @@ class GHNOrder extends AbstractEntity
     }
 
     /**
-     * @return string serialize
+     * @param bool $isUnserialize
+     * @return mixed|string
      */
-    public function getReturnData()
+    public function getReturnData($isUnserialize = false)
     {
+        if ($isUnserialize) {
+            return unserialize($this->returnData);
+        }
+
         return $this->returnData;
     }
 
@@ -1178,7 +1183,7 @@ class GHNOrder extends AbstractEntity
 
         // todo: check payment method : $this->Order->getPaymentMethod()
         if (!$this->Order->isGHNCOD()) {
-            $this->CoDAmount = $this->Order->getPaymentTotal();
+            $this->CoDAmount = (int) $this->Order->getPaymentTotal();
             $this->Order->setIsGHNCOD(true);
         }
 
@@ -1230,7 +1235,7 @@ class GHNOrder extends AbstractEntity
 
         // todo: check payment method : $this->Order->getPaymentMethod()
         if (!$this->Order->isGHNCOD()) {
-            $this->CoDAmount = $this->Order->getPaymentTotal();
+            $this->CoDAmount = (int) $this->Order->getPaymentTotal();
             $this->Order->setIsGHNCOD(true);
         }
 

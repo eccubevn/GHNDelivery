@@ -1,6 +1,20 @@
 CHOTHUHANG: Cho thử hàng
 CHOXEMHANGKHONGTHU: Cho xem hàng (không cho thử hàng)
 KHONGCHOXEMHANG: Không cho xem hàng
+ErrorMessage: Thông tin lỗi
+OrderID: ID đơn hàng (GHN)
+PaymentTypeID: Bên trả phí
+OrderCode: Mã đơn hàng
+ExtraFee: Phí phụ thu
+TotalServiceFee: Phí dịch vụ
+ExpectedDeliveryTime: Thời gian giao hàng dự kiến
+ClientHubID: ID kho hàng
+SortCode: Mã số sắp xếp
+
+ghn.name: Giao hàng nhanh
+ghn.header: Cài đặt
+
+ghn.config.sub_title: Cài đặt
 ghn.config.missing: Vui lòng đăng ký trước
 ghn.config.client_id: Mã chủ cửa hàng (Client Id)
 ghn.config.client_name: Tên chủ cửa hàng
@@ -55,3 +69,10 @@ ghn.shopping.delivery.remove.alret: Bạn có chắc muốn hủy bỏ dịch v�
 # order
 ghn.order.not_found: Không tìm thấy dịch vụ!
 ghn.order.can_not_create: Không thể tạo đơn hàng! Vui lòng nhấn nút tạo lại ở trang danh sách đơn hàng.
+ghn.order.reorder.can_not_create: Chỉ có thể tạo lại GHN đơn hàng ở trạng thái đang xử lý.
+ghn.order.reorder.button: Tạo lại GHN đơn hàng
+
+ghn.shipping: Thông tin đơn hàng trên giao hàng nhanh
+ghn.shipping.id: Đơn giao hàng
+ghn.shipping.not_ghn: "Đơn giao hàng %shipping% không phải là giao hàng nhanh, bỏ qua."
+ghn.shipping.create_already: "Đơn giao hàng %shipping% đã được tạo, bỏ qua."

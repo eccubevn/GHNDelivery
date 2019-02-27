@@ -2,8 +2,8 @@
 
 {% set menus = ['product', 'ghn_delivery_admin_warehouse'] %}
 
-{% block title %}Warehouse{% endblock %}
-{% block sub_title %}GHNDelivery{% endblock %}
+{% block title %}{{ 'ghn.warehouse'|trans }}{% endblock %}
+{% block sub_title %}{{ 'ghn.name'|trans }}{% endblock %}
 
 {% form_theme form '@GHNDelivery/admin/Form/GHNCustomize.twig' %}
 
@@ -18,7 +18,7 @@
             <div class="c-contentsArea__primaryCol">
                 <div class="c-primaryCol">
                     <div class="card rounded border-0 mb-4">
-                        <div class="card-header"><span>設定</span></div>
+                        <div class="card-header"><span>{{ 'ghn.header'|trans }}</span></div>
                         <div class="card-body">
                             {% for field in form if field.vars.name != '_token' %}
                                 <div class="row">
