@@ -8,17 +8,36 @@
 namespace Plugin\GHNDelivery\Controller\Front;
 
 use Eccube\Controller\AbstractController;
+use Plugin\GHNDelivery\Repository\GHNOrderCallbackRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CallbackController extends AbstractController
 {
+    /**
+     * @var GHNOrderCallbackRepository
+     */
+    protected $callbackRepo;
+
+    /**
+     * CallbackController constructor.
+     * @param GHNOrderCallbackRepository $callbackRepo
+     */
+    public function __construct(GHNOrderCallbackRepository $callbackRepo)
+    {
+        $this->callbackRepo = $callbackRepo;
+    }
+
     /**
      * @param Request $request
      * @Route(name="ghn_callback", path="/receive")
      */
     public function index(Request $request)
     {
+        $json = $request->getContent();
+        $this->callbackRepo->saveCallbackData($json, $request->headers->all());
 
+        return new Response(trans('ghn.callback.receive'));
     }
 }

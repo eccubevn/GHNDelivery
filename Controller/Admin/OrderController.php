@@ -172,42 +172,9 @@ class OrderController extends AbstractController
             return $url;
         }
 
-        $warehouse = $this->warehouseRepo->getOne();
-
         /** @var Shipping $shipping */
         foreach ($Order->getShippings() as $shipping) {
-            $isGHNDelivery = $this->ghnDeliveryRepo->find($shipping->getDelivery());
-            if (!$isGHNDelivery) {
-                $this->addWarning(trans('ghn.shipping.not_ghn', ['%shipping%' => $shipping->getId()]), 'admin');
-                continue;
-            }
-
-            $service = $shipping->getGHNService();
-            if (!$service) {
-                $this->addError('ghn.order.not_found', 'admin');
-
-                return $url;
-            }
-
-            $ghnOrder = $this->ghnOrderRepo->buildGHNOrder($shipping, $service, $warehouse);
-            if ($ghnOrder->getId()) {
-                $this->addWarning(trans('ghn.shipping.create_already', ['%shipping%' => $shipping->getId()]), 'admin');
-                continue;
-            } else {
-                // create
-                $dataForApi = $ghnOrder->createOrder($config, $this->eccubeConfig->get('ghn_affiliate_id'));
-                $output = $this->apiService->createOrder($dataForApi);
-            }
-
-            if (!$output->getCode()) {
-                $this->addError($output->getMsg()?$output->getMsg() : 'ghn.order.can_not_create', 'admin');
-
-                return $url;
-            }
-
-            // save information
-            $ghnOrder->setReturnData(serialize($output->getData()));
-            $this->entityManager->persist($ghnOrder);
+            $this->ghnOrderRepo->createGHNOrderByShipping($shipping, false);
         }
         // please flush all for update order
         $this->entityManager->flush();

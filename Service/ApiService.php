@@ -86,14 +86,15 @@ class ApiService
 
     /**
      * @param GHNWarehouse $GHNWarehouse
-     * @return ApiParserService|mixed
+     * @return ApiParserService
      */
     public function addWarehouse(GHNWarehouse $GHNWarehouse)
     {
         /** @var GHNConfig $config */
         $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
         if (!$config) {
-            return false;
+            return $parser;
         }
         $url = $this->endpoint . '/AddHubs';
 
@@ -109,14 +110,15 @@ class ApiService
 
     /**
      * @param GHNWarehouse $GHNWarehouse
-     * @return ApiParserService|mixed
+     * @return ApiParserService
      */
     public function updateWarehouse(GHNWarehouse $GHNWarehouse)
     {
         /** @var GHNConfig $config */
         $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
         if (!$config) {
-            return false;
+            return $parser;
         }
 
         $url = $this->endpoint . '/UpdateHubs';
@@ -132,12 +134,19 @@ class ApiService
         return $parser;
     }
 
+    /**
+     * @param $fromDistrictId
+     * @param $toDistrictId
+     * @param array $options
+     * @return ApiParserService
+     */
     public function findAvailableServices($fromDistrictId, $toDistrictId, $options = array())
     {
         /** @var GHNConfig $config */
         $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
         if (!$config) {
-            return false;
+            return $parser;
         }
 
         $url = $this->endpoint . '/FindAvailableServices';
@@ -158,12 +167,17 @@ class ApiService
         return $parser;
     }
 
+    /**
+     * @param array $data
+     * @return ApiParserService
+     */
     public function createOrder(array $data)
     {
         /** @var GHNConfig $config */
         $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
         if (!$config) {
-            return false;
+            return $parser;
         }
 
         $url = $this->endpoint . '/CreateOrder';
@@ -175,15 +189,42 @@ class ApiService
         return $parser;
     }
 
+    /**
+     * @param array $data
+     * @return ApiParserService
+     */
     public function updateOrder(array $data)
     {
         /** @var GHNConfig $config */
         $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
         if (!$config) {
-            return false;
+            return $parser;
         }
 
         $url = $this->endpoint . '/UpdateOrder';
+
+        $jsonRet = $this->requestApi($url, $data, true);
+        $parser = new ApiParserService();
+        $parser->parse($jsonRet);
+
+        return $parser;
+    }
+
+    /**
+     * @param $data
+     * @return ApiParserService
+     */
+    public function cancelOrder($data)
+    {
+        /** @var GHNConfig $config */
+        $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
+        if (!$config) {
+            return $parser;
+        }
+
+        $url = $this->endpoint . '/CancelOrder';
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -231,7 +272,6 @@ class ApiService
                 // ghn require
                 'Accept: application/json',
                 'Content-Type: application/json',
-                'cache-control: no-cache'
             ],
             CURLOPT_HTTPGET => $post === false,
             CURLOPT_SSL_VERIFYPEER => false,

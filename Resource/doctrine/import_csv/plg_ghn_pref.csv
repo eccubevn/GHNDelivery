@@ -1,714 +1,714 @@
-id,province_name,province_id,district_name,district_code,district_id,pref_eccube_id
-1,An Giang,217,Thành phố Long Xuyên,5101,1566,4
-2,An Giang,217,Thành phố Châu Đốc,5102,1753,4
-3,An Giang,217,Huyện An Phú,5103,1754,4
-4,An Giang,217,Huyện Tân Châu,5104,1755,4
-5,An Giang,217,Huyện Phú Tân,5105,1756,4
-6,An Giang,217,Huyện Châu Phú,5108,1758,4
-7,An Giang,217,Huyện Tịnh Biên,5106,1752,4
-8,An Giang,217,Huyện Tri Tôn,5107,1751,4
-9,An Giang,217,Huyện Châu Thành,5110,1718,4
-10,An Giang,217,Huyện Chợ Mới,5109,1757,4
-11,An Giang,217,Huyện Thoại Sơn,5111,1750,4
-12,Bà Rịa – Vũng Tàu,206,Thành phố Vũng Tàu,5201,1544,5
-13,Bà Rịa – Vũng Tàu,206,Thành phố Bà Rịa,5202,1667,5
-14,Bà Rịa – Vũng Tàu,206,Huyện Châu Đức,5207,1709,5
-15,Bà Rịa – Vũng Tàu,206,Huyện Xuyên Mộc,5203,1699,5
-16,Bà Rịa – Vũng Tàu,206,Huyện Long Điền,5204,1689,5
-17,Bà Rịa – Vũng Tàu,206,Huyện Đất Đỏ,5208,1690,5
-18,Bà Rịa – Vũng Tàu,206,Huyện Tân Thành,5206,1701,5
-19,Bắc Giang,248,Thành phố Bắc Giang,1801,1643,6
-20,Bắc Giang,248,Huyện Yên Thế,1802,1765,6
-21,Bắc Giang,248,Huyện Tân Yên,1806,1762,6
-22,Bắc Giang,248,Huyện Lạng Giang,1808,1760,6
-23,Bắc Giang,248,Huyện Lục Nam,1805,1965,6
-24,Bắc Giang,248,Huyện Lục Ngạn,1803,1966,6
-25,Bắc Giang,248,Huyện Sơn Động,1804,1761,6
-26,Bắc Giang,248,Huyện Yên Dũng,1810,1764,6
-27,Bắc Giang,248,Huyện Việt Yên,1809,1763,6
-28,Bắc Giang,248,Huyện Hiệp Hòa,1807,1759,6
-29,Bắc Kạn,245,Thành Phố Bắc Kạn,1101,1640,7
-30,Bắc Kạn,245,Huyện Pác Nặm,1108,3249,7
-31,Bắc Kạn,245,Huyện Ba Bể,1106,1887,7
-32,Bắc Kạn,245,Huyện Ngân Sơn,1105,3242,7
-33,Bắc Kạn,245,Huyện Bạch Thông,1103,1889,7
-34,Bắc Kạn,245,Huyện Chợ Đồn,1102,1913,7
-35,Bắc Kạn,245,Huyện Chợ Mới,1107,1914,7
-36,Bắc Kạn,245,Huyện Na Rì,1104,3232,7
-37,Bạc Liêu,253,Thành phố Bạc Liêu,6001,1655,8
-38,Bạc Liêu,253,Huyện Hồng Dân,6003,1946,8
-39,Bạc Liêu,253,Huyện Phước Long,6005,1998,8
-40,Bạc Liêu,253,Huyện Vĩnh Lợi,6002,2050,8
-41,Bạc Liêu,253,Huyện Giá Rai,6004,1935,8
-42,Bạc Liêu,253,Huyện Đông Hải,6006,1926,8
-43,Bạc Liêu,253,Huyện Hòa Bình,6007,1723,8
-44,Bắc Ninh,249,Thành phố Bắc Ninh,1901,1644,9
-45,Bắc Ninh,249,Huyện Yên Phong,1902,1768,9
-46,Bắc Ninh,249,Huyện Quế Võ,1903,1728,9
-47,Bắc Ninh,249,Huyện Tiên Du,1904,1729,9
-48,Bắc Ninh,249,Thị xã Từ Sơn,1905,1730,9
-49,Bắc Ninh,249,Huyện Thuận Thành,1906,1767,9
-50,Bắc Ninh,249,Huyện Gia Bình,1907,1766,9
-51,Bắc Ninh,249,Huyện Lương Tài,1908,1969,9
-52,Bến Tre,213,Thành phố Bến Tre,5601,1558,10
-53,Bến Tre,213,Huyện Châu Thành,5602,1742,10
-54,Bến Tre,213,Huyện Chợ Lách,5603,3158,10
-55,Bến Tre,213,Huyện Mỏ Cày Nam,5609,1975,10
-56,Bến Tre,213,Huyện Giồng Trôm,5605,1937,10
-57,Bến Tre,213,Huyện Bình Đại,5606,1895,10
-58,Bến Tre,213,Huyện Ba Tri,5607,1888,10
-59,Bến Tre,213,Huyện Thạnh Phú,5608,2028,10
-60,Bến Tre,213,Huyện Mỏ Cày Bắc,5604,1974,10
-61,Bình Định,262,Thành phố Quy Nhơn,3701,1662,14
-62,Bình Định,262,Huyện An Lão,3702,1886,14
-63,Bình Định,262,Huyện Hoài Nhơn,3704,1771,14
-64,Bình Định,262,Huyện Hoài Ân,3703,2140,14
-65,Bình Định,262,Huyện Phù Mỹ,3705,3254,14
-66,Bình Định,262,Huyện Vĩnh Thạnh,3707,2258,14
-67,Bình Định,262,Huyện Tây Sơn,3708,3279,14
-68,Bình Định,262,Huyện Phù Cát,3706,1770,14
-69,Bình Định,262,Thị xã An Nhơn,3710,1769,14
-70,Bình Định,262,Huyện Tuy Phước,3711,2023,14
-71,Bình Định,262,Huyện Vân Canh,3709,3312,14
-72,Bình Dương,205,Thành phố Thủ Dầu Một,4401,1538,11
-73,Bình Dương,205,Huyện Bàu Bàng,4408,3132,11
-74,Bình Dương,205,Huyện Dầu Tiếng,4407,1746,11
-75,Bình Dương,205,Thị xã Bến Cát,4402,1696,11
-76,Bình Dương,205,Huyện Phú Giáo,4406,1992,11
-77,Bình Dương,205,Thị xã Tân Uyên,4403,1695,11
-78,Bình Dương,205,Thị xã Dĩ An,4405,1540,11
-79,Bình Dương,205,Thị xã Thuận An,4404,1541,11
-80,Bình Dương,205,Huyện Bắc Tân Uyên,4409,3135,11
-81,Bình Phước,239,Thị xã Phước Long,4307,1775,12
-82,Bình Phước,239,Thị xã Đồng Xoài,4301,1625,12
-83,Bình Phước,239,Thị xã Bình Long,4304,1774,12
-84,Bình Phước,239,Huyện Bù Gia Mập,4310,3141,12
-85,Bình Phước,239,Huyện Lộc Ninh,4305,1964,12
-86,Bình Phước,239,Huyện Bù Đốp,4306,3140,12
-87,Bình Phước,239,Huyện Hớn Quản,4309,1773,12
-88,Bình Phước,239,Huyện Đồng Phú,4302,1722,12
-89,Bình Phước,239,Huyện Bù Đăng,4308,1899,12
-90,Bình Phước,239,Huyện Chơn Thành,4303,1772,12
-91,Bình Phước,239,Huyện Phú Riềng,4311,3444,12
-92,Bình Thuận,258,Thành phố Phan Thiết,4701,1666,13
-93,Bình Thuận,258,Thị xã La Gi,4710,1778,13
-94,Bình Thuận,258,Huyện Tuy Phong,4702,1781,13
-95,Bình Thuận,258,Huyện Bắc Bình,4703,1780,13
-96,Bình Thuận,258,Huyện Hàm Thuận Bắc,4704,1777,13
-97,Bình Thuận,258,Huyện Hàm Thuận Nam,4705,1776,13
-98,Bình Thuận,258,Huyện Tánh Linh,4708,2012,13
-99,Bình Thuận,258,Huyện Đức Linh,4707,1779,13
-100,Bình Thuận,258,Huyện Hàm Tân,4706,3196,13
-101,Bình Thuận,258,Huyện đảo Phú Quý,4709,2116,13
-102,Cà Mau,252,Thành phố Cà Mau,6101,1654,15
-103,Cà Mau,252,Huyện U Minh,6103,2042,15
-104,Cà Mau,252,Huyện Thới Bình,6102,1782,15
-105,Cà Mau,252,Huyện Trần Văn Thời,6104,2038,15
-106,Cà Mau,252,Huyện Cái Nước,6105,1901,15
-107,Cà Mau,252,Huyện Đầm Dơi,6106,1922,15
-108,Cà Mau,252,Huyện Năm Căn,6108,1783,15
-109,Cà Mau,252,Huyện Phú Tân,6109,1883,15
-110,Cà Mau,252,Huyện Ngọc Hiển,6107,2186,15
-111,Cần Thơ,220,Quận Ninh Kiều,5501,1572,16
-112,Cần Thơ,220,Quận Ô Môn,5504,1575,16
-113,Cần Thơ,220,Quận Bình Thủy,5502,1573,16
-114,Cần Thơ,220,Quận Cái Răng,5503,1574,16
-115,Cần Thơ,220,Quận Thốt Nốt,5508,1576,16
-116,Cần Thơ,220,Huyện Vĩnh Thạnh,5507,3317,16
-117,Cần Thơ,220,Huyện Cờ Đỏ,5506,3150,16
-118,Cần Thơ,220,Huyện Phong Điền,5505,3250,16
-119,Cần Thơ,220,Huyện Thới Lai,5509,3300,16
-120,Cao Bằng,246,Thành phố Cao Bằng,0601,1641,17
-121,Cao Bằng,246,Huyện Bảo Lâm,0612,1890,17
-122,Cao Bằng,246,Huyện Bảo Lạc,0602,3130,17
-123,Cao Bằng,246,Huyện Thông Nông,0603,3299,17
-124,Cao Bằng,246,Huyện Hà Quảng,0604,1939,17
-125,Cao Bằng,246,Huyện Trà Lĩnh,0605,3305,17
-126,Cao Bằng,246,Huyện Trùng Khánh,0606,2041,17
-127,Cao Bằng,246,Huyện Hạ Lang,0611,3194,17
-128,Cao Bằng,246,Huyện Quảng Uyên,0609,3259,17
-129,Cao Bằng,246,Huyện Phục Hòa,0613,1997,17
-130,Cao Bằng,246,Huyện Hòa An,0608,1943,17
-131,Cao Bằng,246,Huyện Nguyên Bình,0607,3246,17
-132,Cao Bằng,246,Huyện Thạch An,0610,3289,17
-133,Đà Nẵng,203,Quận Liên Chiểu,0405,1530,3
-134,Đà Nẵng,203,Quận Thanh Khê,0402,1527,3
-135,Đà Nẵng,203,Quận Hải Châu,0401,1526,3
-136,Đà Nẵng,203,Quận Sơn Trà,0403,1528,3
-137,Đà Nẵng,203,Quận Ngũ Hành Sơn,0404,1529,3
-138,Đà Nẵng,203,Quận Cẩm Lệ,0407,1531,3
-139,Đà Nẵng,203,Huyện Hòa Vang,0406,1687,3
-140,Đắk Lắk,210,Thành phố Buôn Ma Thuột,4001,1552,59
-141,Đắk Lắk,210,Thị Xã Buôn Hồ,4015,1788,59
-142,Đắk Lắk,210,Huyện Ea H leo,4002,1786,59
-143,Đắk Lắk,210,Huyện Ea Súp,4005,2131,59
-144,Đắk Lắk,210,Huyện Buôn Ðôn,4013,1784,59
-145,Đắk Lắk,210,Huyện Cư M gar,4006,1785,59
-146,Đắk Lắk,210,Huyện Krông Búk,4003,2150,59
-147,Đắk Lắk,210,Huyện Krông Năng,4004,1787,59
-148,Đắk Lắk,210,Huyện Ea Kar,4008,1931,59
-149,Đắk Lắk,210,Huyện M đrắk,4009,3418,59
-150,Đắk Lắk,210,Huyện Krông Bông,4011,1789,59
-151,Đắk Lắk,210,Huyện Krông Pắc,4007,1954,59
-152,Đắk Lắk,210,Huyện Krông Ana,4010,1884,59
-153,Đắk Lắk,210,Huyện Lắk,4012,3217,59
-154,Đắk Lắk,210,Huyện Cư Kuin,4014,3153,59
-155,Đắk Nông,241,Thị xã Gia Nghĩa,6301,1627,60
-156,Đắk Nông,241,Huyện Đắk Glong,6307,1791,60
-157,Đắk Nông,241,Huyện Cư Jút,6304,3152,60
-158,Đắk Nông,241,Huyện Đắk Mil,6303,1792,60
-159,Đắk Nông,241,Huyện Krông Nô,6306,2151,60
-160,Đắk Nông,241,Huyện Đắk Song,6305,2120,60
-161,Đắk Nông,241,Huyện Đắk R lấp,6302,1790,60
-162,Đắk Nông,241,Huyện Tuy Đức,6308,2227,60
-163,Điện Biên,265,Thành phố Điện Biên Phủ,6201,1676,61
-164,Điện Biên,265,Thị Xã Mường Lay,6202,2060,61
-165,Điện Biên,265,Huyện Mường Nhé,6208,1979,61
-166,Điện Biên,265,Huyện Mường Chà,6205,1978,61
-167,Điện Biên,265,Huyện Tủa Chùa,6206,2021,61
-168,Điện Biên,265,Huyện Tuần Giáo,6204,2022,61
-169,Điện Biên,265,Huyện Điện Biên,6203,1923,61
-170,Điện Biên,265,Huyện Điện Biên Đông,6207,2123,61
-171,Điện Biên,265,Huyện Mường Ảng,6209,2170,61
-172,Điện Biên,265,Huyện Nậm Pồ,6210,2179,61
-173,Đồng Nai,204,Thành phố Biên Hòa,4801,1536,62
-174,Đồng Nai,204,Thị xã Long Khánh,4806,1692,62
-175,Đồng Nai,204,Huyện Tân Phú,4803,1693,62
-176,Đồng Nai,204,Huyện Vĩnh Cửu,4802,2049,62
-177,Đồng Nai,204,Huyện Định Quán,4804,1700,62
-178,Đồng Nai,204,Huyện Trảng Bom,4810,1691,62
-179,Đồng Nai,204,Huyện Thống Nhất,4805,1705,62
-180,Đồng Nai,204,Huyện Cẩm Mỹ,4811,1702,62
-181,Đồng Nai,204,Huyện Long Thành,4808,1694,62
-182,Đồng Nai,204,Huyện Xuân Lộc,4807,1704,62
-183,Đồng Nai,204,Huyện Nhơn Trạch,4809,1708,62
-184,Đồng Tháp,216,Thành phố Cao Lãnh,5001,1564,63
-185,Đồng Tháp,216,Thành phố Sa Đéc,5002,1668,63
-186,Đồng Tháp,216,Thị xã Hồng Ngự,5012,2059,63
-187,Đồng Tháp,216,Huyện Tân Hồng,5003,2013,63
-188,Đồng Tháp,216,Huyện Hồng Ngự,5004,3200,63
-189,Đồng Tháp,216,Huyện Tam Nông,5005,2011,63
-190,Đồng Tháp,216,Huyện Tháp Mười,5009,2030,63
-191,Đồng Tháp,216,Huyện Cao Lãnh,5007,1724,63
-192,Đồng Tháp,216,Huyện Thanh Bình,5006,2026,63
-193,Đồng Tháp,216,Huyện Lấp Vò,5008,1961,63
-194,Đồng Tháp,216,Huyện Lai Vung,5010,1725,63
-195,Đồng Tháp,216,Huyện Châu Thành,5011,3155,63
-196,Gia Lai,207,Thành phố Pleiku,3801,1546,18
-197,Gia Lai,207,Thị xã An Khê,3805,1800,18
-198,Gia Lai,207,Thị xã Ayun Pa,3810,1798,18
-199,Gia Lai,207,Huyện KBang,3804,2144,18
-200,Gia Lai,207,Huyện Đắk Đoa,3813,2118,18
-201,Gia Lai,207,Huyện Chư Păh,3802,1801,18
-202,Gia Lai,207,Huyện Ia Grai,3812,1793,18
-203,Gia Lai,207,Huyện Mang Yang,3803,2165,18
-204,Gia Lai,207,Huyện Kông Chro,3806,2149,18
-205,Gia Lai,207,Huyện Đức Cơ,3807,1794,18
-206,Gia Lai,207,Huyện Chư Prông,3808,1795,18
-207,Gia Lai,207,Huyện Chư Sê,3809,1796,18
-208,Gia Lai,207,Huyện Đắk Pơ,3815,2119,18
-209,Gia Lai,207,Huyện Ia Pa,3814,1799,18
-210,Gia Lai,207,Huyện Krông Pa,3811,2152,18
-211,Gia Lai,207,Huyện Phú Thiện,3816,1797,18
-212,Gia Lai,207,Huyện Chư Pưh,3817,2101,18
-213,Hà Giang,227,Thành phố Hà Giang,0501,1600,19
-214,Hà Giang,227,Huyện Đồng Văn,0502,1928,19
-215,Hà Giang,227,Huyện Mèo Vạc,0503,1973,19
-216,Hà Giang,227,Huyện Yên Minh,0504,2053,19
-217,Hà Giang,227,Huyện Quản Bạ,0505,1999,19
-218,Hà Giang,227,Huyện Vị Xuyên,0506,2256,19
-219,Hà Giang,227,Huyện Bắc Mê,0507,2075,19
-220,Hà Giang,227,Huyện Hoàng Su Phì,0508,1945,19
-221,Hà Giang,227,Huyện Xín Mần,0509,2052,19
-222,Hà Giang,227,Huyện Bắc Quang,0510,1893,19
-223,Hà Giang,227,Huyện Quang Bình,0511,2001,19
-224,Hà Nam,232,Thành phố Phủ Lý,2401,1614,20
-225,Hà Nam,232,Huyện Duy Tiên,2402,1802,20
-226,Hà Nam,232,Huyện Kim Bảng,2403,1952,20
-227,Hà Nam,232,Huyện Thanh Liêm,2405,2027,20
-228,Hà Nam,232,Huyện Bình Lục,2406,1897,20
-229,Hà Nam,232,Huyện Lý Nhân,2404,1970,20
-230,Hà Nội,201,Quận Ba Đình,1A01,1484,2
-231,Hà Nội,201,Quận Hoàn Kiếm,1A02,1489,2
-232,Hà Nội,201,Quận Tây Hồ,1A05,1492,2
-233,Hà Nội,201,Quận Long Biên,1A09,1491,2
-234,Hà Nội,201,Quận Cầu Giấy,1A06,1485,2
-235,Hà Nội,201,Quận Đống Đa,1A04,1486,2
-236,Hà Nội,201,Quận Hai Bà Trưng,1A03,1488,2
-237,Hà Nội,201,Quận Hoàng Mai,1A08,1490,2
-238,Hà Nội,201,Quận Thanh Xuân,1A07,1493,2
-239,Hà Nội,201,Huyện Sóc Sơn,1A14,1583,2
-240,Hà Nội,201,Huyện Đông Anh,1A13,1582,2
-241,Hà Nội,201,Huyện Gia Lâm,1A12,1703,2
-242,Hà Nội,201,Quận Nam Từ Liêm,0130,3440,2
-243,Hà Nội,201,Huyện Thanh Trì,1A11,1710,2
-244,Hà Nội,201,Quận Bắc Từ Liêm,0110,1482,2
-245,Hà Nội,201,Huyện Mê Linh,1B29,1581,2
-246,Hà Nội,201,Quận Hà Đông,1B15,1542,2
-247,Hà Nội,201,Thị xã Sơn Tây,1B16,1711,2
-248,Hà Nội,201,Huyện Ba Vì,1B17,1803,2
-249,Hà Nội,201,Huyện Phúc Thọ,1B18,1807,2
-250,Hà Nội,201,Huyện Đan Phượng,1B22,1804,2
-251,Hà Nội,201,Huyện Hoài Đức,1B23,1805,2
-252,Hà Nội,201,Huyện Quốc Oai ,1B20,2004,2
-253,Hà Nội,201,Huyện Thạch Thất,1B19,1808,2
-254,Hà Nội,201,Huyện Chương Mỹ,1B21,1915,2
-255,Hà Nội,201,Huyện Thanh Oai,1B24,1809,2
-256,Hà Nội,201,Huyện Thường Tín,1B27,3303,2
-257,Hà Nội,201,Huyện Phú Xuyên,1B28,3255,2
-258,Hà Nội,201,Huyện Ứng Hòa,1B26,1810,2
-259,Hà Nội,201,Huyện Mỹ Đức,1B25,1806,2
-260,Hà Tĩnh,236,Thành phố Hà Tĩnh,3001,1618,21
-261,Hà Tĩnh,236,Thị xã Hồng Lĩnh,3002,1814,21
-262,Hà Tĩnh,236,Huyện Hương Sơn,3003,3201,21
-263,Hà Tĩnh,236,Huyện Đức Thọ,3004,3188,21
-264,Hà Tĩnh,236,Huyện Vũ Quang,3011,3320,21
-265,Hà Tĩnh,236,Huyện Nghi Xuân,3005,1813,21
-266,Hà Tĩnh,236,Huyện Can Lộc,3006,3143,21
-267,Hà Tĩnh,236,Huyện Hương Khê,3007,1812,21
-268,Hà Tĩnh,236,Huyện Thạch Hà,3008,2024,21
-269,Hà Tĩnh,236,Huyện Cẩm Xuyên,3009,1815,21
-270,Hà Tĩnh,236,Huyện Kỳ Anh,3010,1811,21
-271,Hà Tĩnh,236,Huyện Lộc Hà,3012,3220,21
-272,Hà Tĩnh,236,Thị xã Kỳ Anh,3013,3441,21
-273,Hải Dương,225,Thành phố Hải Dương,2101,1598,22
-274,Hải Dương,225,Thị xã Chí Linh,2102,2056,22
-275,Hải Dương,225,Huyện Nam Sách,2103,1727,22
-276,Hải Dương,225,Huyện Kinh Môn,2104,1818,22
-277,Hải Dương,225,Huyện Kim Thành,2111,1953,22
-278,Hải Dương,225,Huyện Thanh Hà,2110,3292,22
-279,Hải Dương,225,Huyện Cẩm Giàng,2109,1817,22
-280,Hải Dương,225,Huyện Bình Giang,2112,1816,22
-281,Hải Dương,225,Huyện Gia Lộc,2105,1934,22
-282,Hải Dương,225,Huyện Tứ Kỳ,2106,3287,22
-283,Hải Dương,225,Huyện Ninh Giang,2108,3238,22
-284,Hải Dương,225,Huyện Thanh Miện,2107,3294,22
-285,Hải Phòng,224,Quận Hồng Bàng,0301,1589,23
-286,Hải Phòng,224,Quận Ngô Quyền,0303,1587,23
-287,Hải Phòng,224,Quận Lê Chân,0302,1588,23
-288,Hải Phòng,224,Quận Hải An,0305,1591,23
-289,Hải Phòng,224,Quận Kiến An,0304,1590,23
-290,Hải Phòng,224,Quận Đồ Sơn,0306,1707,23
-291,Hải Phòng,224,Quận Dương Kinh,0315,1706,23
-292,Hải Phòng,224,Huyện Thủy Nguyên,0309,1726,23
-293,Hải Phòng,224,Huyện An Dương,0310,1819,23
-294,Hải Phòng,224,Huyện An Lão,0307,1820,23
-295,Hải Phòng,224,Huyện Kiến Thụy,0308,3203,23
-296,Hải Phòng,224,Huyện Tiên Lãng,0311,1821,23
-297,Hải Phòng,224,Huyện Vĩnh Bảo,0312,1822,23
-298,Hải Phòng,224,Huyện đảo Cát Hải,0313,2108,23
-299,Hậu Giang,250,Thành phố Vị Thanh,6401,1653,24
-300,Hậu Giang,250,Thị xã Ngã Bảy,6407,1823,24
-301,Hậu Giang,250,Huyện Châu Thành A,6406,1912,24
-302,Hậu Giang,250,Huyện Châu Thành,6405,2096,24
-303,Hậu Giang,250,Huyện Phụng Hiệp,6404,1824,24
-304,Hậu Giang,250,Huyện Vị Thuỷ,6402,2048,24
-305,Hậu Giang,250,Huyện Long Mỹ,6403,3445,24
-306,Hậu Giang,250,Thị xã Long Mỹ,6408,3218,24
-307,Hồ Chí Minh,202,Quận 1,0201,1442,1
-308,Hồ Chí Minh,202,Quận 12,0212,1454,1
-309,Hồ Chí Minh,202,Quận Thủ Đức,0218,1463,1
-310,Hồ Chí Minh,202,Quận 9,0209,1451,1
-311,Hồ Chí Minh,202,Quận Gò Vấp,0213,1461,1
-312,Hồ Chí Minh,202,Quận Bình Thạnh,0216,1462,1
-313,Hồ Chí Minh,202,Quận Tân Bình,0214,1455,1
-314,Hồ Chí Minh,202,Quận Tân Phú,0215,1456,1
-315,Hồ Chí Minh,202,Quận Phú Nhuận,0217,1457,1
-316,Hồ Chí Minh,202,Quận 2,0202,1443,1
-317,Hồ Chí Minh,202,Quận 3,0203,1444,1
-318,Hồ Chí Minh,202,Quận 10,0210,1452,1
-319,Hồ Chí Minh,202,Quận 11,0211,1453,1
-320,Hồ Chí Minh,202,Quận 4,0204,1446,1
-321,Hồ Chí Minh,202,Quận 5,0205,1447,1
-322,Hồ Chí Minh,202,Quận 6,0206,1448,1
-323,Hồ Chí Minh,202,Quận 8,0208,1450,1
-324,Hồ Chí Minh,202,Quận Bình Tân,0219,1458,1
-325,Hồ Chí Minh,202,Quận 7,0207,1449,1
-326,Hồ Chí Minh,202,Huyện Củ Chi,0221,1460,1
-327,Hồ Chí Minh,202,Huyện Hóc Môn,0222,1459,1
-328,Hồ Chí Minh,202,Huyện Bình Chánh,0220,1533,1
-329,Hồ Chí Minh,202,Huyện Nhà Bè,0223,1534,1
-330,Hồ Chí Minh,202,Huyện Cần Giờ,0224,2090,1
-331,Hòa Bình,267,Thành phố Hòa Bình,2301,1678,25
-332,Hòa Bình,267,Huyện Đà Bắc,2302,1916,25
-333,Hòa Bình,267,Huyện Kỳ Sơn,2306,1955,25
-334,Hòa Bình,267,Huyện Lương Sơn,2307,1968,25
-335,Hòa Bình,267,Huyện Kim Bôi,2308,2146,25
-336,Hòa Bình,267,Huyện Cao Phong,2311,2087,25
-337,Hòa Bình,267,Huyện Tân Lạc,2304,2014,25
-338,Hòa Bình,267,Huyện Mai Châu,2303,2163,25
-339,Hòa Bình,267,Huyện Lạc Sơn,2305,2156,25
-340,Hòa Bình,267,Huyện Yên Thủy,2310,2270,25
-341,Hòa Bình,267,Huyện Lạc Thủy,2309,2157,25
-342,Hưng Yên,268,Thành phố Hưng Yên,2201,1680,26
-343,Hưng Yên,268,Huyện Văn Lâm,2209,2046,26
-344,Hưng Yên,268,Huyện Văn Giang,2210,2045,26
-345,Hưng Yên,268,Huyện Yên Mỹ,2205,1828,26
-346,Hưng Yên,268,Huyện Mỹ Hào,2208,1827,26
-347,Hưng Yên,268,Huyện Ân Thi,2203,1825,26
-348,Hưng Yên,268,Huyện Khoái Châu,2204,1826,26
-349,Hưng Yên,268,Huyện Kim Động,2202,1717,26
-350,Hưng Yên,268,Huyện Tiên Lữ,2206,2018,26
-351,Hưng Yên,268,Huyện Phù Cừ,2207,2194,26
-352,Khánh Hòa,208,Thành phố Nha Trang,4101,1548,27
-353,Khánh Hòa,208,Thành phố Cam Ranh,4106,1664,27
-354,Khánh Hòa,208,Huyện Cam Lâm,4109,1902,27
-355,Khánh Hòa,208,Huyện Vạn Ninh,4102,1829,27
-356,Khánh Hòa,208,Thị xã Ninh Hòa,4103,2061,27
-357,Khánh Hòa,208,Huyện Khánh Vĩnh,4105,3213,27
-358,Khánh Hòa,208,Huyện Diên Khánh,4104,1739,27
-359,Khánh Hòa,208,Huyện Khánh Sơn,4107,3212,27
-360,Khánh Hòa,208,Huyện đảo Trường Sa,4108,2117,27
-361,Kiên Giang,219,Thành phố Rạch Giá,5401,1570,28
-362,Kiên Giang,219,Thị xã Hà Tiên,5402,2058,28
-363,Kiên Giang,219,Huyện Kiên Lương,5403,1950,28
-364,Kiên Giang,219,Huyện Hòn Đất,5404,1830,28
-365,Kiên Giang,219,Huyện Tân Hiệp,5405,1831,28
-366,Kiên Giang,219,Huyện Châu Thành,5406,1719,28
-367,Kiên Giang,219,Huyện Giồng Riềng,5407,1832,28
-368,Kiên Giang,219,Huyện Gò Quao,5408,2132,28
-369,Kiên Giang,219,Huyện An Biên,5409,1833,28
-370,Kiên Giang,219,Huyện An Minh,5410,3125,28
-371,Kiên Giang,219,Huyện Vĩnh Thuận,5411,2260,28
-372,Kiên Giang,219,Huyện đảo Phú Quốc,5412,2115,28
-373,Kiên Giang,219,Huyện đảo Kiên Hải,5413,2113,28
-374,Kiên Giang,219,Huyện U Minh Thượng,5414,2251,28
-375,Kiên Giang,219,Huyện Giang Thành,5415,2134,28
-376,Kon Tum,259,Thành phố Kon Tum,3601,1660,29
-377,Kon Tum,259,Huyện Đắk Glei,3602,1921,29
-378,Kon Tum,259,Huyện Ngọc Hồi,3603,2187,29
-379,Kon Tum,259,Huyện Đắk Tô,3604,2121,29
-380,Kon Tum,259,Huyện Kon Plông,3606,1834,29
-381,Kon Tum,259,Huyện Kon Rẫy,3608,2148,29
-382,Kon Tum,259,Huyện Đắk Hà,3607,1835,29
-383,Kon Tum,259,Huyện Sa Thầy,3605,2205,29
-384,Kon Tum,259,Huyện Tu Mơ Rông,3609,2225,29
-385,Kon Tum,259,Huyện Ia H Drai,3610,3446,29
-386,Lai Châu,264,Thành phố Lai Châu,0701,1675,30
-387,Lai Châu,264,Huyện Tam Đường,0702,2010,30
-388,Lai Châu,264,Huyện Mường Tè,0705,1980,30
-389,Lai Châu,264,Huyện Sìn Hồ,0704,2006,30
-390,Lai Châu,264,Huyện Phong Thổ,0703,1989,30
-391,Lai Châu,264,Huyện Than Uyên,0706,2025,30
-392,Lai Châu,264,Huyện Tân Uyên,0707,2017,30
-393,Lai Châu,264,Huyện Nậm Nhùm,0708,1984,30
-394,Lâm Đồng,209,Thành phố Đà Lạt,4201,1550,31
-395,Lâm Đồng,209,Thành phố Bảo Lộc,4202,1838,31
-396,Lâm Đồng,209,Huyện Đam Rông,4212,1919,31
-397,Lâm Đồng,209,Huyện Lạc Dương,4206,1956,31
-398,Lâm Đồng,209,Huyện Lâm Hà,4210,1958,31
-399,Lâm Đồng,209,Huyện Đơn Dương,4205,1836,31
-400,Lâm Đồng,209,Huyện Đức Trọng,4203,1837,31
-401,Lâm Đồng,209,Huyện Di Linh,4204,3160,31
-402,Lâm Đồng,209,Huyện Bảo Lâm,4211,1839,31
-403,Lâm Đồng,209,Huyện Đạ Huoai,4207,2104,31
-404,Lâm Đồng,209,Huyện Đạ Tẻh,4208,2106,31
-405,Lâm Đồng,209,Huyện Cát Tiên,4209,3146,31
-406,Lạng Sơn,247,Thành phố Lạng Sơn,1001,1642,32
-407,Lạng Sơn,247,Huyện Tràng Định,1002,2036,32
-408,Lạng Sơn,247,Huyện Bình Gia,1003,3138,32
-409,Lạng Sơn,247,Huyện Văn Lãng,1004,3310,32
-410,Lạng Sơn,247,Huyện Cao Lộc,1007,1904,32
-411,Lạng Sơn,247,Huyện Văn Quan,1006,3311,32
-412,Lạng Sơn,247,Huyện Bắc Sơn,1005,3134,32
-413,Lạng Sơn,247,Huyện Hữu Lũng,1011,1948,32
-414,Lạng Sơn,247,Huyện Chi Lăng,1009,3156,32
-415,Lạng Sơn,247,Huyện Lộc Bình,1008,1963,32
-416,Lạng Sơn,247,Huyện Đình Lập,1010,3182,32
-417,Lào Cai,269,Thành phố Lào Cai,0801,1682,33
-418,Lào Cai,269,Huyện Bát Xát,0803,1744,33
-419,Lào Cai,269,Huyện Mường Khương,0809,2171,33
-420,Lào Cai,269,Huyện Xi Ma Cai,0802,2264,33
-421,Lào Cai,269,Huyện Bắc Hà,0808,1892,33
-422,Lào Cai,269,Huyện Bảo Thắng,0804,2073,33
-423,Lào Cai,269,Huyện Bảo Yên,0807,1891,33
-424,Lào Cai,269,Huyện Sa Pa,0805,2005,33
-425,Lào Cai,269,Huyện Văn Bàn,0806,2043,33
-426,Long An,211,Thành phố Tân An,4901,1554,34
-427,Long An,211,Thị xã Kiến Tường,4915,3329,34
-428,Long An,211,Huyện Tân Hưng,4914,3273,34
-429,Long An,211,Huyện Vĩnh Hưng,4902,3315,34
-430,Long An,211,Huyện Mộc Hóa,4903,3227,34
-431,Long An,211,Huyện Tân Thạnh,4904,3276,34
-432,Long An,211,Huyện Thạnh Hóa,4905,3293,34
-433,Long An,211,Huyện Đức Huệ,4906,2129,34
-434,Long An,211,Huyện Đức Hòa,4907,1929,34
-435,Long An,211,Huyện Bến Lức,4908,1894,34
-436,Long An,211,Huyện Thủ Thừa,4909,2031,34
-437,Long An,211,Huyện Tân Trụ,4911,2016,34
-438,Long An,211,Huyện Cần Đước,4912,1906,34
-439,Long An,211,Huyện Cần Giuộc,4913,1907,34
-440,Long An,211,Huyện Châu Thành,4910,1909,34
-441,Nam Định,231,Thành phố Nam Định,2501,1613,35
-442,Nam Định,231,Huyện Mỹ Lộc,2502,1981,35
-443,Nam Định,231,Huyện Vụ Bản,2506,3319,35
-444,Nam Định,231,Huyện Ý Yên,2505,1841,35
-445,Nam Định,231,Huyện Nghĩa Hưng,2509,3243,35
-446,Nam Định,231,Huyện Nam Trực,2507,1983,35
-447,Nam Định,231,Huyện Trực Ninh,2508,3308,35
-448,Nam Định,231,Huyện Xuân Trường,2503,3323,35
-449,Nam Định,231,Huyện Giao Thủy,2504,3193,35
-450,Nam Định,231,Huyện Hải Hậu,2510,1840,35
-451,Nghệ An,235,Thành phố Vinh,2901,1617,36
-452,Nghệ An,235,Thị xã Cửa Lò,2902,1842,36
-453,Nghệ An,235,Thị xã Thái Hòa,2920,1850,36
-454,Nghệ An,235,Huyện Quế Phong,2919,3260,36
-455,Nghệ An,235,Huyện Quỳ Châu,2903,3261,36
-456,Nghệ An,235,Huyện Kỳ Sơn,2907,3211,36
-457,Nghệ An,235,Huyện Tương Dương,2908,3288,36
-458,Nghệ An,235,Huyện Nghĩa Đàn,2905,1851,36
-459,Nghệ An,235,Huyện Quỳ Hợp,2904,1852,36
-460,Nghệ An,235,Huyện Quỳnh Lưu,2906,1848,36
-461,Nghệ An,235,Huyện Con Cuông,2909,1853,36
-462,Nghệ An,235,Huyện Tân Kỳ,2910,1845,36
-463,Nghệ An,235,Huyện Anh Sơn,2913,1844,36
-464,Nghệ An,235,Huyện Diễn Châu,2912,1847,36
-465,Nghệ An,235,Huyện Yên Thành,2911,1846,36
-466,Nghệ An,235,Huyện Đô Lương,2914,1843,36
-467,Nghệ An,235,Huyện Thanh Chương,2915,3291,36
-468,Nghệ An,235,Huyện Nghi Lộc,2916,1854,36
-469,Nghệ An,235,Huyện Nam Đàn,2917,3233,36
-470,Nghệ An,235,Huyện Hưng Nguyên,2918,1947,36
-471,Nghệ An,235,Thị xã Hoàng Mai,2921,1849,36
-472,Ninh Bình,233,Thành phố Ninh Bình,2701,1615,37
-473,Ninh Bình,233,Thị xã Tam Điệp,2702,1713,37
-474,Ninh Bình,233,Huyện Nho Quan,2703,3247,37
-475,Ninh Bình,233,Huyện Gia Viễn,2704,3191,37
-476,Ninh Bình,233,Huyện Hoa Lư,2705,1944,37
-477,Ninh Bình,233,Huyện Yên Khánh,2708,1714,37
-478,Ninh Bình,233,Huyện Kim Sơn,2707,3205,37
-479,Ninh Bình,233,Huyện Yên Mô,2706,3327,37
-480,Ninh Thuận,261,Thành phố Phan Rang – Tháp Chàm,4501,1665,38
-481,Ninh Thuận,261,Huyện Bác Ái,4505,3129,38
-482,Ninh Thuận,261,Huyện Ninh Sơn,4502,1855,38
-483,Ninh Thuận,261,Huyện Ninh Hải,4503,1985,38
-484,Ninh Thuận,261,Huyện Ninh Phước,4504,1986,38
-485,Ninh Thuận,261,Huyện Thuận Bắc,4506,3301,38
-486,Ninh Thuận,261,Huyện Thuận Nam,4507,3302,38
-487,Phú Thọ,229,Thành phố Việt Trì,1501,1602,39
-488,Phú Thọ,229,Thị xã Phú Thọ,1502,2064,39
-489,Phú Thọ,229,Huyện Đoan Hùng,1503,1925,39
-490,Phú Thọ,229,Huyện Hạ Hòa,1505,1938,39
-491,Phú Thọ,229,Huyện Thanh Ba,1504,3290,39
-492,Phú Thọ,229,Huyện Phù Ninh,1509,1994,39
-493,Phú Thọ,229,Huyện Yên Lập,1507,2268,39
-494,Phú Thọ,229,Huyện Cẩm Khê,1506,1905,39
-495,Phú Thọ,229,Huyện Tam Nông,1511,3272,39
-496,Phú Thọ,229,Huyện Lâm Thao,1510,1959,39
-497,Phú Thọ,229,Huyện Thanh Sơn,1508,2029,39
-498,Phú Thọ,229,Huyện Thanh Thủy,1512,2237,39
-499,Phú Thọ,229,Huyện Tân Sơn,1513,2015,39
-500,Phú Yên,260,Thành phố Tuy Hòa,3901,1663,40
-501,Phú Yên,260,Thị xã Sông Cầu,3903,1856,40
-502,Phú Yên,260,Huyện Đồng Xuân,3902,3186,40
-503,Phú Yên,260,Huyện Tuy An,3904,3284,40
-504,Phú Yên,260,Huyện Sơn Hòa,3905,2211,40
-505,Phú Yên,260,Huyện Sông Hinh,3906,2206,40
-506,Phú Yên,260,Huyện Tây Hòa,3909,3278,40
-507,Phú Yên,260,Huyện Phú Hòa,3908,1993,40
-508,Phú Yên,260,Huyện Đông Hòa,3907,3184,40
-509,Quảng Bình,237,Thành Phố Đồng Hới,3101,1619,41
-510,Quảng Bình,237,Huyện Minh Hóa,3103,3224,41
-511,Quảng Bình,237,Huyện Tuyên Hóa,3102,3286,41
-512,Quảng Bình,237,Huyện Quảng Trạch,3104,3258,41
-513,Quảng Bình,237,Huyện Bố Trạch,3105,1858,41
-514,Quảng Bình,237,Huyện Quảng Ninh,3106,2002,41
-515,Quảng Bình,237,Huyện Lệ Thủy,3107,1857,41
-516,Quảng Bình,237,Thị xã Ba Đồn,3108,1859,41
-517,Quảng Nam,243,Thành phố Tam Kỳ,3401,1631,42
-518,Quảng Nam,243,Thành phố Hội An,3402,1632,42
-519,Quảng Nam,243,Huyện Tây Giang,3416,2219,42
-520,Quảng Nam,243,Huyện Đông Giang,3412,2125,42
-521,Quảng Nam,243,Huyện Đại Lộc,3405,1917,42
-522,Quảng Nam,243,Huyện Điện Bàn,3404,1736,42
-523,Quảng Nam,243,Huyện Duy Xuyên,3403,1735,42
-524,Quảng Nam,243,Huyện Quế Sơn,3406,2003,42
-525,Quảng Nam,243,Huyện Nam Giang,3413,2177,42
-526,Quảng Nam,243,Huyện Phước Sơn,3414,2198,42
-527,Quảng Nam,243,Huyện Hiệp Đức,3407,2139,42
-528,Quảng Nam,243,Huyện Thăng Bình,3408,2239,42
-529,Quảng Nam,243,Huyện Tiên Phước,3410,2224,42
-530,Quảng Nam,243,Huyện Bắc Trà My,3411,2078,42
-531,Quảng Nam,243,Huyện Nam Trà My,3415,2178,42
-532,Quảng Nam,243,Huyện Núi Thành,3409,1987,42
-533,Quảng Nam,243,Huyện Phú Ninh,3417,1995,42
-534,Quảng Nam,243,Huyện Nông Sơn,3418,2182,42
-535,Quảng Ngãi,242,Thành phố Quảng Ngãi,3501,1630,43
-536,Quảng Ngãi,242,Huyện Bình Sơn,3503,1898,43
-537,Quảng Ngãi,242,Huyện Trà Bồng,3504,3304,43
-538,Quảng Ngãi,242,Huyện Tây Trà,3514,2222,43
-539,Quảng Ngãi,242,Huyện Sơn Tịnh,3505,1737,43
-540,Quảng Ngãi,242,Huyện Tư Nghĩa,3507,1738,43
-541,Quảng Ngãi,242,Huyện Sơn Hà,3506,2210,43
-542,Quảng Ngãi,242,Huyện Sơn Tây,3513,3270,43
-543,Quảng Ngãi,242,Huyện Minh Long,3509,2167,43
-544,Quảng Ngãi,242,Huyện Nghĩa Hành,3508,1988,43
-545,Quảng Ngãi,242,Huyện Mộ Đức,3510,3226,43
-546,Quảng Ngãi,242,Huyện Đức Phổ,3511,1930,43
-547,Quảng Ngãi,242,Huyện Ba Tơ,3512,3127,43
-548,Quảng Ngãi,242,Huyện đảo Lý Sơn,3502,2114,43
-549,Quảng Ninh,230,Thành phố Hạ Long,1701,1604,44
-550,Quảng Ninh,230,Thành phố Móng Cái,1704,1603,44
-551,Quảng Ninh,230,Thành phố Cẩm Phả,1702,1683,44
-552,Quảng Ninh,230,Thành phố Uông Bí,1703,1686,44
-553,Quảng Ninh,230,Huyện Bình Liêu,1705,1896,44
-554,Quảng Ninh,230,Huyện Tiên Yên,1708,2019,44
-555,Quảng Ninh,230,Huyện Đầm Hà,1706,3180,44
-556,Quảng Ninh,230,Huyện Hải Hà,1707,1940,44
-557,Quảng Ninh,230,Huyện Ba Chẽ,1709,3126,44
-558,Quảng Ninh,230,Huyện đảo Vân Đồn,1713,1920,44
-559,Quảng Ninh,230,Huyện Hoành Bồ,1712,3199,44
-560,Quảng Ninh,230,Huyện Đông Triều,1710,3185,44
-561,Quảng Ninh,230,Thị xã Quảng Yên,1711,2066,44
-562,Quảng Ninh,230,Huyện đảo Cô Tô,1714,2109,44
-563,Quảng Trị,238,Thành phố Đông Hà,3201,1620,45
-564,Quảng Trị,238,Thị xã Quảng Trị,3202,1621,45
-565,Quảng Trị,238,Huyện Vĩnh Linh,3203,1861,45
-566,Quảng Trị,238,Huyện Hướng Hóa,3208,1860,45
-567,Quảng Trị,238,Huyện Gio Linh,3204,1936,45
-568,Quảng Trị,238,Huyện Đa Krông,3209,2105,45
-569,Quảng Trị,238,Huyện Cam Lộ,3205,1903,45
-570,Quảng Trị,238,Huyện Triệu Phong,3206,2040,45
-571,Quảng Trị,238,Huyện Hải Lăng,3207,2137,45
-572,Sóc Trăng,218,Thành phố Sóc Trăng,5901,1568,46
-573,Sóc Trăng,218,Huyện Châu Thành,5910,1910,46
-574,Sóc Trăng,218,Huyện Kế Sách,5902,1949,46
-575,Sóc Trăng,218,Huyện Mỹ Tú,5903,2173,46
-576,Sóc Trăng,218,Huyện Cù Lao Dung,5908,2093,46
-577,Sóc Trăng,218,Huyện Long Phú,5906,2161,46
-578,Sóc Trăng,218,Huyện Mỹ Xuyên,5904,1743,46
-579,Sóc Trăng,218,Thị xã Ngã Năm,5909,2062,46
-580,Sóc Trăng,218,Huyện Thạnh Trị,5905,2238,46
-581,Sóc Trăng,218,Thị xã Vĩnh Châu,5907,2272,46
-582,Sóc Trăng,218,Huyện Trần Đề,5911,2037,46
-583,Sơn La,266,Thành phố Sơn La,1401,1677,47
-584,Sơn La,266,Huyện Quỳnh Nhai,1402,2204,47
-585,Sơn La,266,Huyện Thuận Châu,1404,2032,47
-586,Sơn La,266,Huyện Mường La,1403,3230,47
-587,Sơn La,266,Huyện Bắc Yên,1405,2079,47
-588,Sơn La,266,Huyện Phù Yên,1406,1996,47
-589,Sơn La,266,Huyện Mộc Châu,1410,1976,47
-590,Sơn La,266,Huyện Yên Châu,1408,2267,47
-591,Sơn La,266,Huyện Mai Sơn,1407,1971,47
-592,Sơn La,266,Huyện Sông Mã,1409,2007,47
-593,Sơn La,266,Huyện Sốp Cộp,1411,3266,47
-594,Sơn La,266,Huyện Vân Hồ,1412,2255,47
-595,Tây Ninh,240,Thành phố Tây Ninh,4601,1626,48
-596,Tây Ninh,240,Huyện Tân Biên,4602,1862,48
-597,Tây Ninh,240,Huyện Tân Châu,4603,1863,48
-598,Tây Ninh,240,Huyện Dương Minh Châu,4604,1864,48
-599,Tây Ninh,240,Huyện Châu Thành,4605,1720,48
-600,Tây Ninh,240,Huyện Hòa Thành,4606,1721,48
-601,Tây Ninh,240,Huyện Gò Dầu,4608,1866,48
-602,Tây Ninh,240,Huyện Bến Cầu,4607,1865,48
-603,Tây Ninh,240,Huyện Trảng Bàng,4609,2035,48
-604,Thái Bình,226,Thành phố Thái Bình,2601,1599,49
-605,Thái Bình,226,Huyện Quỳnh Phụ,2602,1868,49
-606,Thái Bình,226,Huyện Hưng Hà,2603,1867,49
-607,Thái Bình,226,Huyện Đông Hưng,2604,1715,49
-608,Thái Bình,226,Huyện Thái Thụy,2608,1869,49
-609,Thái Bình,226,Huyện Tiền Hải,2607,3281,49
-610,Thái Bình,226,Huyện Kiến Xương,2606,1951,49
-611,Thái Bình,226,Huyện Vũ Thư,2605,1716,49
-612,Thái Nguyên,244,Thành phố Thái Nguyên,1201,1639,50
-613,Thái Nguyên,244,Thị xã Sông Công,1202,1684,50
-614,Thái Nguyên,244,Huyện Định Hóa,1203,1924,50
-615,Thái Nguyên,244,Huyện Phú Lương,1204,2195,50
-616,Thái Nguyên,244,Huyện Đồng Hỷ,1207,1731,50
-617,Thái Nguyên,244,Huyện Võ Nhai,1205,2051,50
-618,Thái Nguyên,244,Huyện Đại Từ,1206,1918,50
-619,Thái Nguyên,244,Huyện Phổ Yên,1209,1990,50
-620,Thái Nguyên,244,Huyện Phú Bình,1208,1991,50
-621,Thanh Hóa,234,Thành phố Thanh Hóa,2801,1616,51
-622,Thanh Hóa,234,Thị xã Bỉm Sơn,2802,1876,51
-623,Thanh Hóa,234,Thị xã Sầm Sơn,2803,1712,51
-624,Thanh Hóa,234,Huyện Mường Lát,2806,1878,51
-625,Thanh Hóa,234,Huyện Quan Hóa,2804,1879,51
-626,Thanh Hóa,234,Huyện Bá Thước,2807,2070,51
-627,Thanh Hóa,234,Huyện Quan Sơn,2805,2000,51
-628,Thanh Hóa,234,Huyện Lang Chánh,2811,3216,51
-629,Thanh Hóa,234,Huyện Ngọc Lặc,2812,1874,51
-630,Thanh Hóa,234,Huyện Cẩm Thủy,2814,3147,51
-631,Thanh Hóa,234,Huyện Thạch Thành,2813,1880,51
-632,Thanh Hóa,234,Huyện Hà Trung,2821,1877,51
-633,Thanh Hóa,234,Huyện Vĩnh Lộc,2816,1881,51
-634,Thanh Hóa,234,Huyện Yên Định,2827,1875,51
-635,Thanh Hóa,234,Huyện Thọ Xuân,2815,1873,51
-636,Thanh Hóa,234,Huyện Thường Xuân,2808,1872,51
-637,Thanh Hóa,234,Huyện Triệu Sơn,2818,2249,51
-638,Thanh Hóa,234,Huyện Thiệu Hóa,2817,3298,51
-639,Thanh Hóa,234,Huyện Hoằng Hóa,2822,1748,51
-640,Thanh Hóa,234,Huyện Hậu Lộc,2824,1942,51
-641,Thanh Hóa,234,Huyện Nga Sơn,2823,3241,51
-642,Thanh Hóa,234,Huyện Như Xuân,2809,1871,51
-643,Thanh Hóa,234,Huyện Như Thanh,2810,2190,51
-644,Thanh Hóa,234,Huyện Nông Cống,2819,2181,51
-645,Thanh Hóa,234,Huyện Đông Sơn,2820,1927,51
-646,Thanh Hóa,234,Huyện Quảng Xương,2825,1747,51
-647,Thanh Hóa,234,Huyện Tĩnh Gia,2826,1870,51
-648,Thừa Thiên – Huế,223,Thành phố Huế,3301,1585,52
-649,Thừa Thiên – Huế,223,Huyện Phong Điền,3302,2193,52
-650,Thừa Thiên – Huế,223,Huyện Quảng Điền,3303,3257,52
-651,Thừa Thiên – Huế,223,Huyện Phú Vang,3305,1749,52
-652,Thừa Thiên – Huế,223,Thị xã Hương Thủy,3306,1698,52
-653,Thừa Thiên – Huế,223,Thị xã Hương Trà,3304,1697,52
-654,Thừa Thiên – Huế,223,Huyện A Lưới,3309,1885,52
-655,Thừa Thiên – Huế,223,Huyện Phú Lộc,3307,1882,52
-656,Thừa Thiên – Huế,223,Huyện Nam Đông,3308,3234,52
-657,Tiền Giang,212,Thành phố Mỹ Tho,5301,1556,53
-658,Tiền Giang,212,Thị xã Gò Công,5302,2057,53
-659,Tiền Giang,212,Thị xã Cai Lậy,5311,2055,53
-660,Tiền Giang,212,Huyện Tân Phước,5309,3275,53
-661,Tiền Giang,212,Huyện Cái Bè,5303,1900,53
-662,Tiền Giang,212,Huyện Cai Lậy,5304,2084,53
-663,Tiền Giang,212,Huyện Châu Thành,5305,1740,53
-664,Tiền Giang,212,Huyện Chợ Gạo,5306,1741,53
-665,Tiền Giang,212,Huyện Gò Công Tây,5307,1933,53
-666,Tiền Giang,212,Huyện Gò Công Đông,5308,1932,53
-667,Tiền Giang,212,Huyện Tân Phú Đông,5310,2216,53
-668,Trà Vinh,214,Thành phố Trà Vinh,5801,1560,54
-669,Trà Vinh,214,Huyện Càng Long,5802,2086,54
-670,Trà Vinh,214,Huyện Cầu Kè,5803,2091,54
-671,Trà Vinh,214,Huyện Tiểu Cần,5804,2020,54
-672,Trà Vinh,214,Huyện Châu Thành,5805,1911,54
-673,Trà Vinh,214,Huyện Cầu Ngang,5807,1908,54
-674,Trà Vinh,214,Huyện Trà Cú,5806,2033,54
-675,Trà Vinh,214,Huyện Duyên Hải,5808,2103,54
-676,Trà Vinh,214,Thị xã Duyên Hải,5809,3443,54
-677,Tuyên Quang,228,Thành phố Tuyên Quang,0901,1601,55
-678,Tuyên Quang,228,Huyện Lâm Bình,0902,1957,55
-679,Tuyên Quang,228,Huyện Na Hang,0903,1982,55
-680,Tuyên Quang,228,Huyện Chiêm Hóa,0904,3157,55
-681,Tuyên Quang,228,Huyện Hàm Yên,0905,1941,55
-682,Tuyên Quang,228,Huyện Yên Sơn,0906,1745,55
-683,Tuyên Quang,228,Huyện Sơn Dương,0907,3267,55
-684,Vĩnh Long,215,Thành phố Vĩnh Long,5701,1562,56
-685,Vĩnh Long,215,Huyện Long Hồ,5702,1962,56
-686,Vĩnh Long,215,Huyện Mang Thít,5703,2164,56
-687,Vĩnh Long,215,Huyện Vũng Liêm,5707,2263,56
-688,Vĩnh Long,215,Huyện Tam Bình,5705,2008,56
-689,Vĩnh Long,215,Thị xã Bình Minh,5704,2054,56
-690,Vĩnh Long,215,Huyện Trà Ôn,5706,2034,56
-691,Vĩnh Long,215,Huyện Bình Tân,5708,2081,56
-692,Vĩnh Phúc,221,Thành phố Vĩnh Yên,1601,1578,57
-693,Vĩnh Phúc,221,Thị xã Phúc Yên,1608,2065,57
-694,Vĩnh Phúc,221,Huyện Lập Thạch,1603,1960,57
-695,Vĩnh Phúc,221,Huyện Tam Dương,1602,2009,57
-696,Vĩnh Phúc,221,Huyện Tam Đảo,1609,3271,57
-697,Vĩnh Phúc,221,Huyện Bình Xuyên,1606,1732,57
-698,Vĩnh Phúc,221,Huyện Yên Lạc,1605,1734,57
-699,Vĩnh Phúc,221,Huyện Vĩnh Tường,1604,1733,57
-700,Vĩnh Phúc,221,Huyện Sông Lô,1607,3265,57
-701,Yên Bái,263,Thành phố Yên Bái,1301,1674,58
-702,Yên Bái,263,Thị xã Nghĩa Lộ,1302,2063,58
-703,Yên Bái,263,Huyện Lục Yên,1309,1967,58
-704,Yên Bái,263,Huyện Văn Yên,1303,2047,58
-705,Yên Bái,263,Huyện Mù Cang Chải,1305,1977,58
-706,Yên Bái,263,Huyện Trấn Yên,1307,2039,58
-707,Yên Bái,263,Huyện Trạm Tấu,1308,2248,58
-708,Yên Bái,263,Huyện Văn Chấn,1306,2044,58
-709,Yên Bái,263,Huyện Yên Bình,1304,2266,58
-710,Hồ Chí Minh,202,Quận đặc biệt,02202,1580,1
-711,Hồ Chí Minh,202,Quận đặc biệt DC,02202b,3448,1
-712,Hà Nội,201,Quận đặc biệt,1A00,3442,2
-713,Đà Nẵng,203,Quận đặc biệt,0409,3447,3
+id,province_name,province_id,district_name,district_code,district_id,pref_eccube_id,create_date,update_date
+1,An Giang,217,Thành phố Long Xuyên,5101,1566,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+2,An Giang,217,Thành phố Châu Đốc,5102,1753,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+3,An Giang,217,Huyện An Phú,5103,1754,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+4,An Giang,217,Huyện Tân Châu,5104,1755,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+5,An Giang,217,Huyện Phú Tân,5105,1756,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+6,An Giang,217,Huyện Châu Phú,5108,1758,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+7,An Giang,217,Huyện Tịnh Biên,5106,1752,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+8,An Giang,217,Huyện Tri Tôn,5107,1751,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+9,An Giang,217,Huyện Châu Thành,5110,1718,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+10,An Giang,217,Huyện Chợ Mới,5109,1757,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+11,An Giang,217,Huyện Thoại Sơn,5111,1750,4,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+12,Bà Rịa – Vũng Tàu,206,Thành phố Vũng Tàu,5201,1544,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+13,Bà Rịa – Vũng Tàu,206,Thành phố Bà Rịa,5202,1667,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+14,Bà Rịa – Vũng Tàu,206,Huyện Châu Đức,5207,1709,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+15,Bà Rịa – Vũng Tàu,206,Huyện Xuyên Mộc,5203,1699,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+16,Bà Rịa – Vũng Tàu,206,Huyện Long Điền,5204,1689,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+17,Bà Rịa – Vũng Tàu,206,Huyện Đất Đỏ,5208,1690,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+18,Bà Rịa – Vũng Tàu,206,Huyện Tân Thành,5206,1701,5,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+19,Bắc Giang,248,Thành phố Bắc Giang,1801,1643,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+20,Bắc Giang,248,Huyện Yên Thế,1802,1765,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+21,Bắc Giang,248,Huyện Tân Yên,1806,1762,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+22,Bắc Giang,248,Huyện Lạng Giang,1808,1760,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+23,Bắc Giang,248,Huyện Lục Nam,1805,1965,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+24,Bắc Giang,248,Huyện Lục Ngạn,1803,1966,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+25,Bắc Giang,248,Huyện Sơn Động,1804,1761,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+26,Bắc Giang,248,Huyện Yên Dũng,1810,1764,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+27,Bắc Giang,248,Huyện Việt Yên,1809,1763,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+28,Bắc Giang,248,Huyện Hiệp Hòa,1807,1759,6,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+29,Bắc Kạn,245,Thành Phố Bắc Kạn,1101,1640,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+30,Bắc Kạn,245,Huyện Pác Nặm,1108,3249,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+31,Bắc Kạn,245,Huyện Ba Bể,1106,1887,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+32,Bắc Kạn,245,Huyện Ngân Sơn,1105,3242,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+33,Bắc Kạn,245,Huyện Bạch Thông,1103,1889,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+34,Bắc Kạn,245,Huyện Chợ Đồn,1102,1913,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+35,Bắc Kạn,245,Huyện Chợ Mới,1107,1914,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+36,Bắc Kạn,245,Huyện Na Rì,1104,3232,7,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+37,Bạc Liêu,253,Thành phố Bạc Liêu,6001,1655,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+38,Bạc Liêu,253,Huyện Hồng Dân,6003,1946,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+39,Bạc Liêu,253,Huyện Phước Long,6005,1998,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+40,Bạc Liêu,253,Huyện Vĩnh Lợi,6002,2050,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+41,Bạc Liêu,253,Huyện Giá Rai,6004,1935,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+42,Bạc Liêu,253,Huyện Đông Hải,6006,1926,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+43,Bạc Liêu,253,Huyện Hòa Bình,6007,1723,8,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+44,Bắc Ninh,249,Thành phố Bắc Ninh,1901,1644,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+45,Bắc Ninh,249,Huyện Yên Phong,1902,1768,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+46,Bắc Ninh,249,Huyện Quế Võ,1903,1728,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+47,Bắc Ninh,249,Huyện Tiên Du,1904,1729,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+48,Bắc Ninh,249,Thị xã Từ Sơn,1905,1730,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+49,Bắc Ninh,249,Huyện Thuận Thành,1906,1767,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+50,Bắc Ninh,249,Huyện Gia Bình,1907,1766,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+51,Bắc Ninh,249,Huyện Lương Tài,1908,1969,9,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+52,Bến Tre,213,Thành phố Bến Tre,5601,1558,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+53,Bến Tre,213,Huyện Châu Thành,5602,1742,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+54,Bến Tre,213,Huyện Chợ Lách,5603,3158,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+55,Bến Tre,213,Huyện Mỏ Cày Nam,5609,1975,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+56,Bến Tre,213,Huyện Giồng Trôm,5605,1937,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+57,Bến Tre,213,Huyện Bình Đại,5606,1895,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+58,Bến Tre,213,Huyện Ba Tri,5607,1888,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+59,Bến Tre,213,Huyện Thạnh Phú,5608,2028,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+60,Bến Tre,213,Huyện Mỏ Cày Bắc,5604,1974,10,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+61,Bình Định,262,Thành phố Quy Nhơn,3701,1662,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+62,Bình Định,262,Huyện An Lão,3702,1886,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+63,Bình Định,262,Huyện Hoài Nhơn,3704,1771,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+64,Bình Định,262,Huyện Hoài Ân,3703,2140,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+65,Bình Định,262,Huyện Phù Mỹ,3705,3254,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+66,Bình Định,262,Huyện Vĩnh Thạnh,3707,2258,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+67,Bình Định,262,Huyện Tây Sơn,3708,3279,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+68,Bình Định,262,Huyện Phù Cát,3706,1770,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+69,Bình Định,262,Thị xã An Nhơn,3710,1769,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+70,Bình Định,262,Huyện Tuy Phước,3711,2023,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+71,Bình Định,262,Huyện Vân Canh,3709,3312,14,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+72,Bình Dương,205,Thành phố Thủ Dầu Một,4401,1538,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+73,Bình Dương,205,Huyện Bàu Bàng,4408,3132,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+74,Bình Dương,205,Huyện Dầu Tiếng,4407,1746,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+75,Bình Dương,205,Thị xã Bến Cát,4402,1696,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+76,Bình Dương,205,Huyện Phú Giáo,4406,1992,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+77,Bình Dương,205,Thị xã Tân Uyên,4403,1695,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+78,Bình Dương,205,Thị xã Dĩ An,4405,1540,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+79,Bình Dương,205,Thị xã Thuận An,4404,1541,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+80,Bình Dương,205,Huyện Bắc Tân Uyên,4409,3135,11,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+81,Bình Phước,239,Thị xã Phước Long,4307,1775,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+82,Bình Phước,239,Thị xã Đồng Xoài,4301,1625,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+83,Bình Phước,239,Thị xã Bình Long,4304,1774,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+84,Bình Phước,239,Huyện Bù Gia Mập,4310,3141,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+85,Bình Phước,239,Huyện Lộc Ninh,4305,1964,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+86,Bình Phước,239,Huyện Bù Đốp,4306,3140,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+87,Bình Phước,239,Huyện Hớn Quản,4309,1773,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+88,Bình Phước,239,Huyện Đồng Phú,4302,1722,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+89,Bình Phước,239,Huyện Bù Đăng,4308,1899,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+90,Bình Phước,239,Huyện Chơn Thành,4303,1772,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+91,Bình Phước,239,Huyện Phú Riềng,4311,3444,12,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+92,Bình Thuận,258,Thành phố Phan Thiết,4701,1666,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+93,Bình Thuận,258,Thị xã La Gi,4710,1778,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+94,Bình Thuận,258,Huyện Tuy Phong,4702,1781,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+95,Bình Thuận,258,Huyện Bắc Bình,4703,1780,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+96,Bình Thuận,258,Huyện Hàm Thuận Bắc,4704,1777,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+97,Bình Thuận,258,Huyện Hàm Thuận Nam,4705,1776,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+98,Bình Thuận,258,Huyện Tánh Linh,4708,2012,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+99,Bình Thuận,258,Huyện Đức Linh,4707,1779,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+100,Bình Thuận,258,Huyện Hàm Tân,4706,3196,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+101,Bình Thuận,258,Huyện đảo Phú Quý,4709,2116,13,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+102,Cà Mau,252,Thành phố Cà Mau,6101,1654,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+103,Cà Mau,252,Huyện U Minh,6103,2042,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+104,Cà Mau,252,Huyện Thới Bình,6102,1782,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+105,Cà Mau,252,Huyện Trần Văn Thời,6104,2038,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+106,Cà Mau,252,Huyện Cái Nước,6105,1901,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+107,Cà Mau,252,Huyện Đầm Dơi,6106,1922,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+108,Cà Mau,252,Huyện Năm Căn,6108,1783,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+109,Cà Mau,252,Huyện Phú Tân,6109,1883,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+110,Cà Mau,252,Huyện Ngọc Hiển,6107,2186,15,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+111,Cần Thơ,220,Quận Ninh Kiều,5501,1572,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+112,Cần Thơ,220,Quận Ô Môn,5504,1575,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+113,Cần Thơ,220,Quận Bình Thủy,5502,1573,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+114,Cần Thơ,220,Quận Cái Răng,5503,1574,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+115,Cần Thơ,220,Quận Thốt Nốt,5508,1576,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+116,Cần Thơ,220,Huyện Vĩnh Thạnh,5507,3317,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+117,Cần Thơ,220,Huyện Cờ Đỏ,5506,3150,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+118,Cần Thơ,220,Huyện Phong Điền,5505,3250,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+119,Cần Thơ,220,Huyện Thới Lai,5509,3300,16,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+120,Cao Bằng,246,Thành phố Cao Bằng,0601,1641,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+121,Cao Bằng,246,Huyện Bảo Lâm,0612,1890,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+122,Cao Bằng,246,Huyện Bảo Lạc,0602,3130,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+123,Cao Bằng,246,Huyện Thông Nông,0603,3299,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+124,Cao Bằng,246,Huyện Hà Quảng,0604,1939,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+125,Cao Bằng,246,Huyện Trà Lĩnh,0605,3305,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+126,Cao Bằng,246,Huyện Trùng Khánh,0606,2041,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+127,Cao Bằng,246,Huyện Hạ Lang,0611,3194,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+128,Cao Bằng,246,Huyện Quảng Uyên,0609,3259,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+129,Cao Bằng,246,Huyện Phục Hòa,0613,1997,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+130,Cao Bằng,246,Huyện Hòa An,0608,1943,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+131,Cao Bằng,246,Huyện Nguyên Bình,0607,3246,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+132,Cao Bằng,246,Huyện Thạch An,0610,3289,17,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+133,Đà Nẵng,203,Quận Liên Chiểu,0405,1530,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+134,Đà Nẵng,203,Quận Thanh Khê,0402,1527,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+135,Đà Nẵng,203,Quận Hải Châu,0401,1526,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+136,Đà Nẵng,203,Quận Sơn Trà,0403,1528,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+137,Đà Nẵng,203,Quận Ngũ Hành Sơn,0404,1529,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+138,Đà Nẵng,203,Quận Cẩm Lệ,0407,1531,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+139,Đà Nẵng,203,Huyện Hòa Vang,0406,1687,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+140,Đắk Lắk,210,Thành phố Buôn Ma Thuột,4001,1552,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+141,Đắk Lắk,210,Thị Xã Buôn Hồ,4015,1788,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+142,Đắk Lắk,210,Huyện Ea H leo,4002,1786,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+143,Đắk Lắk,210,Huyện Ea Súp,4005,2131,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+144,Đắk Lắk,210,Huyện Buôn Ðôn,4013,1784,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+145,Đắk Lắk,210,Huyện Cư M gar,4006,1785,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+146,Đắk Lắk,210,Huyện Krông Búk,4003,2150,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+147,Đắk Lắk,210,Huyện Krông Năng,4004,1787,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+148,Đắk Lắk,210,Huyện Ea Kar,4008,1931,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+149,Đắk Lắk,210,Huyện M đrắk,4009,3418,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+150,Đắk Lắk,210,Huyện Krông Bông,4011,1789,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+151,Đắk Lắk,210,Huyện Krông Pắc,4007,1954,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+152,Đắk Lắk,210,Huyện Krông Ana,4010,1884,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+153,Đắk Lắk,210,Huyện Lắk,4012,3217,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+154,Đắk Lắk,210,Huyện Cư Kuin,4014,3153,59,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+155,Đắk Nông,241,Thị xã Gia Nghĩa,6301,1627,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+156,Đắk Nông,241,Huyện Đắk Glong,6307,1791,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+157,Đắk Nông,241,Huyện Cư Jút,6304,3152,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+158,Đắk Nông,241,Huyện Đắk Mil,6303,1792,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+159,Đắk Nông,241,Huyện Krông Nô,6306,2151,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+160,Đắk Nông,241,Huyện Đắk Song,6305,2120,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+161,Đắk Nông,241,Huyện Đắk R lấp,6302,1790,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+162,Đắk Nông,241,Huyện Tuy Đức,6308,2227,60,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+163,Điện Biên,265,Thành phố Điện Biên Phủ,6201,1676,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+164,Điện Biên,265,Thị Xã Mường Lay,6202,2060,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+165,Điện Biên,265,Huyện Mường Nhé,6208,1979,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+166,Điện Biên,265,Huyện Mường Chà,6205,1978,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+167,Điện Biên,265,Huyện Tủa Chùa,6206,2021,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+168,Điện Biên,265,Huyện Tuần Giáo,6204,2022,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+169,Điện Biên,265,Huyện Điện Biên,6203,1923,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+170,Điện Biên,265,Huyện Điện Biên Đông,6207,2123,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+171,Điện Biên,265,Huyện Mường Ảng,6209,2170,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+172,Điện Biên,265,Huyện Nậm Pồ,6210,2179,61,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+173,Đồng Nai,204,Thành phố Biên Hòa,4801,1536,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+174,Đồng Nai,204,Thị xã Long Khánh,4806,1692,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+175,Đồng Nai,204,Huyện Tân Phú,4803,1693,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+176,Đồng Nai,204,Huyện Vĩnh Cửu,4802,2049,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+177,Đồng Nai,204,Huyện Định Quán,4804,1700,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+178,Đồng Nai,204,Huyện Trảng Bom,4810,1691,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+179,Đồng Nai,204,Huyện Thống Nhất,4805,1705,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+180,Đồng Nai,204,Huyện Cẩm Mỹ,4811,1702,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+181,Đồng Nai,204,Huyện Long Thành,4808,1694,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+182,Đồng Nai,204,Huyện Xuân Lộc,4807,1704,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+183,Đồng Nai,204,Huyện Nhơn Trạch,4809,1708,62,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+184,Đồng Tháp,216,Thành phố Cao Lãnh,5001,1564,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+185,Đồng Tháp,216,Thành phố Sa Đéc,5002,1668,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+186,Đồng Tháp,216,Thị xã Hồng Ngự,5012,2059,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+187,Đồng Tháp,216,Huyện Tân Hồng,5003,2013,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+188,Đồng Tháp,216,Huyện Hồng Ngự,5004,3200,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+189,Đồng Tháp,216,Huyện Tam Nông,5005,2011,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+190,Đồng Tháp,216,Huyện Tháp Mười,5009,2030,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+191,Đồng Tháp,216,Huyện Cao Lãnh,5007,1724,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+192,Đồng Tháp,216,Huyện Thanh Bình,5006,2026,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+193,Đồng Tháp,216,Huyện Lấp Vò,5008,1961,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+194,Đồng Tháp,216,Huyện Lai Vung,5010,1725,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+195,Đồng Tháp,216,Huyện Châu Thành,5011,3155,63,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+196,Gia Lai,207,Thành phố Pleiku,3801,1546,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+197,Gia Lai,207,Thị xã An Khê,3805,1800,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+198,Gia Lai,207,Thị xã Ayun Pa,3810,1798,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+199,Gia Lai,207,Huyện KBang,3804,2144,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+200,Gia Lai,207,Huyện Đắk Đoa,3813,2118,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+201,Gia Lai,207,Huyện Chư Păh,3802,1801,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+202,Gia Lai,207,Huyện Ia Grai,3812,1793,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+203,Gia Lai,207,Huyện Mang Yang,3803,2165,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+204,Gia Lai,207,Huyện Kông Chro,3806,2149,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+205,Gia Lai,207,Huyện Đức Cơ,3807,1794,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+206,Gia Lai,207,Huyện Chư Prông,3808,1795,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+207,Gia Lai,207,Huyện Chư Sê,3809,1796,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+208,Gia Lai,207,Huyện Đắk Pơ,3815,2119,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+209,Gia Lai,207,Huyện Ia Pa,3814,1799,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+210,Gia Lai,207,Huyện Krông Pa,3811,2152,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+211,Gia Lai,207,Huyện Phú Thiện,3816,1797,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+212,Gia Lai,207,Huyện Chư Pưh,3817,2101,18,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+213,Hà Giang,227,Thành phố Hà Giang,0501,1600,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+214,Hà Giang,227,Huyện Đồng Văn,0502,1928,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+215,Hà Giang,227,Huyện Mèo Vạc,0503,1973,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+216,Hà Giang,227,Huyện Yên Minh,0504,2053,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+217,Hà Giang,227,Huyện Quản Bạ,0505,1999,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+218,Hà Giang,227,Huyện Vị Xuyên,0506,2256,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+219,Hà Giang,227,Huyện Bắc Mê,0507,2075,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+220,Hà Giang,227,Huyện Hoàng Su Phì,0508,1945,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+221,Hà Giang,227,Huyện Xín Mần,0509,2052,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+222,Hà Giang,227,Huyện Bắc Quang,0510,1893,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+223,Hà Giang,227,Huyện Quang Bình,0511,2001,19,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+224,Hà Nam,232,Thành phố Phủ Lý,2401,1614,20,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+225,Hà Nam,232,Huyện Duy Tiên,2402,1802,20,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+226,Hà Nam,232,Huyện Kim Bảng,2403,1952,20,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+227,Hà Nam,232,Huyện Thanh Liêm,2405,2027,20,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+228,Hà Nam,232,Huyện Bình Lục,2406,1897,20,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+229,Hà Nam,232,Huyện Lý Nhân,2404,1970,20,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+230,Hà Nội,201,Quận Ba Đình,1A01,1484,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+231,Hà Nội,201,Quận Hoàn Kiếm,1A02,1489,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+232,Hà Nội,201,Quận Tây Hồ,1A05,1492,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+233,Hà Nội,201,Quận Long Biên,1A09,1491,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+234,Hà Nội,201,Quận Cầu Giấy,1A06,1485,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+235,Hà Nội,201,Quận Đống Đa,1A04,1486,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+236,Hà Nội,201,Quận Hai Bà Trưng,1A03,1488,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+237,Hà Nội,201,Quận Hoàng Mai,1A08,1490,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+238,Hà Nội,201,Quận Thanh Xuân,1A07,1493,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+239,Hà Nội,201,Huyện Sóc Sơn,1A14,1583,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+240,Hà Nội,201,Huyện Đông Anh,1A13,1582,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+241,Hà Nội,201,Huyện Gia Lâm,1A12,1703,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+242,Hà Nội,201,Quận Nam Từ Liêm,0130,3440,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+243,Hà Nội,201,Huyện Thanh Trì,1A11,1710,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+244,Hà Nội,201,Quận Bắc Từ Liêm,0110,1482,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+245,Hà Nội,201,Huyện Mê Linh,1B29,1581,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+246,Hà Nội,201,Quận Hà Đông,1B15,1542,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+247,Hà Nội,201,Thị xã Sơn Tây,1B16,1711,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+248,Hà Nội,201,Huyện Ba Vì,1B17,1803,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+249,Hà Nội,201,Huyện Phúc Thọ,1B18,1807,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+250,Hà Nội,201,Huyện Đan Phượng,1B22,1804,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+251,Hà Nội,201,Huyện Hoài Đức,1B23,1805,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+252,Hà Nội,201,Huyện Quốc Oai ,1B20,2004,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+253,Hà Nội,201,Huyện Thạch Thất,1B19,1808,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+254,Hà Nội,201,Huyện Chương Mỹ,1B21,1915,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+255,Hà Nội,201,Huyện Thanh Oai,1B24,1809,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+256,Hà Nội,201,Huyện Thường Tín,1B27,3303,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+257,Hà Nội,201,Huyện Phú Xuyên,1B28,3255,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+258,Hà Nội,201,Huyện Ứng Hòa,1B26,1810,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+259,Hà Nội,201,Huyện Mỹ Đức,1B25,1806,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+260,Hà Tĩnh,236,Thành phố Hà Tĩnh,3001,1618,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+261,Hà Tĩnh,236,Thị xã Hồng Lĩnh,3002,1814,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+262,Hà Tĩnh,236,Huyện Hương Sơn,3003,3201,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+263,Hà Tĩnh,236,Huyện Đức Thọ,3004,3188,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+264,Hà Tĩnh,236,Huyện Vũ Quang,3011,3320,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+265,Hà Tĩnh,236,Huyện Nghi Xuân,3005,1813,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+266,Hà Tĩnh,236,Huyện Can Lộc,3006,3143,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+267,Hà Tĩnh,236,Huyện Hương Khê,3007,1812,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+268,Hà Tĩnh,236,Huyện Thạch Hà,3008,2024,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+269,Hà Tĩnh,236,Huyện Cẩm Xuyên,3009,1815,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+270,Hà Tĩnh,236,Huyện Kỳ Anh,3010,1811,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+271,Hà Tĩnh,236,Huyện Lộc Hà,3012,3220,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+272,Hà Tĩnh,236,Thị xã Kỳ Anh,3013,3441,21,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+273,Hải Dương,225,Thành phố Hải Dương,2101,1598,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+274,Hải Dương,225,Thị xã Chí Linh,2102,2056,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+275,Hải Dương,225,Huyện Nam Sách,2103,1727,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+276,Hải Dương,225,Huyện Kinh Môn,2104,1818,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+277,Hải Dương,225,Huyện Kim Thành,2111,1953,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+278,Hải Dương,225,Huyện Thanh Hà,2110,3292,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+279,Hải Dương,225,Huyện Cẩm Giàng,2109,1817,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+280,Hải Dương,225,Huyện Bình Giang,2112,1816,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+281,Hải Dương,225,Huyện Gia Lộc,2105,1934,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+282,Hải Dương,225,Huyện Tứ Kỳ,2106,3287,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+283,Hải Dương,225,Huyện Ninh Giang,2108,3238,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+284,Hải Dương,225,Huyện Thanh Miện,2107,3294,22,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+285,Hải Phòng,224,Quận Hồng Bàng,0301,1589,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+286,Hải Phòng,224,Quận Ngô Quyền,0303,1587,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+287,Hải Phòng,224,Quận Lê Chân,0302,1588,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+288,Hải Phòng,224,Quận Hải An,0305,1591,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+289,Hải Phòng,224,Quận Kiến An,0304,1590,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+290,Hải Phòng,224,Quận Đồ Sơn,0306,1707,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+291,Hải Phòng,224,Quận Dương Kinh,0315,1706,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+292,Hải Phòng,224,Huyện Thủy Nguyên,0309,1726,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+293,Hải Phòng,224,Huyện An Dương,0310,1819,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+294,Hải Phòng,224,Huyện An Lão,0307,1820,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+295,Hải Phòng,224,Huyện Kiến Thụy,0308,3203,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+296,Hải Phòng,224,Huyện Tiên Lãng,0311,1821,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+297,Hải Phòng,224,Huyện Vĩnh Bảo,0312,1822,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+298,Hải Phòng,224,Huyện đảo Cát Hải,0313,2108,23,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+299,Hậu Giang,250,Thành phố Vị Thanh,6401,1653,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+300,Hậu Giang,250,Thị xã Ngã Bảy,6407,1823,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+301,Hậu Giang,250,Huyện Châu Thành A,6406,1912,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+302,Hậu Giang,250,Huyện Châu Thành,6405,2096,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+303,Hậu Giang,250,Huyện Phụng Hiệp,6404,1824,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+304,Hậu Giang,250,Huyện Vị Thuỷ,6402,2048,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+305,Hậu Giang,250,Huyện Long Mỹ,6403,3445,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+306,Hậu Giang,250,Thị xã Long Mỹ,6408,3218,24,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+307,Hồ Chí Minh,202,Quận 1,0201,1442,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+308,Hồ Chí Minh,202,Quận 12,0212,1454,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+309,Hồ Chí Minh,202,Quận Thủ Đức,0218,1463,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+310,Hồ Chí Minh,202,Quận 9,0209,1451,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+311,Hồ Chí Minh,202,Quận Gò Vấp,0213,1461,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+312,Hồ Chí Minh,202,Quận Bình Thạnh,0216,1462,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+313,Hồ Chí Minh,202,Quận Tân Bình,0214,1455,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+314,Hồ Chí Minh,202,Quận Tân Phú,0215,1456,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+315,Hồ Chí Minh,202,Quận Phú Nhuận,0217,1457,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+316,Hồ Chí Minh,202,Quận 2,0202,1443,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+317,Hồ Chí Minh,202,Quận 3,0203,1444,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+318,Hồ Chí Minh,202,Quận 10,0210,1452,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+319,Hồ Chí Minh,202,Quận 11,0211,1453,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+320,Hồ Chí Minh,202,Quận 4,0204,1446,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+321,Hồ Chí Minh,202,Quận 5,0205,1447,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+322,Hồ Chí Minh,202,Quận 6,0206,1448,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+323,Hồ Chí Minh,202,Quận 8,0208,1450,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+324,Hồ Chí Minh,202,Quận Bình Tân,0219,1458,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+325,Hồ Chí Minh,202,Quận 7,0207,1449,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+326,Hồ Chí Minh,202,Huyện Củ Chi,0221,1460,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+327,Hồ Chí Minh,202,Huyện Hóc Môn,0222,1459,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+328,Hồ Chí Minh,202,Huyện Bình Chánh,0220,1533,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+329,Hồ Chí Minh,202,Huyện Nhà Bè,0223,1534,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+330,Hồ Chí Minh,202,Huyện Cần Giờ,0224,2090,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+331,Hòa Bình,267,Thành phố Hòa Bình,2301,1678,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+332,Hòa Bình,267,Huyện Đà Bắc,2302,1916,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+333,Hòa Bình,267,Huyện Kỳ Sơn,2306,1955,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+334,Hòa Bình,267,Huyện Lương Sơn,2307,1968,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+335,Hòa Bình,267,Huyện Kim Bôi,2308,2146,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+336,Hòa Bình,267,Huyện Cao Phong,2311,2087,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+337,Hòa Bình,267,Huyện Tân Lạc,2304,2014,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+338,Hòa Bình,267,Huyện Mai Châu,2303,2163,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+339,Hòa Bình,267,Huyện Lạc Sơn,2305,2156,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+340,Hòa Bình,267,Huyện Yên Thủy,2310,2270,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+341,Hòa Bình,267,Huyện Lạc Thủy,2309,2157,25,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+342,Hưng Yên,268,Thành phố Hưng Yên,2201,1680,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+343,Hưng Yên,268,Huyện Văn Lâm,2209,2046,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+344,Hưng Yên,268,Huyện Văn Giang,2210,2045,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+345,Hưng Yên,268,Huyện Yên Mỹ,2205,1828,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+346,Hưng Yên,268,Huyện Mỹ Hào,2208,1827,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+347,Hưng Yên,268,Huyện Ân Thi,2203,1825,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+348,Hưng Yên,268,Huyện Khoái Châu,2204,1826,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+349,Hưng Yên,268,Huyện Kim Động,2202,1717,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+350,Hưng Yên,268,Huyện Tiên Lữ,2206,2018,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+351,Hưng Yên,268,Huyện Phù Cừ,2207,2194,26,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+352,Khánh Hòa,208,Thành phố Nha Trang,4101,1548,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+353,Khánh Hòa,208,Thành phố Cam Ranh,4106,1664,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+354,Khánh Hòa,208,Huyện Cam Lâm,4109,1902,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+355,Khánh Hòa,208,Huyện Vạn Ninh,4102,1829,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+356,Khánh Hòa,208,Thị xã Ninh Hòa,4103,2061,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+357,Khánh Hòa,208,Huyện Khánh Vĩnh,4105,3213,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+358,Khánh Hòa,208,Huyện Diên Khánh,4104,1739,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+359,Khánh Hòa,208,Huyện Khánh Sơn,4107,3212,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+360,Khánh Hòa,208,Huyện đảo Trường Sa,4108,2117,27,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+361,Kiên Giang,219,Thành phố Rạch Giá,5401,1570,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+362,Kiên Giang,219,Thị xã Hà Tiên,5402,2058,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+363,Kiên Giang,219,Huyện Kiên Lương,5403,1950,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+364,Kiên Giang,219,Huyện Hòn Đất,5404,1830,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+365,Kiên Giang,219,Huyện Tân Hiệp,5405,1831,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+366,Kiên Giang,219,Huyện Châu Thành,5406,1719,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+367,Kiên Giang,219,Huyện Giồng Riềng,5407,1832,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+368,Kiên Giang,219,Huyện Gò Quao,5408,2132,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+369,Kiên Giang,219,Huyện An Biên,5409,1833,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+370,Kiên Giang,219,Huyện An Minh,5410,3125,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+371,Kiên Giang,219,Huyện Vĩnh Thuận,5411,2260,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+372,Kiên Giang,219,Huyện đảo Phú Quốc,5412,2115,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+373,Kiên Giang,219,Huyện đảo Kiên Hải,5413,2113,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+374,Kiên Giang,219,Huyện U Minh Thượng,5414,2251,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+375,Kiên Giang,219,Huyện Giang Thành,5415,2134,28,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+376,Kon Tum,259,Thành phố Kon Tum,3601,1660,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+377,Kon Tum,259,Huyện Đắk Glei,3602,1921,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+378,Kon Tum,259,Huyện Ngọc Hồi,3603,2187,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+379,Kon Tum,259,Huyện Đắk Tô,3604,2121,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+380,Kon Tum,259,Huyện Kon Plông,3606,1834,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+381,Kon Tum,259,Huyện Kon Rẫy,3608,2148,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+382,Kon Tum,259,Huyện Đắk Hà,3607,1835,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+383,Kon Tum,259,Huyện Sa Thầy,3605,2205,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+384,Kon Tum,259,Huyện Tu Mơ Rông,3609,2225,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+385,Kon Tum,259,Huyện Ia H Drai,3610,3446,29,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+386,Lai Châu,264,Thành phố Lai Châu,0701,1675,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+387,Lai Châu,264,Huyện Tam Đường,0702,2010,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+388,Lai Châu,264,Huyện Mường Tè,0705,1980,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+389,Lai Châu,264,Huyện Sìn Hồ,0704,2006,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+390,Lai Châu,264,Huyện Phong Thổ,0703,1989,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+391,Lai Châu,264,Huyện Than Uyên,0706,2025,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+392,Lai Châu,264,Huyện Tân Uyên,0707,2017,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+393,Lai Châu,264,Huyện Nậm Nhùm,0708,1984,30,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+394,Lâm Đồng,209,Thành phố Đà Lạt,4201,1550,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+395,Lâm Đồng,209,Thành phố Bảo Lộc,4202,1838,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+396,Lâm Đồng,209,Huyện Đam Rông,4212,1919,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+397,Lâm Đồng,209,Huyện Lạc Dương,4206,1956,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+398,Lâm Đồng,209,Huyện Lâm Hà,4210,1958,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+399,Lâm Đồng,209,Huyện Đơn Dương,4205,1836,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+400,Lâm Đồng,209,Huyện Đức Trọng,4203,1837,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+401,Lâm Đồng,209,Huyện Di Linh,4204,3160,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+402,Lâm Đồng,209,Huyện Bảo Lâm,4211,1839,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+403,Lâm Đồng,209,Huyện Đạ Huoai,4207,2104,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+404,Lâm Đồng,209,Huyện Đạ Tẻh,4208,2106,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+405,Lâm Đồng,209,Huyện Cát Tiên,4209,3146,31,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+406,Lạng Sơn,247,Thành phố Lạng Sơn,1001,1642,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+407,Lạng Sơn,247,Huyện Tràng Định,1002,2036,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+408,Lạng Sơn,247,Huyện Bình Gia,1003,3138,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+409,Lạng Sơn,247,Huyện Văn Lãng,1004,3310,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+410,Lạng Sơn,247,Huyện Cao Lộc,1007,1904,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+411,Lạng Sơn,247,Huyện Văn Quan,1006,3311,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+412,Lạng Sơn,247,Huyện Bắc Sơn,1005,3134,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+413,Lạng Sơn,247,Huyện Hữu Lũng,1011,1948,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+414,Lạng Sơn,247,Huyện Chi Lăng,1009,3156,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+415,Lạng Sơn,247,Huyện Lộc Bình,1008,1963,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+416,Lạng Sơn,247,Huyện Đình Lập,1010,3182,32,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+417,Lào Cai,269,Thành phố Lào Cai,0801,1682,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+418,Lào Cai,269,Huyện Bát Xát,0803,1744,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+419,Lào Cai,269,Huyện Mường Khương,0809,2171,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+420,Lào Cai,269,Huyện Xi Ma Cai,0802,2264,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+421,Lào Cai,269,Huyện Bắc Hà,0808,1892,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+422,Lào Cai,269,Huyện Bảo Thắng,0804,2073,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+423,Lào Cai,269,Huyện Bảo Yên,0807,1891,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+424,Lào Cai,269,Huyện Sa Pa,0805,2005,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+425,Lào Cai,269,Huyện Văn Bàn,0806,2043,33,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+426,Long An,211,Thành phố Tân An,4901,1554,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+427,Long An,211,Thị xã Kiến Tường,4915,3329,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+428,Long An,211,Huyện Tân Hưng,4914,3273,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+429,Long An,211,Huyện Vĩnh Hưng,4902,3315,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+430,Long An,211,Huyện Mộc Hóa,4903,3227,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+431,Long An,211,Huyện Tân Thạnh,4904,3276,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+432,Long An,211,Huyện Thạnh Hóa,4905,3293,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+433,Long An,211,Huyện Đức Huệ,4906,2129,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+434,Long An,211,Huyện Đức Hòa,4907,1929,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+435,Long An,211,Huyện Bến Lức,4908,1894,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+436,Long An,211,Huyện Thủ Thừa,4909,2031,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+437,Long An,211,Huyện Tân Trụ,4911,2016,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+438,Long An,211,Huyện Cần Đước,4912,1906,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+439,Long An,211,Huyện Cần Giuộc,4913,1907,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+440,Long An,211,Huyện Châu Thành,4910,1909,34,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+441,Nam Định,231,Thành phố Nam Định,2501,1613,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+442,Nam Định,231,Huyện Mỹ Lộc,2502,1981,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+443,Nam Định,231,Huyện Vụ Bản,2506,3319,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+444,Nam Định,231,Huyện Ý Yên,2505,1841,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+445,Nam Định,231,Huyện Nghĩa Hưng,2509,3243,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+446,Nam Định,231,Huyện Nam Trực,2507,1983,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+447,Nam Định,231,Huyện Trực Ninh,2508,3308,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+448,Nam Định,231,Huyện Xuân Trường,2503,3323,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+449,Nam Định,231,Huyện Giao Thủy,2504,3193,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+450,Nam Định,231,Huyện Hải Hậu,2510,1840,35,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+451,Nghệ An,235,Thành phố Vinh,2901,1617,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+452,Nghệ An,235,Thị xã Cửa Lò,2902,1842,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+453,Nghệ An,235,Thị xã Thái Hòa,2920,1850,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+454,Nghệ An,235,Huyện Quế Phong,2919,3260,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+455,Nghệ An,235,Huyện Quỳ Châu,2903,3261,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+456,Nghệ An,235,Huyện Kỳ Sơn,2907,3211,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+457,Nghệ An,235,Huyện Tương Dương,2908,3288,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+458,Nghệ An,235,Huyện Nghĩa Đàn,2905,1851,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+459,Nghệ An,235,Huyện Quỳ Hợp,2904,1852,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+460,Nghệ An,235,Huyện Quỳnh Lưu,2906,1848,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+461,Nghệ An,235,Huyện Con Cuông,2909,1853,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+462,Nghệ An,235,Huyện Tân Kỳ,2910,1845,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+463,Nghệ An,235,Huyện Anh Sơn,2913,1844,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+464,Nghệ An,235,Huyện Diễn Châu,2912,1847,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+465,Nghệ An,235,Huyện Yên Thành,2911,1846,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+466,Nghệ An,235,Huyện Đô Lương,2914,1843,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+467,Nghệ An,235,Huyện Thanh Chương,2915,3291,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+468,Nghệ An,235,Huyện Nghi Lộc,2916,1854,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+469,Nghệ An,235,Huyện Nam Đàn,2917,3233,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+470,Nghệ An,235,Huyện Hưng Nguyên,2918,1947,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+471,Nghệ An,235,Thị xã Hoàng Mai,2921,1849,36,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+472,Ninh Bình,233,Thành phố Ninh Bình,2701,1615,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+473,Ninh Bình,233,Thị xã Tam Điệp,2702,1713,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+474,Ninh Bình,233,Huyện Nho Quan,2703,3247,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+475,Ninh Bình,233,Huyện Gia Viễn,2704,3191,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+476,Ninh Bình,233,Huyện Hoa Lư,2705,1944,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+477,Ninh Bình,233,Huyện Yên Khánh,2708,1714,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+478,Ninh Bình,233,Huyện Kim Sơn,2707,3205,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+479,Ninh Bình,233,Huyện Yên Mô,2706,3327,37,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+480,Ninh Thuận,261,Thành phố Phan Rang – Tháp Chàm,4501,1665,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+481,Ninh Thuận,261,Huyện Bác Ái,4505,3129,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+482,Ninh Thuận,261,Huyện Ninh Sơn,4502,1855,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+483,Ninh Thuận,261,Huyện Ninh Hải,4503,1985,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+484,Ninh Thuận,261,Huyện Ninh Phước,4504,1986,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+485,Ninh Thuận,261,Huyện Thuận Bắc,4506,3301,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+486,Ninh Thuận,261,Huyện Thuận Nam,4507,3302,38,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+487,Phú Thọ,229,Thành phố Việt Trì,1501,1602,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+488,Phú Thọ,229,Thị xã Phú Thọ,1502,2064,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+489,Phú Thọ,229,Huyện Đoan Hùng,1503,1925,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+490,Phú Thọ,229,Huyện Hạ Hòa,1505,1938,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+491,Phú Thọ,229,Huyện Thanh Ba,1504,3290,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+492,Phú Thọ,229,Huyện Phù Ninh,1509,1994,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+493,Phú Thọ,229,Huyện Yên Lập,1507,2268,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+494,Phú Thọ,229,Huyện Cẩm Khê,1506,1905,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+495,Phú Thọ,229,Huyện Tam Nông,1511,3272,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+496,Phú Thọ,229,Huyện Lâm Thao,1510,1959,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+497,Phú Thọ,229,Huyện Thanh Sơn,1508,2029,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+498,Phú Thọ,229,Huyện Thanh Thủy,1512,2237,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+499,Phú Thọ,229,Huyện Tân Sơn,1513,2015,39,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+500,Phú Yên,260,Thành phố Tuy Hòa,3901,1663,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+501,Phú Yên,260,Thị xã Sông Cầu,3903,1856,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+502,Phú Yên,260,Huyện Đồng Xuân,3902,3186,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+503,Phú Yên,260,Huyện Tuy An,3904,3284,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+504,Phú Yên,260,Huyện Sơn Hòa,3905,2211,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+505,Phú Yên,260,Huyện Sông Hinh,3906,2206,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+506,Phú Yên,260,Huyện Tây Hòa,3909,3278,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+507,Phú Yên,260,Huyện Phú Hòa,3908,1993,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+508,Phú Yên,260,Huyện Đông Hòa,3907,3184,40,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+509,Quảng Bình,237,Thành Phố Đồng Hới,3101,1619,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+510,Quảng Bình,237,Huyện Minh Hóa,3103,3224,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+511,Quảng Bình,237,Huyện Tuyên Hóa,3102,3286,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+512,Quảng Bình,237,Huyện Quảng Trạch,3104,3258,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+513,Quảng Bình,237,Huyện Bố Trạch,3105,1858,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+514,Quảng Bình,237,Huyện Quảng Ninh,3106,2002,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+515,Quảng Bình,237,Huyện Lệ Thủy,3107,1857,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+516,Quảng Bình,237,Thị xã Ba Đồn,3108,1859,41,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+517,Quảng Nam,243,Thành phố Tam Kỳ,3401,1631,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+518,Quảng Nam,243,Thành phố Hội An,3402,1632,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+519,Quảng Nam,243,Huyện Tây Giang,3416,2219,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+520,Quảng Nam,243,Huyện Đông Giang,3412,2125,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+521,Quảng Nam,243,Huyện Đại Lộc,3405,1917,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+522,Quảng Nam,243,Huyện Điện Bàn,3404,1736,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+523,Quảng Nam,243,Huyện Duy Xuyên,3403,1735,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+524,Quảng Nam,243,Huyện Quế Sơn,3406,2003,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+525,Quảng Nam,243,Huyện Nam Giang,3413,2177,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+526,Quảng Nam,243,Huyện Phước Sơn,3414,2198,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+527,Quảng Nam,243,Huyện Hiệp Đức,3407,2139,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+528,Quảng Nam,243,Huyện Thăng Bình,3408,2239,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+529,Quảng Nam,243,Huyện Tiên Phước,3410,2224,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+530,Quảng Nam,243,Huyện Bắc Trà My,3411,2078,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+531,Quảng Nam,243,Huyện Nam Trà My,3415,2178,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+532,Quảng Nam,243,Huyện Núi Thành,3409,1987,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+533,Quảng Nam,243,Huyện Phú Ninh,3417,1995,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+534,Quảng Nam,243,Huyện Nông Sơn,3418,2182,42,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+535,Quảng Ngãi,242,Thành phố Quảng Ngãi,3501,1630,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+536,Quảng Ngãi,242,Huyện Bình Sơn,3503,1898,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+537,Quảng Ngãi,242,Huyện Trà Bồng,3504,3304,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+538,Quảng Ngãi,242,Huyện Tây Trà,3514,2222,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+539,Quảng Ngãi,242,Huyện Sơn Tịnh,3505,1737,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+540,Quảng Ngãi,242,Huyện Tư Nghĩa,3507,1738,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+541,Quảng Ngãi,242,Huyện Sơn Hà,3506,2210,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+542,Quảng Ngãi,242,Huyện Sơn Tây,3513,3270,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+543,Quảng Ngãi,242,Huyện Minh Long,3509,2167,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+544,Quảng Ngãi,242,Huyện Nghĩa Hành,3508,1988,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+545,Quảng Ngãi,242,Huyện Mộ Đức,3510,3226,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+546,Quảng Ngãi,242,Huyện Đức Phổ,3511,1930,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+547,Quảng Ngãi,242,Huyện Ba Tơ,3512,3127,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+548,Quảng Ngãi,242,Huyện đảo Lý Sơn,3502,2114,43,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+549,Quảng Ninh,230,Thành phố Hạ Long,1701,1604,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+550,Quảng Ninh,230,Thành phố Móng Cái,1704,1603,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+551,Quảng Ninh,230,Thành phố Cẩm Phả,1702,1683,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+552,Quảng Ninh,230,Thành phố Uông Bí,1703,1686,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+553,Quảng Ninh,230,Huyện Bình Liêu,1705,1896,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+554,Quảng Ninh,230,Huyện Tiên Yên,1708,2019,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+555,Quảng Ninh,230,Huyện Đầm Hà,1706,3180,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+556,Quảng Ninh,230,Huyện Hải Hà,1707,1940,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+557,Quảng Ninh,230,Huyện Ba Chẽ,1709,3126,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+558,Quảng Ninh,230,Huyện đảo Vân Đồn,1713,1920,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+559,Quảng Ninh,230,Huyện Hoành Bồ,1712,3199,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+560,Quảng Ninh,230,Huyện Đông Triều,1710,3185,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+561,Quảng Ninh,230,Thị xã Quảng Yên,1711,2066,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+562,Quảng Ninh,230,Huyện đảo Cô Tô,1714,2109,44,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+563,Quảng Trị,238,Thành phố Đông Hà,3201,1620,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+564,Quảng Trị,238,Thị xã Quảng Trị,3202,1621,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+565,Quảng Trị,238,Huyện Vĩnh Linh,3203,1861,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+566,Quảng Trị,238,Huyện Hướng Hóa,3208,1860,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+567,Quảng Trị,238,Huyện Gio Linh,3204,1936,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+568,Quảng Trị,238,Huyện Đa Krông,3209,2105,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+569,Quảng Trị,238,Huyện Cam Lộ,3205,1903,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+570,Quảng Trị,238,Huyện Triệu Phong,3206,2040,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+571,Quảng Trị,238,Huyện Hải Lăng,3207,2137,45,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+572,Sóc Trăng,218,Thành phố Sóc Trăng,5901,1568,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+573,Sóc Trăng,218,Huyện Châu Thành,5910,1910,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+574,Sóc Trăng,218,Huyện Kế Sách,5902,1949,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+575,Sóc Trăng,218,Huyện Mỹ Tú,5903,2173,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+576,Sóc Trăng,218,Huyện Cù Lao Dung,5908,2093,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+577,Sóc Trăng,218,Huyện Long Phú,5906,2161,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+578,Sóc Trăng,218,Huyện Mỹ Xuyên,5904,1743,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+579,Sóc Trăng,218,Thị xã Ngã Năm,5909,2062,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+580,Sóc Trăng,218,Huyện Thạnh Trị,5905,2238,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+581,Sóc Trăng,218,Thị xã Vĩnh Châu,5907,2272,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+582,Sóc Trăng,218,Huyện Trần Đề,5911,2037,46,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+583,Sơn La,266,Thành phố Sơn La,1401,1677,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+584,Sơn La,266,Huyện Quỳnh Nhai,1402,2204,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+585,Sơn La,266,Huyện Thuận Châu,1404,2032,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+586,Sơn La,266,Huyện Mường La,1403,3230,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+587,Sơn La,266,Huyện Bắc Yên,1405,2079,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+588,Sơn La,266,Huyện Phù Yên,1406,1996,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+589,Sơn La,266,Huyện Mộc Châu,1410,1976,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+590,Sơn La,266,Huyện Yên Châu,1408,2267,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+591,Sơn La,266,Huyện Mai Sơn,1407,1971,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+592,Sơn La,266,Huyện Sông Mã,1409,2007,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+593,Sơn La,266,Huyện Sốp Cộp,1411,3266,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+594,Sơn La,266,Huyện Vân Hồ,1412,2255,47,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+595,Tây Ninh,240,Thành phố Tây Ninh,4601,1626,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+596,Tây Ninh,240,Huyện Tân Biên,4602,1862,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+597,Tây Ninh,240,Huyện Tân Châu,4603,1863,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+598,Tây Ninh,240,Huyện Dương Minh Châu,4604,1864,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+599,Tây Ninh,240,Huyện Châu Thành,4605,1720,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+600,Tây Ninh,240,Huyện Hòa Thành,4606,1721,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+601,Tây Ninh,240,Huyện Gò Dầu,4608,1866,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+602,Tây Ninh,240,Huyện Bến Cầu,4607,1865,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+603,Tây Ninh,240,Huyện Trảng Bàng,4609,2035,48,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+604,Thái Bình,226,Thành phố Thái Bình,2601,1599,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+605,Thái Bình,226,Huyện Quỳnh Phụ,2602,1868,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+606,Thái Bình,226,Huyện Hưng Hà,2603,1867,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+607,Thái Bình,226,Huyện Đông Hưng,2604,1715,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+608,Thái Bình,226,Huyện Thái Thụy,2608,1869,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+609,Thái Bình,226,Huyện Tiền Hải,2607,3281,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+610,Thái Bình,226,Huyện Kiến Xương,2606,1951,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+611,Thái Bình,226,Huyện Vũ Thư,2605,1716,49,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+612,Thái Nguyên,244,Thành phố Thái Nguyên,1201,1639,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+613,Thái Nguyên,244,Thị xã Sông Công,1202,1684,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+614,Thái Nguyên,244,Huyện Định Hóa,1203,1924,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+615,Thái Nguyên,244,Huyện Phú Lương,1204,2195,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+616,Thái Nguyên,244,Huyện Đồng Hỷ,1207,1731,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+617,Thái Nguyên,244,Huyện Võ Nhai,1205,2051,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+618,Thái Nguyên,244,Huyện Đại Từ,1206,1918,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+619,Thái Nguyên,244,Huyện Phổ Yên,1209,1990,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+620,Thái Nguyên,244,Huyện Phú Bình,1208,1991,50,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+621,Thanh Hóa,234,Thành phố Thanh Hóa,2801,1616,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+622,Thanh Hóa,234,Thị xã Bỉm Sơn,2802,1876,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+623,Thanh Hóa,234,Thị xã Sầm Sơn,2803,1712,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+624,Thanh Hóa,234,Huyện Mường Lát,2806,1878,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+625,Thanh Hóa,234,Huyện Quan Hóa,2804,1879,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+626,Thanh Hóa,234,Huyện Bá Thước,2807,2070,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+627,Thanh Hóa,234,Huyện Quan Sơn,2805,2000,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+628,Thanh Hóa,234,Huyện Lang Chánh,2811,3216,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+629,Thanh Hóa,234,Huyện Ngọc Lặc,2812,1874,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+630,Thanh Hóa,234,Huyện Cẩm Thủy,2814,3147,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+631,Thanh Hóa,234,Huyện Thạch Thành,2813,1880,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+632,Thanh Hóa,234,Huyện Hà Trung,2821,1877,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+633,Thanh Hóa,234,Huyện Vĩnh Lộc,2816,1881,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+634,Thanh Hóa,234,Huyện Yên Định,2827,1875,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+635,Thanh Hóa,234,Huyện Thọ Xuân,2815,1873,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+636,Thanh Hóa,234,Huyện Thường Xuân,2808,1872,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+637,Thanh Hóa,234,Huyện Triệu Sơn,2818,2249,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+638,Thanh Hóa,234,Huyện Thiệu Hóa,2817,3298,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+639,Thanh Hóa,234,Huyện Hoằng Hóa,2822,1748,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+640,Thanh Hóa,234,Huyện Hậu Lộc,2824,1942,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+641,Thanh Hóa,234,Huyện Nga Sơn,2823,3241,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+642,Thanh Hóa,234,Huyện Như Xuân,2809,1871,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+643,Thanh Hóa,234,Huyện Như Thanh,2810,2190,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+644,Thanh Hóa,234,Huyện Nông Cống,2819,2181,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+645,Thanh Hóa,234,Huyện Đông Sơn,2820,1927,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+646,Thanh Hóa,234,Huyện Quảng Xương,2825,1747,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+647,Thanh Hóa,234,Huyện Tĩnh Gia,2826,1870,51,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+648,Thừa Thiên – Huế,223,Thành phố Huế,3301,1585,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+649,Thừa Thiên – Huế,223,Huyện Phong Điền,3302,2193,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+650,Thừa Thiên – Huế,223,Huyện Quảng Điền,3303,3257,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+651,Thừa Thiên – Huế,223,Huyện Phú Vang,3305,1749,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+652,Thừa Thiên – Huế,223,Thị xã Hương Thủy,3306,1698,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+653,Thừa Thiên – Huế,223,Thị xã Hương Trà,3304,1697,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+654,Thừa Thiên – Huế,223,Huyện A Lưới,3309,1885,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+655,Thừa Thiên – Huế,223,Huyện Phú Lộc,3307,1882,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+656,Thừa Thiên – Huế,223,Huyện Nam Đông,3308,3234,52,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+657,Tiền Giang,212,Thành phố Mỹ Tho,5301,1556,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+658,Tiền Giang,212,Thị xã Gò Công,5302,2057,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+659,Tiền Giang,212,Thị xã Cai Lậy,5311,2055,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+660,Tiền Giang,212,Huyện Tân Phước,5309,3275,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+661,Tiền Giang,212,Huyện Cái Bè,5303,1900,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+662,Tiền Giang,212,Huyện Cai Lậy,5304,2084,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+663,Tiền Giang,212,Huyện Châu Thành,5305,1740,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+664,Tiền Giang,212,Huyện Chợ Gạo,5306,1741,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+665,Tiền Giang,212,Huyện Gò Công Tây,5307,1933,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+666,Tiền Giang,212,Huyện Gò Công Đông,5308,1932,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+667,Tiền Giang,212,Huyện Tân Phú Đông,5310,2216,53,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+668,Trà Vinh,214,Thành phố Trà Vinh,5801,1560,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+669,Trà Vinh,214,Huyện Càng Long,5802,2086,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+670,Trà Vinh,214,Huyện Cầu Kè,5803,2091,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+671,Trà Vinh,214,Huyện Tiểu Cần,5804,2020,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+672,Trà Vinh,214,Huyện Châu Thành,5805,1911,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+673,Trà Vinh,214,Huyện Cầu Ngang,5807,1908,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+674,Trà Vinh,214,Huyện Trà Cú,5806,2033,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+675,Trà Vinh,214,Huyện Duyên Hải,5808,2103,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+676,Trà Vinh,214,Thị xã Duyên Hải,5809,3443,54,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+677,Tuyên Quang,228,Thành phố Tuyên Quang,0901,1601,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+678,Tuyên Quang,228,Huyện Lâm Bình,0902,1957,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+679,Tuyên Quang,228,Huyện Na Hang,0903,1982,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+680,Tuyên Quang,228,Huyện Chiêm Hóa,0904,3157,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+681,Tuyên Quang,228,Huyện Hàm Yên,0905,1941,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+682,Tuyên Quang,228,Huyện Yên Sơn,0906,1745,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+683,Tuyên Quang,228,Huyện Sơn Dương,0907,3267,55,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+684,Vĩnh Long,215,Thành phố Vĩnh Long,5701,1562,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+685,Vĩnh Long,215,Huyện Long Hồ,5702,1962,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+686,Vĩnh Long,215,Huyện Mang Thít,5703,2164,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+687,Vĩnh Long,215,Huyện Vũng Liêm,5707,2263,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+688,Vĩnh Long,215,Huyện Tam Bình,5705,2008,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+689,Vĩnh Long,215,Thị xã Bình Minh,5704,2054,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+690,Vĩnh Long,215,Huyện Trà Ôn,5706,2034,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+691,Vĩnh Long,215,Huyện Bình Tân,5708,2081,56,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+692,Vĩnh Phúc,221,Thành phố Vĩnh Yên,1601,1578,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+693,Vĩnh Phúc,221,Thị xã Phúc Yên,1608,2065,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+694,Vĩnh Phúc,221,Huyện Lập Thạch,1603,1960,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+695,Vĩnh Phúc,221,Huyện Tam Dương,1602,2009,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+696,Vĩnh Phúc,221,Huyện Tam Đảo,1609,3271,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+697,Vĩnh Phúc,221,Huyện Bình Xuyên,1606,1732,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+698,Vĩnh Phúc,221,Huyện Yên Lạc,1605,1734,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+699,Vĩnh Phúc,221,Huyện Vĩnh Tường,1604,1733,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+700,Vĩnh Phúc,221,Huyện Sông Lô,1607,3265,57,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+701,Yên Bái,263,Thành phố Yên Bái,1301,1674,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+702,Yên Bái,263,Thị xã Nghĩa Lộ,1302,2063,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+703,Yên Bái,263,Huyện Lục Yên,1309,1967,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+704,Yên Bái,263,Huyện Văn Yên,1303,2047,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+705,Yên Bái,263,Huyện Mù Cang Chải,1305,1977,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+706,Yên Bái,263,Huyện Trấn Yên,1307,2039,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+707,Yên Bái,263,Huyện Trạm Tấu,1308,2248,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+708,Yên Bái,263,Huyện Văn Chấn,1306,2044,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+709,Yên Bái,263,Huyện Yên Bình,1304,2266,58,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+710,Hồ Chí Minh,202,Quận đặc biệt,02202,1580,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+711,Hồ Chí Minh,202,Quận đặc biệt DC,02202b,3448,1,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+712,Hà Nội,201,Quận đặc biệt,1A00,3442,2,"2019-02-28 13:47:52","2019-02-28 13:47:52"
+713,Đà Nẵng,203,Quận đặc biệt,0409,3447,3,"2019-02-28 13:47:52","2019-02-28 13:47:52"

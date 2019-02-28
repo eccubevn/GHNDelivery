@@ -9,19 +9,42 @@ namespace Plugin\GHNDelivery\Repository;
 
 
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Eccube\Entity\Shipping;
 use Eccube\Repository\AbstractRepository;
 use Plugin\GHNDelivery\Entity\GHNService;
+use Plugin\GHNDelivery\Service\ApiService;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class GHNServiceRepository extends AbstractRepository
 {
     /** @var GHNConfigRepository */
     protected $configRepo;
 
-    public function __construct(ManagerRegistry $registry, GHNConfigRepository $configRepository)
+    /** @var Session */
+    protected $session;
+
+    /** @var ApiService */
+    protected $apiService;
+
+    /** @var GHNWarehouseRepository */
+    protected $warehouseRepo;
+
+    /**
+     * GHNServiceRepository constructor.
+     * @param GHNConfigRepository $configRepo
+     * @param Session $session
+     * @param ApiService $apiService
+     * @param GHNWarehouseRepository $warehouseRepo
+     */
+    public function __construct(ManagerRegistry $registry, GHNConfigRepository $configRepo, Session $session, ApiService $apiService, GHNWarehouseRepository $warehouseRepo)
     {
         parent::__construct($registry, GHNService::class);
-        $this->configRepo = $configRepository;
+        $this->configRepo = $configRepo;
+        $this->session = $session;
+        $this->apiService = $apiService;
+        $this->warehouseRepo = $warehouseRepo;
     }
+
 
     /**
      * @param $shp
@@ -29,8 +52,9 @@ class GHNServiceRepository extends AbstractRepository
      * @param $warehouse
      * @return GHNService
      */
-    public function buildGHNService($shp, $mainServiceId, $warehouse): GHNService
+    public function buildGHNService(Shipping $shp, $mainServiceId): GHNService
     {
+        $warehouse = $this->warehouseRepo->getOne();
         /** @var GHNService $service */
         $service = $this->findOneBy(['Shipping' => $shp]);
         if (!$service) {
@@ -48,5 +72,45 @@ class GHNServiceRepository extends AbstractRepository
         $service->setWeight($this->configRepo->find(1)->getWeight());
 
         return $service;
+    }
+
+    /**
+     * @param Shipping $shipping
+     * @param $mainServiceId
+     * @param null $index
+     * @return bool
+     * @throws \Doctrine\ORM\ORMException
+     */
+    public function createGHNServiceByShipping(Shipping $shipping, $mainServiceId, $index = null)
+    {
+        $service = $this->buildGHNService($shipping, $mainServiceId);
+        if (!is_null($index)) {
+            $sessionKey = $this->eccubeConfig->get('admin_ghn_session_service_fee').$index;
+        } else {
+            $sessionKey = $this->eccubeConfig->get('admin_ghn_session_service_fee');
+        }
+
+        $data = $this->session->get($sessionKey, []);
+        $arrMsg = ['%shipping%' => $shipping->getId()];
+        if (empty($data)) {
+            $output = $this->apiService->findAvailableServices($service->getFromDistrictId(), $service->getToDistrictId());
+            // call api to get service list
+            $data = $output->getData();
+            // error
+            if (empty($data) || !is_array($data)) {
+                $this->session->getFlashBag()->add('eccube.admin.error', trans('ghn.shipping.service.cannot_connect', $arrMsg));
+
+                return false;
+            }
+        }
+
+        if (!$service->setMainService($data)) {
+            $this->session->getFlashBag()->add('eccube.admin.error', trans('ghn.shipping.service.incorrect', $arrMsg));
+
+            return false;
+        }
+        $shipping->setGHNService($service);
+        $this->getEntityManager()->persist($service);
+        return true;
     }
 }

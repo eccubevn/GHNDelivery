@@ -68,11 +68,20 @@ ghn.shopping.delivery.remove.alret: Bạn có chắc muốn hủy bỏ dịch v�
 
 # order
 ghn.order.not_found: Không tìm thấy dịch vụ!
-ghn.order.can_not_create: Không thể tạo đơn hàng! Vui lòng nhấn nút tạo lại ở trang danh sách đơn hàng.
+ghn.order.can_not_create: Không thể tạo đơn giao hàng! Vui lòng nhấn nút tạo lại ở trang chi tiết đơn hàng.
 ghn.order.reorder.can_not_create: Chỉ có thể tạo lại GHN đơn hàng ở trạng thái đang xử lý.
 ghn.order.reorder.button: Tạo lại GHN đơn hàng
 
 ghn.shipping: Thông tin đơn hàng trên giao hàng nhanh
 ghn.shipping.id: Đơn giao hàng
-ghn.shipping.not_ghn: "Đơn giao hàng %shipping% không phải là giao hàng nhanh, bỏ qua."
-ghn.shipping.create_already: "Đơn giao hàng %shipping% đã được tạo, bỏ qua."
+ghn.shipping.not_ghn: "Đơn giao hàng %shipping% không phải là giao hàng nhanh, bỏ qua!"
+ghn.shipping.not_found: "Không tìm thấy đơn giao hàng %shipping%"
+ghn.shipping.create_already: "Đơn giao hàng %shipping% đã được tạo, bỏ qua!"
+ghn.shipping.service.not_found: "Dịch vụ của đơn giao hàng %shipping% không tìm thấy!"
+ghn.shipping.cannot_create: "Không thể tạo đơn giao hàng %shipping%! Vui lòng nhấn nút tạo lại ở trang chi tiết đơn hàng."
+ghn.shipping.service.cannot_connect: "Dịch vụ của đơn giao hàng %shipping% không thể tạo, vui lòng kiểm tra lại cài đặt hoặc đường truyền internet"
+ghn.shipping.service.incorrect: "Dịch vụ của đơn giao hàng %shipping% không đúng, vui lòng chọn lại!"
+ghn.shipping.cancel.incorrect: "Đơn giao hàng %shipping% không thể hủy, vui lòng liên hệ GHN!"
+
+
+ghn.callback.receive: Chúng tôi đã nhận được, cảm ơn sự hợp tác.

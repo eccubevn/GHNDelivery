@@ -97,6 +97,56 @@ class GHNWarehouse extends AbstractEntity
     private $hub_id;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $create_date;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $update_date;
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreateDate()
+    {
+        return $this->create_date;
+    }
+
+    /**
+     * @param \DateTime $create_date
+     * @return $this
+     */
+    public function setCreateDate(\DateTime $create_date)
+    {
+        $this->create_date = $create_date;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdateDate()
+    {
+        return $this->update_date;
+    }
+
+    /**
+     * @param \DateTime $update_date
+     * @return $this
+     */
+    public function setUpdateDate(\DateTime $update_date)
+    {
+        $this->update_date = $update_date;
+        return $this;
+    }
+
+    /**
      * GHNWarehouse constructor.
      * @param int $hub_id
      */

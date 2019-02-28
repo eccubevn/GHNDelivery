@@ -7,6 +7,7 @@
 
 namespace Plugin\GHNDelivery\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Entity\AbstractEntity;
 use Eccube\Entity\Order;
@@ -354,6 +355,49 @@ class GHNOrder extends AbstractEntity
      * @ORM\Column(name="return_data", type="text", nullable=true)
      */
     private $returnData;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $create_date;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $update_date;
+
+    /**
+     * @var GHNOrderCallback[]
+     * @ORM\OneToMany(targetEntity="Plugin\GHNDelivery\Entity\GHNOrderCallback", mappedBy="GHNOrder")
+     */
+    private $GHNOrderCallbacks;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=30, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="order_code", type="string", length=30, nullable=true)
+     */
+    private $OrderCode;
+
+    /**
+     * GHNOrder constructor.
+     * @param int $id
+     */
+    public function __construct()
+    {
+        $this->GHNOrderCallbacks = new ArrayCollection();
+    }
 
     /**
      * @return Order
@@ -1132,6 +1176,12 @@ class GHNOrder extends AbstractEntity
     public function setReturnData(string $returnData)
     {
         $this->returnData = $returnData;
+        $data = unserialize($returnData);
+        if (isset($data['OrderCode'])) {
+            $this->setOrderCode($data['OrderCode']);
+        }
+
+        return $this;
     }
 
     public function isCreatedOrder()
@@ -1151,7 +1201,7 @@ class GHNOrder extends AbstractEntity
      * @param null $ghn_affiliate_id
      * @return array
      */
-    public function createOrder(GHNConfig $config, $ghn_affiliate_id = null)
+    public function buildCreateOrderData(GHNConfig $config, $ghn_affiliate_id = null)
     {
         $this->token = $config->getToken();
         $this->PaymentTypeID = (int)$config->getPaymentType();
@@ -1190,7 +1240,7 @@ class GHNOrder extends AbstractEntity
         $arrAttr = $this->toArray(['GHNService', 'GHNWarehouse', 'Order', 'Shipping', 'id', 'returnData', '__initializer__', '__cloner__', '__isInitialized__', 'AnnotationReader']);
         // remove all empty data
         foreach ($arrAttr as $key => $att) {
-            if (is_null($att)) {
+            if (is_null($att) || is_object($att)) {
                 unset($arrAttr[$key]);
             }
         }
@@ -1200,10 +1250,9 @@ class GHNOrder extends AbstractEntity
 
     /**
      * @param GHNConfig $config
-     * @param null $ghn_affiliate_id
      * @return array
      */
-    public function updateOrder(GHNConfig $config)
+    public function buildUpdateOrderData(GHNConfig $config)
     {
         if (!$this->isCreatedOrder()) {
             return [];
@@ -1291,6 +1340,118 @@ class GHNOrder extends AbstractEntity
     public function setGHNWarehouse(GHNWarehouse $GHNWarehouse)
     {
         $this->GHNWarehouse = $GHNWarehouse;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrderCode()
+    {
+        return $this->OrderCode;
+    }
+
+    /**
+     * @param string $OrderCode
+     */
+    public function setOrderCode(string $OrderCode)
+    {
+        $this->OrderCode = $OrderCode;
+    }
+
+    /**
+     * @param GHNConfig $config
+     * @return array
+     */
+    public function buildCancelData(GHNConfig $config)
+    {
+        $arr = [
+            'token' => $config->getToken(),
+            'OrderCode' => $this->getOrderCode()
+        ];
+
+        return $arr;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreateDate()
+    {
+        return $this->create_date;
+    }
+
+    /**
+     * @param \DateTime $create_date
+     * @return $this
+     */
+    public function setCreateDate(\DateTime $create_date)
+    {
+        $this->create_date = $create_date;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdateDate()
+    {
+        return $this->update_date;
+    }
+
+    /**
+     * @param \DateTime $update_date
+     * @return $this
+     */
+    public function setUpdateDate(\DateTime $update_date)
+    {
+        $this->update_date = $update_date;
+        return $this;
+    }
+
+    /**
+     * @return GHNOrderCallback[]
+     */
+    public function getGHNOrderCallbacks()
+    {
+        return $this->GHNOrderCallbacks;
+    }
+
+    /**
+     * @param GHNOrderCallback $GHNOrderCallbacks
+     * @return GHNOrder
+     */
+    public function addGHNOrderCallbacks(GHNOrderCallback $GHNOrderCallback)
+    {
+        $this->GHNOrderCallbacks->add($GHNOrderCallback);
+        return $this;
+    }
+
+    /**
+     * @param GHNOrderCallback $GHNOrderCallback
+     * @return GHNOrder
+     */
+    public function removeGHNOrderCallbacks(GHNOrderCallback $GHNOrderCallback)
+    {
+        $this->GHNOrderCallbacks->removeElement($GHNOrderCallback);
         return $this;
     }
 }
