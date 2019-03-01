@@ -213,8 +213,12 @@ class GHNShoppingController extends AbstractController
             $Deliveries = $this->deliveryRepository->getDeliveries($SaleTypes);
             foreach ($Deliveries as $delivery) {
                 if ($delivery->getId() != $currentDelivery->getId()) {
-                    $shipping->setDelivery($delivery);
-                    $this->entityManager->flush($shipping);
+                    // change all delivery of shipping in order
+                    foreach ($shipping->getOrder()->getShippings() as $value) {
+                        $value->setDelivery($delivery);
+                        $this->entityManager->persist($value);
+                    }
+                    $this->entityManager->flush();
                     $isChange = true;
                     break;
                 }

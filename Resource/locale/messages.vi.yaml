@@ -65,6 +65,7 @@ ghn.shopping.delivery.service: Dịch vụ
 ghn.shopping.delivery.service_incorrect: Dịch vụ không đúng, vui lòng chọn lại!
 ghn.shopping.delivery.remove.error: Không có dịch vụ chuyển phát khác giao hàng nhanh, không thể hủy bỏ
 ghn.shopping.delivery.remove.alret: Bạn có chắc muốn hủy bỏ dịch vụ Giao hàng nhanh cho địa điểm này không?
+ghn.shopping.force: Bởi vì có 1 đơn giao hàng sử dụng phương thức thanh toán Giao Hàng Nhanh nên tất cả các giao hàng sẽ được chỉnh về chung phương thức để tiện việc giao hàng. Mong quí khách thông cảm!
 
 # order
 ghn.order.not_found: Không tìm thấy dịch vụ!

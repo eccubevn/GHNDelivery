@@ -137,6 +137,7 @@ class Event implements EventSubscriberInterface
      * For one shipping only
      *
      * @param EventArgs $eventArgs
+     * @throws \Doctrine\ORM\ORMException
      */
     public function calcGHNServeFeeOneShipping(EventArgs $eventArgs)
     {
@@ -190,6 +191,10 @@ class Event implements EventSubscriberInterface
         $this->entityManager->flush();
     }
 
+    /**
+     * @param EventArgs $event
+     * @throws \Doctrine\ORM\ORMException
+     */
     public function orderEditHandle(EventArgs $event)
     {
         /** @var GHNConfig $config */
@@ -217,6 +222,9 @@ class Event implements EventSubscriberInterface
         $this->entityManager->flush();
     }
 
+    /**
+     * @param TemplateEvent $templateEvent
+     */
     public function shoppingIndex(TemplateEvent $templateEvent)
     {
         $config = $this->configRepo->find(1);
@@ -228,6 +236,8 @@ class Event implements EventSubscriberInterface
         /** @var Order $order */
         $order = $parameters['Order'];
         $redirects = [];
+        $hardCoreDelivery = null;
+        // check GHN delivery in order
         foreach ($order->getShippings() as $shipping) {
             $redirects[$shipping->getId()] = false;
             $delivery = $shipping->getDelivery();
@@ -235,6 +245,7 @@ class Event implements EventSubscriberInterface
             // if ghn delivery => add script to redirect to GHN page
             if ($GHNDelivery) {
                 $redirects[$shipping->getId()] = true;
+                $hardCoreDelivery = $delivery;
                 /** @var OrderItem $shippingOrderItem */
                 foreach ($shipping->getOrderItems() as $shippingOrderItem) {
                     // is exist GHN delivery fee
@@ -244,9 +255,33 @@ class Event implements EventSubscriberInterface
                 }
             }
         }
+
+        // force using all GHN delivery
+        $isAddedWarning = false;
+        if (in_array(true, array_values($redirects)) && $hardCoreDelivery) {
+            foreach ($order->getShippings() as $shipping) {
+                $shipping->setDelivery($hardCoreDelivery);
+                if (!$isAddedWarning) {
+                    $this->addFlash('eccube.front.warning', 'ghn.shopping.force');
+                    $isAddedWarning = true;
+                }
+
+                $redirects[$shipping->getId()] = true;
+                /** @var OrderItem $shippingOrderItem */
+                foreach ($shipping->getOrderItems() as $shippingOrderItem) {
+                    // is exist GHN delivery fee
+                    if ($shippingOrderItem->isDeliveryFee() && $shippingOrderItem->getProcessorName() == GHNProcessor::class) {
+                        $redirects[$shipping->getId()] = false;
+                    }
+                }
+            }
+            $this->entityManager->flush();
+        }
+
         // save to session
         $this->session->set($this->eccubeConfig->get('ghn_session_redirect'), $redirects);
 
+        // change tempalte
         foreach ($redirects as $key => $value) {
             if ($value) {
                 $templateEvent->setResponse($this->redirectToRoute('ghn_delivery_shopping', ['id' => $key]));
