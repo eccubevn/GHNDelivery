@@ -52,9 +52,9 @@ trait GHNShippingTrait
 
     /**
      * @var ?GHNPref
-     * @ORM\ManyToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNPref")
+     * @ORM\ManyToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNPref", inversedBy="Shippings")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="ghn_pref_id", referencedColumnName="id", nullable=true)
+     *   @ORM\JoinColumn(name="ghn_pref_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      * })
      */
     private $GHNPref;
@@ -62,7 +62,7 @@ trait GHNShippingTrait
     /**
      * @var GHNService|null
      *
-     * @ORM\OneToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNService")
+     * @ORM\OneToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNService", mappedBy="Shipping")
      */
     private $GHNService;
 
@@ -78,7 +78,7 @@ trait GHNShippingTrait
      * @param $GHNPref
      * @return $this
      */
-    public function setGHNPref($GHNPref)
+    public function setGHNPref(GHNPref $GHNPref)
     {
         $this->GHNPref = $GHNPref;
 

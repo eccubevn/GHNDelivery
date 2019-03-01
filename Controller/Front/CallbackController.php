@@ -35,8 +35,11 @@ class CallbackController extends AbstractController
      */
     public function index(Request $request)
     {
+        log_info("Callback from GHN start");
         $json = $request->getContent();
         $this->callbackRepo->saveCallbackData($json, $request->headers->all());
+
+        log_info("Callback from GHN end");
 
         return new Response(trans('ghn.callback.receive'));
     }

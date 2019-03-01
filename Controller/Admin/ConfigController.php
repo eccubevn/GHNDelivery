@@ -72,6 +72,11 @@ class ConfigController extends AbstractController
             $this->entityManager->flush($Config);
             $this->addSuccess('admin.common.save_complete', 'admin');
 
+            if (!$this->warehouseRepo->getOne()) {
+                $this->addInfo('ghn.config.warehouse', 'admin');
+
+                return $this->redirectToRoute('ghn_delivery_admin_warehouse');
+            }
             return $this->redirectToRoute('ghn_delivery_admin_config');
         }
 
@@ -84,7 +89,7 @@ class ConfigController extends AbstractController
      * @Route("/%eccube_admin_route%/ghn/warehouse", name="ghn_delivery_admin_warehouse")
      * @Template("@GHNDelivery/admin/warehouse.twig")
      */
-    public function wareHouse(Request $request)
+    public function warehouse(Request $request)
     {
         /** @var GHNConfig $config */
         $config = $this->configRepository->find(1);
@@ -93,7 +98,7 @@ class ConfigController extends AbstractController
 
             return $this->redirectToRoute('ghn_delivery_admin_config');
         }
-        $Warehouse = $this->warehouseRepo->getOrCreate();
+        $Warehouse = $this->warehouseRepo->getOrCreate(true);
         $form = $this->createForm(WarehouseType::class, $Warehouse);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

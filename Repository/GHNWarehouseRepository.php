@@ -13,6 +13,7 @@ use Eccube\Entity\BaseInfo;
 use Eccube\Repository\AbstractRepository;
 use Eccube\Repository\BaseInfoRepository;
 use Plugin\GHNDelivery\Entity\GHNWarehouse;
+use Plugin\GHNDelivery\Service\ApiService;
 
 class GHNWarehouseRepository extends AbstractRepository
 {
@@ -20,23 +21,61 @@ class GHNWarehouseRepository extends AbstractRepository
      * @var BaseInfo
      */
     private $baseInfo;
-    
-    public function __construct(ManagerRegistry $registry, string $entityClass = GHNWarehouse::class, BaseInfoRepository $baseInfoRepository)
+
+    /** @var ApiService */
+    protected $apiService;
+
+    /** @var GHNPrefRepository */
+    protected $GHNPrefRepo;
+
+    /**
+     * GHNWarehouseRepository constructor.
+     * @param ManagerRegistry $registry
+     * @param BaseInfoRepository $baseInfoRepository
+     * @param ApiService $apiService
+     * @param GHNPrefRepository $GHNPrefRepo
+     * @throws \Exception
+     */
+    public function __construct(ManagerRegistry $registry, BaseInfoRepository $baseInfoRepository, ApiService $apiService, GHNPrefRepository $GHNPrefRepo)
     {
         $this->baseInfo = $baseInfoRepository->get();
-        parent::__construct($registry, $entityClass);
+        $this->apiService = $apiService;
+        $this->GHNPrefRepo = $GHNPrefRepo;
+        parent::__construct($registry, GHNWarehouse::class);
     }
 
     /**
-     * @return GHNWarehouse
+     * @param bool $isAutoSave
+     * @return null|object|GHNWarehouse
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
      */
-    public function getOrCreate()
+    public function getOrCreate($isAutoSave = false)
     {
         $Warehouse = $this->findOneBy([]);
 
         if (is_null($Warehouse)) {
             $Warehouse = new GHNWarehouse();
             $Warehouse->setEmail($this->baseInfo->getEmail02());
+
+            // get warehouse list
+            $output = $this->apiService->getWarehouse();
+            if ($output->getCode()) {
+                $isCanSave = false;
+                foreach ($output->getData() as $warehouse) {
+                    if (isset($warehouse['IsMain']) && $warehouse['IsMain']) {
+                        $isCanSave = true;
+                        $pref = $this->GHNPrefRepo->findOneBy(['district_id' => $warehouse['DistrictID']]);
+                        $Warehouse->setWarehouseFromApiData($warehouse, $pref);
+                        break;
+                    }
+                }
+
+                if ($isAutoSave && $isCanSave) {
+                    $this->getEntityManager()->persist($Warehouse);
+                    $this->getEntityManager()->flush($Warehouse);
+                }
+            }
         }
 
         return $Warehouse;

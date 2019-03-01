@@ -28,26 +28,6 @@ class ApiService
     protected $configRepo;
 
     /**
-     * @var GHNPrefRepository
-     */
-    protected $ghnPrefRepo;
-
-    /**
-     * @var GHNWarehouseRepository
-     */
-    protected $ghnWarehouseRepo;
-
-    /**
-     * @var GHNDeliveryRepository
-     */
-    protected $ghnDeliveryRepo;
-
-    /**
-     * @var EccubeConfig
-     */
-    protected $eccubeConfig;
-
-    /**
      * @var BaseInfo
      */
     protected $baseInfo;
@@ -71,13 +51,9 @@ class ApiService
      * @param EccubeConfig $eccubeConfig
      * @param BaseInfo $baseInfo
      */
-    public function __construct(GHNConfigRepository $configRepo, GHNPrefRepository $ghnPrefRepo, GHNWarehouseRepository $ghnWarehouseRepo, GHNDeliveryRepository $ghnDeliveryRepo, EccubeConfig $eccubeConfig, BaseInfoRepository $baseInfoRepository, RequestStack $requestStack)
+    public function __construct(GHNConfigRepository $configRepo, EccubeConfig $eccubeConfig, BaseInfoRepository $baseInfoRepository, RequestStack $requestStack)
     {
         $this->configRepo = $configRepo;
-        $this->ghnPrefRepo = $ghnPrefRepo;
-        $this->ghnWarehouseRepo = $ghnWarehouseRepo;
-        $this->ghnDeliveryRepo = $ghnDeliveryRepo;
-        $this->eccubeConfig = $eccubeConfig;
         $this->baseInfo = $baseInfoRepository->get();
         $this->requestStack = $requestStack;
 
@@ -107,6 +83,30 @@ class ApiService
 
         return $parser;
     }
+
+    /**
+     * get all warehouse of customer (by token)
+     * @return ApiParserService
+     */
+    public function getWarehouse()
+    {
+        /** @var GHNConfig $config */
+        $config = $this->configRepo->find(1);
+        $parser = new ApiParserService();
+        if (!$config) {
+            return $parser;
+        }
+        $url = $this->endpoint . '/GetHubs';
+
+        $data['token'] = $config->getToken();
+
+        $jsonRet = $this->requestApi($url, $data, true);
+        $parser = new ApiParserService();
+        $parser->parse($jsonRet);
+
+        return $parser;
+    }
+
 
     /**
      * @param GHNWarehouse $GHNWarehouse

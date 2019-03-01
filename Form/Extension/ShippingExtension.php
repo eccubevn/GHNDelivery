@@ -10,9 +10,9 @@ namespace Plugin\GHNDelivery\Form\Extension;
 
 use Eccube\Entity\Delivery;
 use Eccube\Form\Type\Admin\ShippingType;
-use Eccube\Repository\DeliveryRepository;
 use Plugin\GHNDelivery\Entity\GHNPref;
 use Plugin\GHNDelivery\Entity\GHNService;
+use Plugin\GHNDelivery\Repository\GHNDeliveryRepository;
 use Plugin\GHNDelivery\Repository\GHNServiceRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractTypeExtension;
@@ -24,26 +24,26 @@ use Symfony\Component\Form\FormEvents;
 
 class ShippingExtension extends AbstractTypeExtension
 {
-    /** @var DeliveryRepository */
-    private $deliveryRepo;
+    /** @var GHNDeliveryRepository */
+    private $GHNDeliveryRepository;
 
     /** @var GHNServiceRepository */
     private $serviceRepo;
 
     /**
      * ShippingExtension constructor.
-     * @param DeliveryRepository $deliveryRepo
+     * @param GHNDeliveryRepository $deliveryRepo
      * @param GHNServiceRepository $serviceRepo
      */
-    public function __construct(DeliveryRepository $deliveryRepo, GHNServiceRepository $serviceRepo)
+    public function __construct(GHNDeliveryRepository $deliveryRepo, GHNServiceRepository $serviceRepo)
     {
-        $this->deliveryRepo = $deliveryRepo;
+        $this->GHNDeliveryRepository = $deliveryRepo;
         $this->serviceRepo = $serviceRepo;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $deliveryRepo = $this->deliveryRepo;
+        $deliveryRepo = $this->GHNDeliveryRepository;
         $serviceRepo = $this->serviceRepo;
         $builder->add('GHNPref', EntityType::class, [
             'label' => 'ghn.warehouse.district',

@@ -35,6 +35,10 @@ trait FullAddressTrait
             $tmp[] = $this->postal_code;
         }
 
+        $tmp = array_filter($tmp, function ($item) {
+            return empty($item) ? false : true;
+        });
+
         return implode(', ', $tmp);
     }
 }

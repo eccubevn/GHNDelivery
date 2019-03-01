@@ -12,6 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Eccube\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Entity\Master\Pref;
+use Eccube\Entity\Shipping;
 
 /**
  * Class GHNPref
@@ -76,6 +77,12 @@ class GHNPref extends AbstractEntity
     private $Pref;
 
     /**
+     * @var Shipping[]
+     * @ORM\OneToMany(targetEntity="Eccube\Entity\Shipping", mappedBy="GHNPref")
+     */
+    private $Shippings;
+
+    /**
      * @var GHNWarehouse[]
      *
      * @ORM\OneToMany(targetEntity="Plugin\GHNDelivery\Entity\GHNWarehouse", mappedBy="GHNPref")
@@ -85,14 +92,14 @@ class GHNPref extends AbstractEntity
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="create_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="create_date", type="datetimetz", nullable=true)
      */
     private $create_date;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="update_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="update_date", type="datetimetz", nullable=true)
      */
     private $update_date;
 
@@ -138,6 +145,7 @@ class GHNPref extends AbstractEntity
     public function __construct()
     {
         $this->Warehouses = new ArrayCollection();
+        $this->Shippings = new ArrayCollection();
     }
 
     /**
@@ -263,7 +271,7 @@ class GHNPref extends AbstractEntity
     /**
      * @param GHNWarehouse $Warehouse
      */
-    public function addWarehouse(GHNWarehouse $Warehouse): void
+    public function addWarehouse(GHNWarehouse $Warehouse)
     {
         if (is_null($this->Warehouses)) {
             $this->Warehouses = new ArrayCollection();
@@ -275,8 +283,36 @@ class GHNPref extends AbstractEntity
     /**
      * @param GHNWarehouse $Warehouse
      */
-    public function removeWarehouse($Warehouse): void
+    public function removeWarehouse($Warehouse)
     {
         $this->Warehouses->removeElement($Warehouse);
+    }
+
+    /**
+     * @return Shipping[]
+     */
+    public function getShippings()
+    {
+        return $this->Shippings;
+    }
+
+    /**
+     * @param Shipping $shp
+     */
+    public function addShipping(Shipping $shp)
+    {
+        if (is_null($this->Shippings)) {
+            $this->Shippings = new ArrayCollection();
+        }
+
+        $this->Shippings->add($shp);
+    }
+
+    /**
+     * @param GHNWarehouse $Warehouse
+     */
+    public function removeShipping(Shipping $shp)
+    {
+        $this->Shippings->removeElement($shp);
     }
 }

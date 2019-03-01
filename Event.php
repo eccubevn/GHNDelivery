@@ -258,10 +258,11 @@ class Event implements EventSubscriberInterface
 
         // force using all GHN delivery
         $isAddedWarning = false;
-        if (in_array(true, array_values($redirects)) && $hardCoreDelivery) {
+        if (count($redirects) > 1 && in_array(true, array_values($redirects)) && $hardCoreDelivery) {
             foreach ($order->getShippings() as $shipping) {
                 $shipping->setDelivery($hardCoreDelivery);
                 if (!$isAddedWarning) {
+                    $this->session->getFlashBag()->clear();
                     $this->addFlash('eccube.front.warning', 'ghn.shopping.force');
                     $isAddedWarning = true;
                 }

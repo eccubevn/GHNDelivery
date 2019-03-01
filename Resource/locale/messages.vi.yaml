@@ -38,6 +38,7 @@ ghn.config.checkout.cod: Khác
 ghn.config.wallet: Sử dụng ví GHN để thanh toán phí giao hàng
 ghn.config.wallet.yes: Có
 ghn.config.wallet.no: Không
+ghn.config.warehouse: Vui lòng tiếp tục cài đặt kho hàng trước khi sử dụng.
 # warehouse
 ghn.warehouse: Quản lý kho
 ghn.warehouse.address: Địa chỉ

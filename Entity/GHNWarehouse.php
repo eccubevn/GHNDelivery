@@ -99,14 +99,14 @@ class GHNWarehouse extends AbstractEntity
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="create_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="create_date", type="datetimetz", nullable=true)
      */
     private $create_date;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="update_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="update_date", type="datetimetz", nullable=true)
      */
     private $update_date;
 
@@ -355,5 +355,25 @@ class GHNWarehouse extends AbstractEntity
         ];
 
         return implode('', $ret);
+    }
+
+    /**
+     * @param array $warehouse
+     * @param GHNPref|null $GHNPref
+     */
+    public function setWarehouseFromApiData(array $warehouse, GHNPref $GHNPref = null)
+    {
+        $this->setHubId($warehouse['HubID']);
+        $this->setEmail($warehouse['Email']);
+        $this->setLati($warehouse['Latitude']);
+        $this->setLong($warehouse['Longitude']);
+        $this->setAddress($warehouse['Address']);
+        $this->setContactName($warehouse['ContactName']);
+        $this->setContactPhone($warehouse['ContactPhone']);
+        $this->setIsMain(true);
+        if ($GHNPref) {
+            $this->setGHNPref($GHNPref);
+            $GHNPref->addWarehouse($this);
+        }
     }
 }

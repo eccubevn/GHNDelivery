@@ -33,7 +33,7 @@ class GHNService extends AbstractEntity
     /**
      * @var Shipping
      *
-     * @ORM\OneToOne(targetEntity="Eccube\Entity\Shipping")
+     * @ORM\OneToOne(targetEntity="Eccube\Entity\Shipping", inversedBy="GHNService")
      * @ORM\JoinColumns(
      *     @ORM\JoinColumn(name="shipping_id", referencedColumnName="id", onDelete="CASCADE")
      * )
@@ -132,14 +132,14 @@ class GHNService extends AbstractEntity
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="create_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="create_date", type="datetimetz", nullable=true)
      */
     private $create_date;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="update_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="update_date", type="datetimetz", nullable=true)
      */
     private $update_date;
 

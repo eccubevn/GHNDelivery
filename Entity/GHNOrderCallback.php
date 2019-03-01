@@ -63,14 +63,14 @@ class GHNOrderCallback extends AbstractEntity
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="create_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="create_date", type="datetimetz", nullable=true)
      */
     private $create_date;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="update_date", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="update_date", type="datetimetz", nullable=true)
      */
     private $update_date;
 
