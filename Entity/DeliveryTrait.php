@@ -21,7 +21,7 @@ trait DeliveryTrait
     /**
      * @var GHNDelivery
      *
-     * @ORM\OneToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNDelivery")
+     * @ORM\OneToOne(targetEntity="Plugin\GHNDelivery\Entity\GHNDelivery", mappedBy="Delivery")
      */
     private $GHNDelivery;
 

@@ -24,7 +24,7 @@ class GHNDelivery extends AbstractEntity
     /**
      * @var Delivery
      *
-     * @ORM\OneToOne(targetEntity="Eccube\Entity\Delivery")
+     * @ORM\OneToOne(targetEntity="Eccube\Entity\Delivery", inversedBy="GHNDelivery")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id", referencedColumnName="id")
      * })

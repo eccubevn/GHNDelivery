@@ -236,7 +236,6 @@ class Event implements EventSubscriberInterface
         /** @var Order $order */
         $order = $parameters['Order'];
         $redirects = [];
-        $hardCoreDelivery = null;
         // check GHN delivery in order
         foreach ($order->getShippings() as $shipping) {
             $redirects[$shipping->getId()] = false;
@@ -245,7 +244,6 @@ class Event implements EventSubscriberInterface
             // if ghn delivery => add script to redirect to GHN page
             if ($GHNDelivery) {
                 $redirects[$shipping->getId()] = true;
-                $hardCoreDelivery = $delivery;
                 /** @var OrderItem $shippingOrderItem */
                 foreach ($shipping->getOrderItems() as $shippingOrderItem) {
                     // is exist GHN delivery fee
@@ -254,29 +252,6 @@ class Event implements EventSubscriberInterface
                     }
                 }
             }
-        }
-
-        // force using all GHN delivery
-        $isAddedWarning = false;
-        if (count($redirects) > 1 && in_array(true, array_values($redirects)) && $hardCoreDelivery) {
-            foreach ($order->getShippings() as $shipping) {
-                $shipping->setDelivery($hardCoreDelivery);
-                if (!$isAddedWarning) {
-                    $this->session->getFlashBag()->clear();
-                    $this->addFlash('eccube.front.warning', 'ghn.shopping.force');
-                    $isAddedWarning = true;
-                }
-
-                $redirects[$shipping->getId()] = true;
-                /** @var OrderItem $shippingOrderItem */
-                foreach ($shipping->getOrderItems() as $shippingOrderItem) {
-                    // is exist GHN delivery fee
-                    if ($shippingOrderItem->isDeliveryFee() && $shippingOrderItem->getProcessorName() == GHNProcessor::class) {
-                        $redirects[$shipping->getId()] = false;
-                    }
-                }
-            }
-            $this->entityManager->flush();
         }
 
         // save to session
