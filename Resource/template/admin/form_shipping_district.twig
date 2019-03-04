@@ -83,6 +83,7 @@
                 {{- form_label(form) -}}
                 <div class="col">
                     {{- form_widget(form) -}}
+                    {%- if help -%}<p class="form-text font-weight-bold text-danger mb-0">{{ help|trans }}</p>{%- endif -%}
                 </div>
                 </div>
         {%- endif -%}

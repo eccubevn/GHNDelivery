@@ -5,12 +5,14 @@
  * Time: 3:25 PM
 #}
 {#Render re-register GHN#}
+{% if Order.id %}
 <script type="text/javascript">
     $(function () {
         $("#ghn-reorder").insertBefore(".c-conversionArea button[name=mode]");
     });
 </script>
 <a id="ghn-reorder" href="{{ url('ghn_reorder', {'id': Order.id}) }}" class="btn btn-ec-conversion px-5 mr-3">{{ 'ghn.order.reorder.button'|trans }}</a>
+{% endif %}
 
 {#GHN Order infomation#}
 {% if GHNOrders|length > 0 %}

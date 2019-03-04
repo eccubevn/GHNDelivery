@@ -84,6 +84,6 @@ ghn.shipping.cannot_create: "Không thể tạo đơn giao hàng %shipping%! Vui
 ghn.shipping.service.cannot_connect: "Dịch vụ của đơn giao hàng %shipping% không thể tạo, vui lòng kiểm tra lại cài đặt hoặc đường truyền internet"
 ghn.shipping.service.incorrect: "Dịch vụ của đơn giao hàng %shipping% không đúng, vui lòng chọn lại!"
 ghn.shipping.cancel.incorrect: "Đơn giao hàng %shipping% không thể hủy, vui lòng liên hệ GHN!"
-
+ghn.shipping.service.help: Vui lòng thêm chi phí giao hàng bằng tay
 
 ghn.callback.receive: Chúng tôi đã nhận được, cảm ơn sự hợp tác.

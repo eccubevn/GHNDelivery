@@ -49,6 +49,7 @@ class ShippingExtension extends AbstractTypeExtension
             'label' => 'ghn.warehouse.district',
             'required' => false,
             'class' => GHNPref::class,
+            'help' => '',
             'choice_label' => function(?GHNPref $GHNPref) {
                 return $GHNPref->getProvinceName() . ' - ' . $GHNPref->getDistrictName();
             },
