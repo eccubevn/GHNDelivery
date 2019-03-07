@@ -6,6 +6,7 @@ use Plugin\GHNDelivery\Entity\GHNConfig;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -100,13 +101,6 @@ class ConfigType extends AbstractType
                 ],
                 'constraints' => []
             ])
-            ->add('callback_url', UrlType::class, [
-                'help' => 'ghn.config.callback_url.help',
-                'label' => 'ghn.config.callback_url',
-                'constraints' => [
-                    new NotBlank()
-                ]
-            ])
             ->add('note_code', ChoiceType::class, [
                 'label_attr' => ['class' => 'col-form-label'],
                 'label' => 'ghn.config.note_code',
@@ -147,6 +141,26 @@ class ConfigType extends AbstractType
                     'ghn.config.wallet.yes' => true,
                     'ghn.config.wallet.no' => false
                 ]
+            ])
+            ->add('callback_url', UrlType::class, [
+                'help' => 'ghn.config.callback_url.help',
+                'label' => 'ghn.config.callback_url',
+                'constraints' => [
+                    new NotBlank()
+                ]
+            ])
+            ->add('is_set_callback', ChoiceType::class, [
+                'label_attr' => ['class' => 'col-form-label'],
+                'label' => 'ghn.config.set_callback',
+                'help' => 'ghn.config.set_callback.help',
+                'multiple' => false,
+                'expanded' => true,
+                'mapped' => false,
+                'choices' => [
+                    'ghn.config.set_callback.yes' => true,
+                    'ghn.config.set_callback.no' => false
+                ],
+                'data' => false
             ]);
     }
 

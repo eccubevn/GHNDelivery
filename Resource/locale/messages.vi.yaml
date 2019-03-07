@@ -1,3 +1,4 @@
+# hard-text from api
 CHOTHUHANG: Cho thử hàng
 CHOXEMHANGKHONGTHU: Cho xem hàng (không cho thử hàng)
 KHONGCHOXEMHANG: Không cho xem hàng
@@ -10,6 +11,8 @@ TotalServiceFee: Phí dịch vụ
 ExpectedDeliveryTime: Thời gian giao hàng dự kiến
 ClientHubID: ID kho hàng
 SortCode: Mã số sắp xếp
+Success: Thành công
+URLCallback not ssl or invalid: Đường đẫn callback phải đúng định dạng ssl
 
 ghn.name: Giao hàng nhanh
 ghn.header: Cài đặt
@@ -28,7 +31,7 @@ ghn.config.height: Chiều cao trung bình của một món hàng (cm)
 ghn.config.payment_type: Người trả phí giao hàng
 ghn.config.payment_type.seller: Người bán
 ghn.config.payment_type.buyer: Người mua
-ghn.config.callback_url: Link nhận thông tin trạng thái giao hàng từ GHN
+ghn.config.callback_url: Đường dẫn nhận thông tin giao hàng từ GHN (callback)
 ghn.config.callback_url.help: "Mặc định: <tên miền của bạn>/receive. Ví dụ: http://eccubeshop.vn/receive"
 ghn.config.note_code: Loại hàng
 ghn.config.insurance_fee: Phí bảo hộ
@@ -39,6 +42,11 @@ ghn.config.wallet: Sử dụng ví GHN để thanh toán phí giao hàng
 ghn.config.wallet.yes: Có
 ghn.config.wallet.no: Không
 ghn.config.warehouse: Vui lòng tiếp tục cài đặt kho hàng trước khi sử dụng.
+ghn.config.set_callback: Tự động cài callback
+ghn.config.set_callback.help: "Hệ thống sẽ tự động thiết lập đường dẫn callback trên máy chủ GHN. Nếu không, bạn cũng có thể thiết lập bằng tay ở đây: https://api.ghn.vn/home/account, hướng dẫn: https://api.ghn.vn/home/docs/detail?id=36"
+ghn.config.set_callback.yes: Có
+ghn.config.set_callback.no: Không
+ghn.api.call.not_config: Vui lòng thiết lập token trước khi thực hiện thao tác này.
 # warehouse
 ghn.warehouse: Quản lý kho
 ghn.warehouse.address: Địa chỉ

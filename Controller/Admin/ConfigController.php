@@ -11,11 +11,16 @@ use Plugin\GHNDelivery\Form\Type\Admin\WarehouseType;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
 use Plugin\GHNDelivery\Repository\GHNPrefRepository;
 use Plugin\GHNDelivery\Repository\GHNWarehouseRepository;
+use Plugin\GHNDelivery\Service\ApiParserService;
 use Plugin\GHNDelivery\Service\ApiService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class ConfigController
+ * @package Plugin\GHNDelivery\Controller\Admin
+ */
 class ConfigController extends AbstractController
 {
     /**
@@ -45,6 +50,10 @@ class ConfigController extends AbstractController
      * ConfigController constructor.
      * @param GHNConfigRepository $configRepository
      * @param GHNPrefRepository $GHNPrefRepo
+     * @param BaseInfoRepository $baseInfoRepository
+     * @param GHNWarehouseRepository $warehouseRepo
+     * @param ApiService $apiService
+     * @throws \Exception
      */
     public function __construct(GHNConfigRepository $configRepository, GHNPrefRepository $GHNPrefRepo, BaseInfoRepository $baseInfoRepository, GHNWarehouseRepository $warehouseRepo, ApiService $apiService)
     {
@@ -54,7 +63,6 @@ class ConfigController extends AbstractController
         $this->warehouseRepo = $warehouseRepo;
         $this->apiService = $apiService;
     }
-
 
     /**
      * @Route("/%eccube_admin_route%/ghn/config", name="ghn_delivery_admin_config")
@@ -71,12 +79,25 @@ class ConfigController extends AbstractController
             $this->entityManager->persist($Config);
             $this->entityManager->flush($Config);
             $this->addSuccess('admin.common.save_complete', 'admin');
+            if ($form['is_set_callback']->getData()) {
+                // update config to server
+                $output = $this->apiService->updateConfig($Config);
+                if (!$output->getCode()) {
+                    $this->addError($output->getMsg() ? $output->getMsg() : 'admin.common.save_error', 'admin');
+                    $this->addPaserError($output);
+
+                    return [
+                        'form' => $form->createView(),
+                    ];
+                }
+            }
 
             if (!$this->warehouseRepo->getOne()) {
                 $this->addInfo('ghn.config.warehouse', 'admin');
 
                 return $this->redirectToRoute('ghn_delivery_admin_warehouse');
             }
+
             return $this->redirectToRoute('ghn_delivery_admin_config');
         }
 
@@ -126,11 +147,26 @@ class ConfigController extends AbstractController
                 return $this->redirectToRoute('ghn_delivery_admin_warehouse');
             } else {
                 $this->addError($parser->getMsg() ? $parser->getMsg() : 'admin.common.save_error', 'admin');
+                $this->addPaserError($parser);
             }
         }
 
         return [
             'form' => $form->createView(),
         ];
+    }
+
+    /**
+     * @param $output
+     */
+    private function addPaserError(ApiParserService $output): void
+    {
+        if (is_array($output->getData())) {
+            foreach ($output->getData() as $message) {
+                $this->addError($message, 'admin');
+            }
+        } elseif (is_string($output->getData())) {
+            $this->addError($output->getData(), 'admin');
+        }
     }
 }

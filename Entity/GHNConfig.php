@@ -476,4 +476,45 @@ class GHNConfig extends AbstractEntity
         $this->height = $height;
         return $this;
     }
+
+    public function getConfigCallbackData()
+    {
+        $arrRet = [
+            'token' => $this->getToken(),
+            'TokenClient' => [$this->getToken()],
+            'ConfigCod' => true,
+            'ConfigReturnData' => true,
+            'URLCallback' => $this->getCallbackUrl(),
+            'ConfigField' =>
+                [
+                    'CoDAmount' => true,
+                    'CurrentWarehouseName' => true,
+                    'CustomerID' => true,
+                    'CustomerName' => true,
+                    'CustomerPhone' => true,
+                    'Note' => true,
+                    'OrderCode' => true,
+                    'ServiceName' => true,
+                    'ShippingOrderCosts' => true,
+                    'Weight' => true,
+                    'ExternalCode' => true,
+                    'ReturnInfo' => true,
+                ],
+            'ConfigStatus' =>
+                [
+                    'ReadyToPick' => true,
+                    'Picking' => true,
+                    'Storing' => true,
+                    'Delivering' => true,
+                    'Delivered' => true,
+                    'WaitingToFinish' => true,
+                    'Return' => true,
+                    'Returned' => true,
+                    'Finish' => true,
+                    'LostOrder' => true,
+                    'Cancel' => true,
+                ],
+        ];
+        return $arrRet;
+    }
 }

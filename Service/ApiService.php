@@ -13,6 +13,7 @@ use Eccube\Common\EccubeConfig;
 use Eccube\Entity\BaseInfo;
 use Eccube\Repository\BaseInfoRepository;
 use Plugin\GHNDelivery\Entity\GHNConfig;
+use Plugin\GHNDelivery\Entity\GHNOrder;
 use Plugin\GHNDelivery\Entity\GHNWarehouse;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
 use Plugin\GHNDelivery\Repository\GHNDeliveryRepository;
@@ -22,11 +23,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class ApiService
 {
-    /**
-     * @var GHNConfigRepository
-     */
-    protected $configRepo;
-
     /**
      * @var BaseInfo
      */
@@ -43,6 +39,11 @@ class ApiService
     private $endpoint;
 
     /**
+     * @var GHNConfig
+     */
+    protected $config;
+
+    /**
      * ApiService constructor.
      * @param GHNConfigRepository $configRepo
      * @param GHNPrefRepository $ghnPrefRepo
@@ -53,7 +54,7 @@ class ApiService
      */
     public function __construct(GHNConfigRepository $configRepo, EccubeConfig $eccubeConfig, BaseInfoRepository $baseInfoRepository, RequestStack $requestStack)
     {
-        $this->configRepo = $configRepo;
+        $this->config = $configRepo->find(1);
         $this->baseInfo = $baseInfoRepository->get();
         $this->requestStack = $requestStack;
 
@@ -61,21 +62,33 @@ class ApiService
     }
 
     /**
+     * @param GHNConfig $config
+     * @return ApiParserService
+     */
+    public function updateConfig(GHNConfig $config)
+    {
+        $url = $this->endpoint . '/SetConfigClient';
+        $data = $config->getConfigCallbackData();
+
+        $jsonRet = $this->requestApi($url, $data, true);
+        $parser = new ApiParserService();
+        $parser->parse($jsonRet);
+
+        return $parser;
+    }
+
+    /**
      * @param GHNWarehouse $GHNWarehouse
      * @return ApiParserService
+     * @throws GHNException
      */
     public function addWarehouse(GHNWarehouse $GHNWarehouse)
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
         $url = $this->endpoint . '/AddHubs';
 
         $data = $GHNWarehouse->getApiCreateParameter();
-        $data['token'] = $config->getToken();
+        $data['token'] = $this->config->getToken();
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -86,19 +99,16 @@ class ApiService
 
     /**
      * get all warehouse of customer (by token)
+     *
      * @return ApiParserService
+     * @throws GHNException
      */
     public function getWarehouse()
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
         $url = $this->endpoint . '/GetHubs';
 
-        $data['token'] = $config->getToken();
+        $data['token'] = $this->config->getToken();
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -111,20 +121,16 @@ class ApiService
     /**
      * @param GHNWarehouse $GHNWarehouse
      * @return ApiParserService
+     * @throws GHNException
      */
     public function updateWarehouse(GHNWarehouse $GHNWarehouse)
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
 
         $url = $this->endpoint . '/UpdateHubs';
 
         $data = $GHNWarehouse->getApiCreateParameter();
-        $data['token'] = $config->getToken();
+        $data['token'] = $this->config->getToken();
         $data['HubID'] = (int) $GHNWarehouse->getHubId();
 
         $jsonRet = $this->requestApi($url, $data, true);
@@ -139,19 +145,15 @@ class ApiService
      * @param $toDistrictId
      * @param array $options
      * @return ApiParserService
+     * @throws GHNException
      */
     public function findAvailableServices($fromDistrictId, $toDistrictId, $options = array())
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
 
         $url = $this->endpoint . '/FindAvailableServices';
 
-        $data['token'] = $config->getToken();
+        $data['token'] = $this->config->getToken();
         $data['FromDistrictID'] = (int) $fromDistrictId;
         $data['ToDistrictID'] = (int) $toDistrictId;
         if (count($options)) {
@@ -168,19 +170,17 @@ class ApiService
     }
 
     /**
-     * @param array $data
+     * @param GHNOrder $GHNOrder
+     * @param $affId
      * @return ApiParserService
+     * @throws GHNException
      */
-    public function createOrder(array $data)
+    public function createGHNOrder(GHNOrder $GHNOrder, $affId)
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
 
         $url = $this->endpoint . '/CreateOrder';
+        $data = $GHNOrder->buildCreateOrderData($this->config, $affId);
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -190,19 +190,16 @@ class ApiService
     }
 
     /**
-     * @param array $data
+     * @param GHNOrder $GHNOrder
      * @return ApiParserService
+     * @throws GHNException
      */
-    public function updateOrder(array $data)
+    public function updateGHNOrder(GHNOrder $GHNOrder)
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
 
         $url = $this->endpoint . '/UpdateOrder';
+        $data = $GHNOrder->buildUpdateOrderData($this->config);
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -212,19 +209,16 @@ class ApiService
     }
 
     /**
-     * @param $data
+     * @param GHNOrder $GHNOrder
      * @return ApiParserService
+     * @throws GHNException
      */
-    public function cancelOrder($data)
+    public function cancelOrder(GHNOrder $GHNOrder)
     {
-        /** @var GHNConfig $config */
-        $config = $this->configRepo->find(1);
-        $parser = new ApiParserService();
-        if (!$config) {
-            return $parser;
-        }
+        $this->checkConfig();
 
         $url = $this->endpoint . '/CancelOrder';
+        $data = $GHNOrder->buildCancelData($this->config);
 
         $jsonRet = $this->requestApi($url, $data, true);
         $parser = new ApiParserService();
@@ -295,5 +289,16 @@ class ApiService
 //        }
 
         return $result ? $result : $message;
+    }
+
+    /**
+     * @throws GHNException
+     */
+    private function checkConfig()
+    {
+        $config = $this->config;
+        if (!$config) {
+            throw new GHNException('ghn.api.call.not_config');
+        }
     }
 }

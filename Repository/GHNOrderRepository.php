@@ -7,7 +7,6 @@
 
 namespace Plugin\GHNDelivery\Repository;
 
-
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Eccube\Common\EccubeConfig;
 use Eccube\Entity\Order;
@@ -19,6 +18,10 @@ use Plugin\GHNDelivery\Service\ApiParserService;
 use Plugin\GHNDelivery\Service\ApiService;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+/**
+ * Class GHNOrderRepository
+ * @package Plugin\GHNDelivery\Repository
+ */
 class GHNOrderRepository extends AbstractRepository
 {
     /** @var Session */
@@ -33,33 +36,29 @@ class GHNOrderRepository extends AbstractRepository
     /** @var GHNDeliveryRepository */
     protected $ghnDeliveryRepo;
 
-    /** @var GHNConfigRepository */
-    protected $configRepo;
-
     /** @var GHNServiceRepository */
     protected $serviceRepo;
 
     /**
      * GHNOrderRepository constructor.
+     * @param ManagerRegistry $registry
      * @param Session $session
      * @param ApiService $apiService
      * @param GHNWarehouseRepository $warehouseRepo
      * @param GHNDeliveryRepository $ghnDeliveryRepo
-     * @param GHNConfigRepository $configRepo
      * @param GHNServiceRepository $serviceRepo
+     * @param EccubeConfig $eccubeConfig
      */
-    public function __construct(ManagerRegistry $registry, Session $session, ApiService $apiService, GHNWarehouseRepository $warehouseRepo, GHNDeliveryRepository $ghnDeliveryRepo, GHNConfigRepository $configRepo, GHNServiceRepository $serviceRepo, EccubeConfig $eccubeConfig)
+    public function __construct(ManagerRegistry $registry, Session $session, ApiService $apiService, GHNWarehouseRepository $warehouseRepo, GHNDeliveryRepository $ghnDeliveryRepo, GHNServiceRepository $serviceRepo, EccubeConfig $eccubeConfig)
     {
         parent::__construct($registry, GHNOrder::class);
         $this->session = $session;
         $this->apiService = $apiService;
         $this->warehouseRepo = $warehouseRepo;
         $this->ghnDeliveryRepo = $ghnDeliveryRepo;
-        $this->configRepo = $configRepo;
         $this->serviceRepo = $serviceRepo;
         $this->eccubeConfig = $eccubeConfig;
     }
-
 
     /**
      * @param $shipping
@@ -86,6 +85,7 @@ class GHNOrderRepository extends AbstractRepository
     /**
      * @param Order $order
      * @throws \Doctrine\ORM\ORMException
+     * @throws \Plugin\GHNDelivery\Service\GHNException
      */
     public function createGHNOrderByOrder(Order $order)
     {
@@ -97,8 +97,10 @@ class GHNOrderRepository extends AbstractRepository
 
     /**
      * @param Shipping $shipping
+     * @param bool $isAutoUpdate
      * @return bool
      * @throws \Doctrine\ORM\ORMException
+     * @throws \Plugin\GHNDelivery\Service\GHNException
      */
     public function createGHNOrderByShipping(Shipping $shipping, $isAutoUpdate = true)
     {
@@ -140,23 +142,21 @@ class GHNOrderRepository extends AbstractRepository
      * @param GHNOrder $ghnOrder
      * @param bool $isAutoUpdate
      * @return ApiParserService
+     * @throws \Plugin\GHNDelivery\Service\GHNException
      */
     public function callOrderApi(GHNOrder $ghnOrder, $isAutoUpdate = true)
     {
-        $config = $this->configRepo->find(1);
         $output = new ApiParserService();
         // update
         if ($ghnOrder->getId()) {
             if ($isAutoUpdate) {
-                $dataForApi = $ghnOrder->buildUpdateOrderData($config);
-                $output = $this->apiService->updateOrder($dataForApi);
+                $output = $this->apiService->updateGHNOrder($ghnOrder);
             } else {
                 $this->session->getFlashBag()->add('eccube.admin.warning', trans('ghn.shipping.create_already', ['%shipping%' => $ghnOrder->getShipping()->getId()]));
             }
         } else {
             // create
-            $dataForApi = $ghnOrder->buildCreateOrderData($config, $this->eccubeConfig->get('ghn_affiliate_id'));
-            $output = $this->apiService->createOrder($dataForApi);
+            $output = $this->apiService->createGHNOrder($ghnOrder, $this->eccubeConfig->get('ghn_affiliate_id'));
         }
 
         return $output;
@@ -166,6 +166,7 @@ class GHNOrderRepository extends AbstractRepository
      * @param Order $order
      * @return bool
      * @throws \Doctrine\ORM\ORMException
+     * @throws \Plugin\GHNDelivery\Service\GHNException
      */
     public function cancelGHNOrderByOrder(Order $order)
     {
@@ -176,13 +177,13 @@ class GHNOrderRepository extends AbstractRepository
     }
 
     /**
-     * @param $shipping
+     * @param Shipping $shipping
      * @return bool
      * @throws \Doctrine\ORM\ORMException
+     * @throws \Plugin\GHNDelivery\Service\GHNException
      */
     public function cancelGHNOrderByShipping(Shipping $shipping)
     {
-        $config = $this->configRepo->find(1);
         $arr = ['%shipping%' => $shipping->getId()];
         $isGHNDelivery = $this->ghnDeliveryRepo->find($shipping->getDelivery());
         if (!$isGHNDelivery) {
@@ -195,8 +196,7 @@ class GHNOrderRepository extends AbstractRepository
             $this->session->getFlashBag()->add('eccube.admin.error', trans('ghn.shipping.not_found', $arr));
             return false;
         }
-        $data = $ghnOrder->buildCancelData($config);
-        $output = $this->apiService->cancelOrder($data);
+        $output = $this->apiService->cancelOrder($ghnOrder);
 
         if (!$output->getCode()) {
             $this->session->getFlashBag()->add('eccube.admin.error', $output->getMsg() ? $output->getMsg() : trans('ghn.shipping.cancel.incorrect', $arr));

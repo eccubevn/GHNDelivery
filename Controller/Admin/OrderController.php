@@ -13,7 +13,6 @@ use Eccube\Entity\Master\OrderStatus;
 use Eccube\Entity\Order;
 use Eccube\Entity\Shipping;
 use Plugin\GHNDelivery\Entity\GHNConfig;
-use Plugin\GHNDelivery\Entity\GHNOrder;
 use Plugin\GHNDelivery\Entity\GHNPref;
 use Plugin\GHNDelivery\Entity\GHNWarehouse;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
@@ -29,6 +28,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class OrderController
+ * @package Plugin\GHNDelivery\Controller\Admin
+ */
 class OrderController extends AbstractController
 {
     /**

@@ -15,6 +15,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+/**
+ * Class WarehouseType
+ * @package Plugin\GHNDelivery\Form\Type\Admin
+ */
 class WarehouseType extends AbstractType
 {
     /** @var EccubeConfig */
@@ -66,24 +70,11 @@ class WarehouseType extends AbstractType
                 'choice_label' => function(?GHNPref $GHNPref) {
                     return $GHNPref->getProvinceName() . ' - ' . $GHNPref->getDistrictName();
                 },
-//                'query_builder' => function (EntityRepository $entityRepository) {
-//                    return $entityRepository->createQueryBuilder('ghn_pref');
-//                },
             ])
             ->add('email', EmailType::class, [
                 'label' => 'common.mail_address',
                 'required' => false
             ])
-//            ->add('is_main', ChoiceType::class, [
-//                'label_attr' => ['class' => 'col-form-label'],
-//                'label' => 'ghn.warehouse.is_main',
-//                'expanded' => true,
-//                'multiple' => false,
-//                'choices' => [
-//                    'ghn.warehouse.is_main.yes' => true,
-//                    'ghn.warehouse.is_main.no' => false,
-//                ],
-//            ])
             ->add('lati', NumberType::class, [
                 'label' => 'ghn.warehouse.lati',
                 'required' => false,

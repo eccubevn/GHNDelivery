@@ -32,6 +32,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class GHNShoppingController
+ * @package Plugin\GHNDelivery\Controller\Front\Shopping
+ */
 class GHNShoppingController extends AbstractController
 {
     /**
