@@ -5,7 +5,7 @@
  * Time: 3:25 PM
 #}
 {#Render re-register GHN#}
-{% if Order.id %}
+{% if Order.id and Order.OrderStatus.id == constant('\\Eccube\\Entity\\Master\\OrderStatus::IN_PROGRESS') %}
 <script type="text/javascript">
     $(function () {
         $("#ghn-reorder").insertBefore(".c-conversionArea button[name=mode]");

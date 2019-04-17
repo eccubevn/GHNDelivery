@@ -208,6 +208,7 @@ class Event implements EventSubscriberInterface
         if ($order->getOrderStatus()->getId() == OrderStatus::CANCEL) {
             // do cancel
             $this->ghnOrderRepo->cancelGHNOrderByOrder($order);
+            $this->addFlash('eccube.admin.success', 'ghn.shipping.cancel.success');
             $this->entityManager->flush();
             return;
         }
@@ -217,6 +218,7 @@ class Event implements EventSubscriberInterface
         }
 
         $this->ghnOrderRepo->createGHNOrderByOrder($order);
+        $this->addFlash('eccube.admin.success', 'ghn.shipping.create.success');
 
         // please flush all for update order
         $this->entityManager->flush();
