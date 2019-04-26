@@ -77,8 +77,6 @@ class ConfigController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $Config = $form->getData();
             $this->entityManager->persist($Config);
-            $this->entityManager->flush($Config);
-            $this->addSuccess('admin.common.save_complete', 'admin');
             if ($form['is_set_callback']->getData()) {
                 // update config to server
                 $output = $this->apiService->updateConfig($Config);
@@ -91,6 +89,9 @@ class ConfigController extends AbstractController
                     ];
                 }
             }
+
+            $this->entityManager->flush($Config);
+            $this->addSuccess('admin.common.save_complete', 'admin');
 
             if (!$this->warehouseRepo->getOne()) {
                 $this->addInfo('ghn.config.warehouse', 'admin');

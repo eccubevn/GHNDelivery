@@ -32,7 +32,7 @@ class ConfigType extends AbstractType
                     'ghn.config.mode.prod' => true,
                 ],
                 'label_attr' => ['class' => 'col-form-label'],
-                'empty_data' => true,
+                'empty_data' => false,
                 'expanded' => true,
                 'multiple' => false,
             ])
@@ -173,7 +173,7 @@ class ConfigType extends AbstractType
                     'ghn.config.set_callback.yes' => true,
                     'ghn.config.set_callback.no' => false
                 ],
-                'empty_data' => false
+                'data' => false
             ]);
     }
 

@@ -160,7 +160,7 @@ class GHNConfig extends AbstractEntity
      *
      * @ORM\Column(name="is_prod", type="boolean", nullable=true)
      */
-    private $is_prod;
+    private $is_prod = false;
 
     /**
      * @return boolean
