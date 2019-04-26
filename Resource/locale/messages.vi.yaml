@@ -19,6 +19,9 @@ ghn.header: Cài đặt
 
 ghn.config.sub_title: Cài đặt
 ghn.config.missing: Vui lòng đăng ký trước
+ghn.config.mode: Môi trường
+ghn.config.mode.test: Kiểm tra
+ghn.config.mode.prod: Chạy thật
 ghn.config.client_id: Mã chủ cửa hàng (Client Id)
 ghn.config.client_name: Tên chủ cửa hàng
 ghn.config.client_phone: Số điện thoại chủ cửa hàng

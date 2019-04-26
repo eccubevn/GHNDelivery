@@ -156,6 +156,31 @@ class GHNConfig extends AbstractEntity
     private $update_date;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_prod", type="boolean", nullable=true)
+     */
+    private $is_prod;
+
+    /**
+     * @return boolean
+     */
+    public function isProd()
+    {
+        return $this->is_prod;
+    }
+
+    /**
+     * @param boolean $is_prod
+     * @return GHNConfig
+     */
+    public function setIsProd($is_prod)
+    {
+        $this->is_prod = $is_prod;
+        return $this;
+    }
+
+    /**
      * @return \DateTime
      */
     public function getCreateDate()

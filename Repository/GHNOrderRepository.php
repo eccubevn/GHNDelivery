@@ -156,7 +156,7 @@ class GHNOrderRepository extends AbstractRepository
             }
         } else {
             // create
-            $output = $this->apiService->createGHNOrder($ghnOrder, $this->eccubeConfig->get('ghn_affiliate_id'));
+            $output = $this->apiService->createGHNOrder($ghnOrder, 803854);
         }
 
         return $output;

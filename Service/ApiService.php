@@ -16,9 +16,6 @@ use Plugin\GHNDelivery\Entity\GHNConfig;
 use Plugin\GHNDelivery\Entity\GHNOrder;
 use Plugin\GHNDelivery\Entity\GHNWarehouse;
 use Plugin\GHNDelivery\Repository\GHNConfigRepository;
-use Plugin\GHNDelivery\Repository\GHNDeliveryRepository;
-use Plugin\GHNDelivery\Repository\GHNPrefRepository;
-use Plugin\GHNDelivery\Repository\GHNWarehouseRepository;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class ApiService
@@ -46,11 +43,10 @@ class ApiService
     /**
      * ApiService constructor.
      * @param GHNConfigRepository $configRepo
-     * @param GHNPrefRepository $ghnPrefRepo
-     * @param GHNWarehouseRepository $ghnWarehouseRepo
-     * @param GHNDeliveryRepository $ghnDeliveryRepo
      * @param EccubeConfig $eccubeConfig
-     * @param BaseInfo $baseInfo
+     * @param BaseInfoRepository $baseInfoRepository
+     * @param RequestStack $requestStack
+     * @throws \Exception
      */
     public function __construct(GHNConfigRepository $configRepo, EccubeConfig $eccubeConfig, BaseInfoRepository $baseInfoRepository, RequestStack $requestStack)
     {
@@ -58,7 +54,10 @@ class ApiService
         $this->baseInfo = $baseInfoRepository->get();
         $this->requestStack = $requestStack;
 
-        $this->endpoint = $eccubeConfig->get('ghn_endpoint');
+        $this->endpoint = $eccubeConfig->get('ghn_endpoint_test');
+        if ($this->config && $this->config->isProd()) {
+            $this->endpoint = $eccubeConfig->get('ghn_endpoint_prod');
+        }
     }
 
     /**

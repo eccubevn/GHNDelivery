@@ -4,6 +4,7 @@ namespace Plugin\GHNDelivery\Form\Type\Admin;
 
 use Plugin\GHNDelivery\Entity\GHNConfig;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
@@ -23,7 +24,19 @@ class ConfigType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('client_id', TextType::class, [
+        $builder
+            ->add('is_prod', ChoiceType::class, [
+                'label' => 'ghn.config.mode',
+                'choices' => [
+                    'ghn.config.mode.test' => false,
+                    'ghn.config.mode.prod' => true,
+                ],
+                'label_attr' => ['class' => 'col-form-label'],
+                'empty_data' => true,
+                'expanded' => true,
+                'multiple' => false,
+            ])
+            ->add('client_id', TextType::class, [
             'label' => 'ghn.config.client_id',
             'constraints' => [
                 new NotBlank(),
@@ -160,7 +173,7 @@ class ConfigType extends AbstractType
                     'ghn.config.set_callback.yes' => true,
                     'ghn.config.set_callback.no' => false
                 ],
-                'data' => false
+                'empty_data' => false
             ]);
     }
 
