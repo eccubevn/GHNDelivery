@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "5fa97ec2-2e39-29b6-7160-fe9dc860eb1c",
+		"name": "Apiv3 Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hubs",
+			"item": [
+				{
+					"name": "Add Hubs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request AddHubs \"] = responseCode.code === 200;",
+									"tests[\"Successful get data Hubs\"] = responseBody.has(\"HubID\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"TokenStaging\",\n  \"Address\": \"140 Lê Trọng Tấn\",\n    \"ContactName\": \"Thái Văn Chinh\",\n    \"ContactPhone\": \"0988367330\",\n    \"DistrictID\": 1461,\n    \"Email\": \"chinh.tv@ghn.vn\",\n    \"IsMain\": true,\n    \"Latitude\": 10.0000001,\n    \"Longitude\": 108.00000032\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/AddHubs",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"AddHubs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hubs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request getHubs \"] = responseCode.code === 200;",
+									"tests[\"Successful get data Hubs\"] = responseBody.has(\"Success\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\": \"TokenStaging\"}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/GetHubs",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"GetHubs"
+							]
+						},
+						"description": "Get all hubs"
+					},
+					"response": [
+						{
+							"name": "Get Hubs",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"token\": \"TokenTest\"}"
+								},
+								"url": {
+									"raw": "http://api.serverapi.host/api/v1/apiv3/GetHubs",
+									"protocol": "http",
+									"host": [
+										"api",
+										"serverapi",
+										"host"
+									],
+									"path": [
+										"api",
+										"v1",
+										"apiv3",
+										"GetHubs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "keep-alive",
+									"name": "connection",
+									"description": ""
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": ""
+								},
+								{
+									"key": "date",
+									"value": "Wed, 27 Sep 2017 09:59:05 GMT",
+									"name": "date",
+									"description": ""
+								},
+								{
+									"key": "server",
+									"value": "nginx/1.12.1",
+									"name": "server",
+									"description": ""
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Aug 28 2018 14:27:54 GMT+0700 (SE Asia Standard Time)",
+									"hostOnly": false,
+									"httpOnly": true,
+									"domain": ".serverapi.host",
+									"path": "/",
+									"secure": false,
+									"session": false,
+									"value": "d4ae9ac6792a24a81aefd1ad74b1ffd691503905274",
+									"key": "__cfduid"
+								}
+							],
+							"body": "{\"code\":1,\"msg\":\"Success\",\"data\":[{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":null,\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":297924,\"IsEditHub\":false,\"IsMain\":true,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298433,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298434,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298435,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298436,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298437,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298438,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298439,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298440,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298441,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298442,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298443,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298444,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298445,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298446,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298447,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298448,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298449,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298478,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"Kiệt test\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":null,\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298511,\"IsEditHub\":false,\"IsMain\":false,\"Latitude\":1.2343322,\"Longitude\":1.2343322,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"13/4 Trần Văn Hoàng, Ho Chi Minh City, Ho Chi Minh, Vietnam\",\"ClientID\":192803,\"ContactName\":\"TEST ACCOUNT\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"13/4 Trần Văn Hoàng, Ho Chi Minh City, Ho Chi Minh, Vietnam,Quận Tân Bình\",\"HubID\":298534,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":107754776,\"Longitude\":10665301279999994,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298535,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298536,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298537,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298538,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298541,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298546,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298547,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298548,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298549,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298550,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298551,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298552,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298553,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298554,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298555,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298556,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298557,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298558,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298559,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298571,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298611,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298620,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298623,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298624,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298628,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298629,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"},{\"Address\":\"140 Lê Trọng Tấn\",\"ClientID\":192803,\"ContactName\":\"client name\",\"ContactPhone\":\"0988367330\",\"DistrictID\":1455,\"DistrictName\":\"Quận Tân Bình\",\"Email\":\"\",\"FullAddress\":\"140 Lê Trọng Tấn,Quận Tân Bình\",\"HubID\":298630,\"IsEditHub\":true,\"IsMain\":false,\"Latitude\":0,\"Longitude\":0,\"PeCode\":null,\"ProvinceID\":202,\"ProvinceName\":\"Hồ Chí Minh\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Update Hubs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Update \"] = responseCode.code === 200;",
+									"tests[\"Successful get data UpdateHubs\"] = responseBody.has(\"Success\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"TokenStaging\",\n  \"HubID\": 298735,\n    \"Address\": \"140 Lê Trọng Tấnx\",\n    \"ContactName\": \"Thái Văn Chinh\",\n    \"ContactPhone\": \"0988367330\",\n    \"DistrictID\": 1461,\n    \"Email\": \"chinh.tv@ghn.vn\",\n    \"IsMain\": false,\n    \"Latitude\": 10.0000001,\n    \"Longitude\": 108.00000032\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/UpdateHubs",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"UpdateHubs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calculate Fee",
+			"item": [
+				{
+					"name": "Calculate Fee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Calculate Fee \"] = responseCode.code === 200;",
+									"tests[\"Successful Calculate Fee\"] = responseBody.has(\"Success\");",
+									"tests[\"Successful has CalculatedFee\"] = responseBody.has(\"CalculatedFee\");",
+									"tests[\"Successful has DiscountFee\"] = responseBody.has(\"DiscountFee\");",
+									"tests[\"Successful has WeightDimension\"] = responseBody.has(\"WeightDimension\");",
+									"tests[\"Successful has ServiceFee\"] = responseBody.has(\"ServiceFee\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"TokenStaging\",\n    \"Weight\": 1000,\n    \"Length\": 10,\n    \"Width\": 10,\n    \"Height\": 10,\n    \"FromDistrictID\": 1443,\n    \"ToDistrictID\": 1452,\n    \"ServiceID\": 53319,\n    \"CouponCode\": \"APIV3\",\n    \"OrderCosts\":\n    [\n        {\n            \"ServiceID\": 100022, \"ServiceType\": 5\n        },\n        {\n            \"ServiceID\": 53337, \"ServiceType\": 5\n        }\n    ],\n    \"InsuranceFee\": 2000000\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/CalculateFee",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"CalculateFee"
+							]
+						},
+						"description": "Calculate Fee"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Districts - Wards",
+			"item": [
+				{
+					"name": "Get Districts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request GetDistrict \"] = responseCode.code === 200;",
+									"tests[\"Successful get data\"] = responseBody.has(\"Success\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\": \"TokenStaging\"}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/GetDistricts",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"GetDistricts"
+							]
+						},
+						"description": "Get all districts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wards",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request GetWards\"] = responseCode.code === 200;",
+									"tests[\"Successful get data\"] = responseBody.has(\"Success\");",
+									"tests[\"Successful get WardCode\"] = responseBody.has(\"WardCode\");",
+									"console.log(\"================ DATA WARD==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"TokenStaging\", \n  \"DistrictID\": 1452\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/GetWards",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"GetWards"
+							]
+						},
+						"description": "List Wards of Districts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "CreateOrder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request CreateOrder \"] = responseCode.code === 200;",
+									"tests[\"Successful response \"] = responseBody.has(\"Success\");",
+									"tests[\"Successful has OrderID \"] = responseBody.has(\"OrderID\");",
+									"tests[\"Successful has OrderCode \"] = responseBody.has(\"OrderCode\");",
+									"tests[\"Successful has TotalServiceFee \"] = responseBody.has(\"TotalServiceFee\");",
+									"tests[\"Successful has ExpectedDeliveryTime \"] = responseBody.has(\"ExpectedDeliveryTime\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"TokenStaging\",\n    \"PaymentTypeID\": 1,\n    \"FromDistrictID\": 1455,\n    \"ToDistrictID\": 1462,\n    \"Note\": \"Tạo ĐH qua API\",\n    \"SealCode\": \"tem niêm phong\",\n    \"ExternalCode\": \"\",\n    \"ClientContactName\": \"GHN\",\n    \"ClientContactPhone\": \"0987654321\",\n    \"ClientAddress\": \"70 Lữ Gia, Phường 15, Quận 11\",\n    \"CustomerName\": \"Kiệt test\",\n    \"CustomerPhone\": \"0987654321\",\n    \"ShippingAddress\": \"70 Lữ Gia, Phường 15, Quận 11\",\n    \"CoDAmount\": 1500000,\n    \"NoteCode\":\"CHOXEMHANGKHONGTHU\",\n    \"InsuranceFee\": 0,\n    \"ClientHubID\": 298779,\n    \"ServiceID\": 53319,\n    \"ToLatitude\": 1.2343322,\n    \"ToLongitude\": 10.54324322,\n    \"FromLat\": 1.2343322,\n    \"FromLng\": 10.54324322,\n    \"Content\": \"Test nội dung\",\n    \"CouponCode\": \"\",\n    \"Weight\": 10200,\n    \"Length\": 10,\n    \"Width\": 10,\n    \"Height\": 10,\n    \"CheckMainBankAccount\": false,\n    \"ReturnContactName\": \"kiệt\",\n    \"ReturnContactPhone\": \"01643277249\",\n    \"ReturnAddress\": \"50 thành thái\",\n    \"ReturnDistrictCode\": \"1455\",\n    \"ExternalReturnCode\": \"\",\n    \"IsCreditCreate\": true,\n    \"FromWardCode\":\"21402\",\n    \"ToWardCode\":\"21610\",\n    \"ShippingOrderCosts\":\n    [\n      {\n        \"ServiceID\": 53337, \"ServiceType\": 5\n      }\n    ]\n}\n"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/CreateOrder",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"CreateOrder"
+							]
+						},
+						"description": "Create Order by API"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOrder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request UpdateOrder \"] = responseCode.code === 200;",
+									"tests[\"Successful response UpdateOrder\"] = responseBody.has(\"Success\");",
+									"tests[\"Successful has TotalServiceFee\"] = responseBody.has(\"TotalServiceFee\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"TokenStaging\",\n    \"ShippingOrderID\": 56803259,\n    \"OrderCode\": \"DC0K1SK9\",\n    \"PaymentTypeID\": 1,\n    \"FromDistrictID\": 1452,\n    \"FromWardCode\":\"21015\",\n    \"ToDistrictID\": 1452,\n    \"ToWardCode\":\"21015\",\n    \"Note\": \"Lưu ĐH qua API\",\n    \"NoteCode\":\"KHONGCHOXEMHANG\",\n    \"ClientContactName\": \"kiet update\",\n    \"ClientContactPhone\": \"01643277249\",\n    \"ClientAddress\": \"50 thành thái\",\n    \"CustomerName\": \"khách hàng kiệt\",\n    \"CustomerPhone\": \"0987654321\",\n    \"ShippingAddress\": \"13/4 trần văn hoàng\",\n    \"CoDAmount\": 15000000,\n    \"InsuranceFee\": 1500000,\n    \"ClientHubID\": 0,\n    \"ServiceID\": 53320,\n    \"Content\": \"Test nội dung\",\n    \"CouponCode\": \"\",\n    \"Weight\": 1200,\n    \"Length\": 10,\n    \"Width\": 10,\n    \"Height\": 10,\n    \"OrderCosts\": \n    [\n        {\n          \"ServiceID\": 53337\n        }\n    ],\n    \"ReturnContactName\": \"ghn\",\n    \"ReturnContactPhone\": \"0987654321\",\n    \"ReturnAddress\": \"70 lữ gia\",\n    \"ReturnDistrictCode\": \"1455\",\n    \"ExternalReturnCode\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/UpdateOrder",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"UpdateOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Order Info \"] = responseCode.code === 200;",
+									"tests[\"Successful has OrderID\"] = responseBody.has(\"ShippingOrderID\");",
+									"tests[\"Successful has OrderCode\"] = responseBody.has(\"OrderCode\");",
+									"tests[\"Successful has ServiceName\"] = responseBody.has(\"ServiceName\");",
+									"tests[\"Successful has Weight\"] = responseBody.has(\"Weight\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"TokenStaging\",\n    \"OrderCode\": \"251065\"\n}\n\n"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/OrderInfo",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"OrderInfo"
+							]
+						},
+						"description": "Get Order Info"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Cancel Order \"] = responseCode.code === 200;",
+									"tests[\"Successful Canceled Order\"] = responseBody.has(\"Success\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"TokenStaging\",\n    \"OrderCode\": \"236619U7\"\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/CancelOrder",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"CancelOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request ReturnOrder \"] = responseCode.code === 200;",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"TokenStaging\",\n    \"OrderCode\": \"237DLN66\"\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/ReturnOrder",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"ReturnOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# Create \n# Update"
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "Find Available Service",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Find Availiable Service\"] = responseCode.code === 200;",
+									"tests[\"Successful get ExpectedDeliveryTime\"] = responseBody.has(\"ExpectedDeliveryTime\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"TokenStaging\",\n    \"FromDistrictID\": 1453,\n    \"ToDistrictID\": 1452,\n    \"Weight\": 1000,\n    \"Height\": 15,\n    \"Length\": 15,\n    \"Width\": 15\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/FindAvailableServices",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"FindAvailableServices"
+							]
+						},
+						"description": "Find available services"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Sign In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Order Info \"] = responseCode.code === 200;",
+									"tests[\"Successful has ClientID\"] = responseBody.has(\"ClientID\");",
+									"tests[\"Successful has ClientName\"] = responseBody.has(\"ClientName\");",
+									"tests[\"Successful has Token\"] = responseBody.has(\"Token\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"TokenStaging\",\r\n    \"Email\": \"finaldjego@gmail.com\",\r\n  \"Password\": \"1234567890\"\r\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/SignIn",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"SignIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Successful send request Order Info \"] = responseCode.code === 200;",
+									"tests[\"Successful has ClientID\"] = responseBody.has(\"ClientID\");",
+									"tests[\"Successful has ClientName\"] = responseBody.has(\"ClientName\");",
+									"tests[\"Successful has Token\"] = responseBody.has(\"Token\");",
+									"console.log(\"================ DATA ==========================\");",
+									"console.log(jsonData);",
+									"console.log(\"================ END ==========================\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\":\"TokenStaging\",\r\n    \"Email\": \"stagingapi@ghn.vn\",\r\n    \"Password\": \"1234567890\",\r\n    \"ContactPhone\": \"01643277245\",\r\n    \"ContactName\": \"Staging API\"\r\n}"
+						},
+						"url": {
+							"raw": "{{link_host}}/api/v1/apiv3/SignUp",
+							"host": [
+								"{{link_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiv3",
+								"SignUp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
