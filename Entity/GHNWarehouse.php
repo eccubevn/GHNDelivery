@@ -331,11 +331,11 @@ class GHNWarehouse extends AbstractEntity
         }
 
         if ($this->getLati()) {
-            $ret['Latitude'] = $this->getLati();
+            $ret['Latitude'] = (float) $this->getLati();
         }
 
         if ($this->getLong()) {
-            $ret['Longitude'] = $this->getLong();
+            $ret['Longitude'] = (float) $this->getLong();
         }
 
         return $ret;
