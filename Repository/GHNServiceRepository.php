@@ -9,6 +9,7 @@ namespace Plugin\GHNDelivery\Repository;
 
 
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Eccube\Common\EccubeConfig;
 use Eccube\Entity\Shipping;
 use Eccube\Repository\AbstractRepository;
 use Plugin\GHNDelivery\Entity\GHNService;
@@ -31,18 +32,21 @@ class GHNServiceRepository extends AbstractRepository
 
     /**
      * GHNServiceRepository constructor.
+     * @param ManagerRegistry $registry
      * @param GHNConfigRepository $configRepo
      * @param Session $session
      * @param ApiService $apiService
      * @param GHNWarehouseRepository $warehouseRepo
+     * @param EccubeConfig $eccubeConfig
      */
-    public function __construct(ManagerRegistry $registry, GHNConfigRepository $configRepo, Session $session, ApiService $apiService, GHNWarehouseRepository $warehouseRepo)
+    public function __construct(ManagerRegistry $registry, GHNConfigRepository $configRepo, Session $session, ApiService $apiService, GHNWarehouseRepository $warehouseRepo, EccubeConfig $eccubeConfig)
     {
         parent::__construct($registry, GHNService::class);
         $this->configRepo = $configRepo;
         $this->session = $session;
         $this->apiService = $apiService;
         $this->warehouseRepo = $warehouseRepo;
+        $this->setEccubeConfig($eccubeConfig);
     }
 
 
